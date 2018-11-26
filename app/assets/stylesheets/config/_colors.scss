@@ -1,8 +1,20 @@
-// Define variables for your color scheme
+// Our color variables
 
-// For example:
+// Initially selected blue
+$blue: #6AA8C5;
+// Darker version of the same blue
+$darkblue: #266A89;
+// Lighter version of the same blue
+$lightblue: #7EC8EA;
+
+// Very dark gray
+$black: #282828;
+$white: #FFFFFF;
+
+
+
+// Bootstrap colors:
 $red: #EE5F5B;
-$blue: #469AE0;
 $yellow: #FDB631;
 $orange: #E67E22;
 $green: #32B796;
