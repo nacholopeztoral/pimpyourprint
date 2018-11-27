@@ -1,9 +1,11 @@
 class ChallengesController < ApplicationController
   def index
     # Index only available for Admins
-    # Only take into account Challenges that are active and part of the scope
-    @challenges = policy_scope(Challenge).order(created_at: :desc).where(:active == true)
-    authorize @challenges
+    # Challenges that are active and part of the scope
+    @challenges_active = policy_scope(Challenge).order(created_at: :desc).where(active: true)
+    @challenges_unactive = policy_scope(Challenge).order(created_at: :desc).where(active: false)
+    authorize @challenges_active
+    authorize @challenges_unactive
   end
 
   def show
@@ -41,6 +43,14 @@ class ChallengesController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def activation
+    @challenge = Challenge.find(params[:id])
+    @challenge.active = !@challenge.active
+    @challenge.save
+    redirect_to challenges_path
+    authorize @challenge
   end
 
   private

@@ -25,4 +25,8 @@ class ChallengePolicy < ApplicationPolicy
   def update?
     user.admin
   end
+
+  def activation?
+    true
+  end
 end

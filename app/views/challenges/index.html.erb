@@ -1,3 +1,19 @@
-<% @challenges.each do |challenge|  %>
-  <p><%= challenge.title %></p>
-<% end %>
+<div class="container-fluid">
+  <h1>Currently active challenges</h1>
+  <% @challenges_active.each do |challenge|  %>
+    <p><%= link_to challenge.title, challenge_path(challenge) %>
+    <%= link_to activation_path(challenge), title: "Deactivate the Challenge" do %>
+      <i class="fas fa-times"></i>
+    <% end %>
+    </p>
+  <% end %>
+
+  <h1>Currently unactive challenges</h1>
+  <% @challenges_unactive.each do |challenge|  %>
+    <p><%= link_to challenge.title, challenge_path(challenge)%>
+    <%= link_to activation_path(challenge), title: "Activate the Challenge" do %>
+      <i class="fas fa-check"></i>
+    <% end %>
+    </p>
+  <% end %>
+</div>

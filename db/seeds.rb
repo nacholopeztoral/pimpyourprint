@@ -120,7 +120,7 @@ dry_clothes = Challenge.new(title: "Hang your clothes to dry them",
                     description:"Skip the dryer, that uses too much energy",
                     carbon: 80,
                     picture:"photo",
-                    active: true
+                    active: false
                     )
 dry_clothes.save!
 
@@ -129,7 +129,7 @@ dry_hair = Challenge.new(title: "Dry your hair with a towel instead of a blow dr
                     description:"It's better for the earth, for your hair and for your energy bill!",
                     carbon: 80,
                     picture:"photo",
-                    active: true
+                    active: false
                     )
 dry_hair.save!
 

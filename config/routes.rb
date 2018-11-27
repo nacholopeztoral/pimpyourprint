@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :user_challenges, only: :create
   end
 
+  get 'activation/:id', to: 'challenges#activation', as: :activation
+
   resource :my_challenge, only: :show
   resources :transportations, except: [:edit, :update, :destroy]
 
