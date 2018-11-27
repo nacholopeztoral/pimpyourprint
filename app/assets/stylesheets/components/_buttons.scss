@@ -1,0 +1,36 @@
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 4px 12px;
+  font-size: 18px;
+  line-height: 1.42857;
+}
+
+.btn-primary {
+  color: $white;
+  background-color: $blue;
+}
+
+.btn-primary:hover {
+  color: $white;
+  background-color: $darkblue;
+}
+
+.btn-secondary {
+  color: $white;
+  background-color: $green;
+}
+
+.btn-secondary:hover {
+  color: $white;
+  background-color: $darkgreen;
+}
