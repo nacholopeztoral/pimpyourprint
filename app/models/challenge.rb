@@ -5,6 +5,6 @@ class Challenge < ApplicationRecord
   validates :title, presence: true, uniqueness: true
   validates :description, presence: true
   # Add array of categories in the future
-  validates :category, presence: true
+  validates :category, inclusion: { in: %w(plastic energy nutrition other) }
   validates :picture, presence: true
 end

@@ -20,8 +20,15 @@ class ChallengesController < ApplicationController
 
   def create
     # Only Admins can create a challenge
-    @challenge = Challenge.find(params[:id])
+    @challenge = Challenge.new(challenge_params)
     authorize @challenge
+    if @challenge.save
+      redirect_to @challenge
+      raise
+    else
+      render 'new'
+      raise
+    end
   end
 
   def edit
