@@ -1,5 +1,5 @@
 .challenge-container {
-  height: 100vh;
+  height: calc(100vh - 70px);
   width: 100vw;
   display: flex;
   align-items: center;
@@ -13,21 +13,49 @@
   background-color: $blue;
   border-radius: 10px;
   color: $white;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
   .challenge-title {
-
+    font-size: 25px;
   }
   .challenge-picture {
-
+    height: 20vh;
+    width: 30vh;
+    border-radius: 10px;
+    border: 1px solid $white;
   }
-  .challenge.picture {
+  .challenge-description {
+    font-weight: lighter;
   }
-  .co2-info {
-  text-align: center;
-    .co2-icon {
-      height: 50px;
-      width: 50px;
-    }
+  .challenge-category {
+    font-size: 15px;
+  }
+  .btn.btn-secondary{
+    box-shadow: 0px 0px 4px #FFFFFF;
   }
 }
 
+.co2-info {
+  background-color: $green;
+  position: absolute;
+  top: -30px;
+  left: calc(80vw / 2 - 50px);
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px #FFFFFF;
+  .co2-icon {
+    height: 40px;
+    width: 40px;
+  }
+}
 
+.challenge-tip {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}

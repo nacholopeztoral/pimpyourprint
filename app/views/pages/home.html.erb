@@ -6,7 +6,9 @@
 <div class="btn btn-secondary">click me</div>
  -->
 
- <% challenge = Challenge.find(3) %>
+ <% challenge %> <!-- #comment to test -->
+ <!-- # uncomment to test -->
+<!--  <% challenge = Challenge.find(2) %> -->
 
 <div class="challenge-container">
   <div class="challenge-body">
@@ -19,11 +21,14 @@
     <div class="challenge-description">
       <%= challenge.description %>
     </div>
-    <%= challenge.category %>
     <div class="co2-info">
       <%= image_tag("co2.svg", class: 'co2-icon') %>
       <%= challenge.carbon %>
     </div>
+    <div class="btn btn-secondary">
+      Done!
+    </div>
+    <div class="challenge-tip"><i class="fas fa-info-circle"></i></div>
   </div>
 </div>
 
