@@ -1,6 +1,7 @@
 class QuizResultsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
   def show
+  authorize :quiz_results, :show?
   @score = points
   end
 
