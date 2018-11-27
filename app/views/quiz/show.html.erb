@@ -1,0 +1,42 @@
+<h1>Eco quiz</h1>
+
+
+<%= form_tag quiz_results_path, options = { method: "get" } do  %>
+<label for="Transport">Way of moving:</label>
+<% [ 'Bike', 'My feet', 'Gas vehicle', 'Public Transport', 'My private jet' ].each do |transport| %>
+  <br><%= radio_button_tag 'transport', transport, @transport == transport %>
+  <%= transport.humanize %>
+<% end %>
+<br>
+<br>
+<label for="Flight">Average amount of hours flying per year?</label>
+<% [ 'I do not fly', 'Less than 10 hours (2 flights)', 'Between 10-40 (1 or 2 long distance flights)', 'More than 50 '].each do |flight| %>
+  <br><%= radio_button_tag 'flight', flight, @flight == flight %>
+  <%= flight.humanize %>
+<% end %>
+<br>
+<br>
+<label for="Smoker">Do you smoke?</label>
+<% [  'ALWAYS', 'Sometimes', 'Never'].each do |smoker| %>
+  <br><%= radio_button_tag 'smoker', smoker, @smoker == smoker %>
+  <%= smoker.humanize %>
+<% end %>
+<br>
+<br>
+<label for="Diet:">Meat consumtion:</label>
+<% [ 'Always','Around 5', '1 to 2 meals per week', 'Never' ].each do |diet| %>
+  <br><%= radio_button_tag 'diet', diet, @diet == diet %>
+  <%= diet.humanize %>
+<% end %>
+<br>
+<br>
+<label for="Recicle">How often do you recicle?:</label>
+<% [ 'ALWAYS', 'MOST OF THE TIME', 'SOMETIMES', 'NEVER' ].each do |recicle| %>
+  <br><%= radio_button_tag 'recicle', recicle, @recicle == recicle %>
+  <%= recicle.humanize %>
+<% end %>
+<br>
+<br>
+<%= submit_tag "Submit" %>
+
+<% end %>
