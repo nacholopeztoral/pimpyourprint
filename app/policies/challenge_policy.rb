@@ -6,26 +6,23 @@ class ChallengePolicy < ApplicationPolicy
   end
 
   def index?
-    false
+    # Only visible for admins
+    user.admin
   end
 
   def show?
     true
   end
 
-  def create?
+  def new?
     true
   end
 
-  def new?
-    create?
+  def create?
+    user.admin
   end
 
   def update?
     true
-  end
-
-  def edit?
-    update?
   end
 end
