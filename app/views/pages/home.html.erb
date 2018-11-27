@@ -1,6 +1,29 @@
-<h1>Headline</h1>
+<!-- <h1>Headline</h1>
 <h2>Headline</h2>
 <h3>Headline</h3>
 <p>Paragraph</p>
 <div class="btn btn-primary">click me</div>
 <div class="btn btn-secondary">click me</div>
+ -->
+
+ <% challenge = Challenge.find(3) %>
+
+<div class="challenge-container">
+  <div class="challenge-body">
+    <div class="challenge-title">
+      <%= challenge.title %>
+    </div>
+    <div class="challenge-picture">
+      <%= challenge.picture %>
+    </div>
+    <div class="challenge-description">
+      <%= challenge.description %>
+    </div>
+    <%= challenge.category %>
+    <div class="co2-info">
+      <%= image_tag("co2.svg", class: 'co2-icon') %>
+      <%= challenge.carbon %>
+    </div>
+  </div>
+</div>
+
