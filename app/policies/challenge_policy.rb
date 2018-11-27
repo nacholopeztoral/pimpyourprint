@@ -6,26 +6,24 @@ class ChallengePolicy < ApplicationPolicy
   end
 
   def index?
-    true
+    # Only visible for admins
+    user.admin
   end
 
   def show?
     true
   end
 
-  def create?
+  def new?
     true
   end
 
-  def new?
-    create?
+  def create?
+    # Only Admins can create a new challenge
+    user.admin
   end
 
   def update?
-    true
-  end
-
-  def edit?
-    update?
+    user.admin
   end
 end
