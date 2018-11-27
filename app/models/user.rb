@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_many :tips
   has_many :transportations
   has_many :user_challenges
+  has_many :challenges, through: :user_challenges
 
   validates :usersame, uniqueness: true, presence: true
   validates :city, presence: true
