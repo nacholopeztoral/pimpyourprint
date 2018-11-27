@@ -24,10 +24,8 @@ class ChallengesController < ApplicationController
     authorize @challenge
     if @challenge.save
       redirect_to @challenge
-      raise
     else
       render 'new'
-      raise
     end
   end
 
