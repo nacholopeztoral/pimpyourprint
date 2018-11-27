@@ -13,16 +13,14 @@ class ChallengesController < ApplicationController
   end
 
   def new
-    # Show available for the Users to suggest a new challenge
     @challenge = Challenge.new
     authorize @challenge
   end
 
   def create
-    # Only Admins can create a challenge
     @challenge = Challenge.new(challenge_params)
     authorize @challenge
-    if @challenge.save
+    if @challenge.save!
       redirect_to @challenge
     else
       render 'new'
@@ -31,14 +29,18 @@ class ChallengesController < ApplicationController
 
   def edit
     @challenge = Challenge.find(params[:id])
-    # + link to edit form
     authorize @challenge
   end
 
   def update
     @challenge = Challenge.find(params[:id])
-    # ///
+    @challenge.update(challenge_params)
     authorize @challenge
+    if @challenge.save
+      redirect_to @challenge
+    else
+      render 'edit'
+    end
   end
 
   private
@@ -49,6 +51,7 @@ class ChallengesController < ApplicationController
             :title,
             :description,
             :carbon,
+            :category,
             :picture
           )
   end

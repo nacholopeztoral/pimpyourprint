@@ -19,8 +19,7 @@ class ChallengePolicy < ApplicationPolicy
   end
 
   def create?
-    # Only Admins can create a new challenge
-    user.admin
+    true
   end
 
   def update?
