@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   end
 
   resource :my_challenge, only: :show
-
   resources :transportations, except: [:edit, :update, :destroy]
 
 end
