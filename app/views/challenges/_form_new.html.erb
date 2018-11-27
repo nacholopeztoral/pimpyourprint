@@ -1,0 +1,31 @@
+<div class="form">
+  <%= form_for challenge do |f| %>
+
+    <div class="form-inputs">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="form-inputs">
+      <%= f.label :description %>
+      <%= f.text_area :description, rows: 5, class: "form-control" %>
+    </div>
+
+    <div class="form-inputs">
+      <%= f.label :carbon %>
+      <%= f.text_field :carbon, class: "form-control" %>
+    </div>
+
+    <div class="form-inputs">
+      <%= f.label :category %>
+      <%= f.select :category, ['plastic', 'energy', 'nutrition', 'other'], class: "form-control" %>
+    </div>
+
+    <div class="form-inputs align-center">
+      <%= f.label :picture %>
+      <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', class: "button-form" %>
+    </div>
+
+    <%= f.submit id: "btn btn-primary", class: "button-form" %>
+  <% end %>
+</div>

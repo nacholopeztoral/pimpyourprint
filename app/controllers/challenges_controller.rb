@@ -62,7 +62,8 @@ class ChallengesController < ApplicationController
             :description,
             :carbon,
             :category,
-            :picture
+            :picture,
+            :active
           )
   end
 end

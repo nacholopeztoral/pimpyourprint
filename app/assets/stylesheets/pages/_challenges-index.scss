@@ -1,0 +1,47 @@
+.challenges-container {
+  max-width: 700px;
+}
+
+.challenge-list {
+  display: flex;
+  position: relative;
+  min-height: 80px;
+  max-height: 120px;
+  background-color: #EAEAEA;
+  border-radius: 5px;
+  border: 2px solid $gray;
+  margin: 5px 0px;
+}
+
+.challenge-name {
+  position: absolute;
+  height: 100%;
+  padding: 10px;
+  top: 0px;
+  flex: 0 0 75%;
+}
+
+.challenge-activate {
+  flex: 0 0 25%;
+  height: 100%;
+  position: absolute;
+  background-color: $blue;
+  color: $white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 20px 10px;
+  right: 0;
+}
+
+.challenge-title {
+  color: $gray;
+  text-align: center;
+}
+
+.activation-link {
+  color: $white;
+}
+
+.activation-link:hover {
+  color: $darkblue;
+}
