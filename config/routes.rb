@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :challenges, except: [:destroy] do
-    resources :tips, except: [:destroy]
+    resources :user_challenges, only: :create
   end
 
-  resources :user_challenges, except: [:edit, :update, :destroy]
-  resources :transportations, except: [:destroy]
+  resource :my_challenge, only: :show
+
+  resources :transportations, except: [:edit, :update, :destroy]
+
 end
