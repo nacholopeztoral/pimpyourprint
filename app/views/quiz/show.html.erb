@@ -1,6 +1,7 @@
 <h1>Eco quiz</h1>
 
-<%= form_tag quiz_path do %>
+
+<%= form_tag quiz_results_path, options = { method: "get" } do  %>
 <label for="Transport">Way of moving:</label>
 <% [ 'Bike', 'My feet', 'Gas vehicle', 'Public Transport', 'My private jet' ].each do |transport| %>
   <br><%= radio_button_tag 'transport', transport, @transport == transport %>
@@ -9,9 +10,9 @@
 <br>
 <br>
 <label for="Flight">Average amount of hours flying per year?</label>
-<% [ 'Less than 10 hours (2 flights)', 'Between 10-40 (1 or 2 long distance flights)', 'More than 50 '].each do |smoker| %>
-  <br><%= radio_button_tag 'smoker', smoker, @smoker == smoker %>
-  <%= smoker.humanize %>
+<% [ 'I do not fly', 'Less than 10 hours (2 flights)', 'Between 10-40 (1 or 2 long distance flights)', 'More than 50 '].each do |flight| %>
+  <br><%= radio_button_tag 'flight', flight, @flight == flight %>
+  <%= flight.humanize %>
 <% end %>
 <br>
 <br>
