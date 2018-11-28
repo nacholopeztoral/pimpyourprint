@@ -7,7 +7,7 @@
 
 // img.src = 'https://images.unsplash.com/photo-1536770011174-70a15f35bec1?ixlib=rb-0.3.5&s=61e4ba3e967cd84a9177b60bad3c2f48&auto=format&fit=crop&w=5794&q=80';
 img.src = 'https://res.cloudinary.com/dyenysckr/image/upload/v1543337219/mirrored_forest.jpg';
-var CanvasXSize = 1600;
+var CanvasXSize = 2000;
 var CanvasYSize = 1000;
 var speed = 40; // lower is faster
 var scale = 1;
