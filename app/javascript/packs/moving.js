@@ -1,4 +1,4 @@
- if(window.location.pathname == '/') {
+ if(window.location.pathname == '/')  {
         // script body here
     var img = new Image();
 
