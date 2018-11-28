@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   get 'activation/:id', to: 'challenges#activation', as: :activation
 
   resource :my_challenge, only: :show
-  resources :transportations, except: [:edit, :update, :destroy]
+  resources :transportations, only: [:new, :create]
 
 end
