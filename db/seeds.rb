@@ -1,7 +1,8 @@
+UserChallenge.destroy_all
 Challenge.destroy_all
 User.destroy_all
 
-puts "Creating Challenges and the Test User..."
+puts "Creating Challenges and Users..."
 admin = User.new(username: "AdminUser", email:"admin@test.com", password:"admin@test.com", city: "Berlin", admin: true)
 admin.save!
 user = User.new(username: "Testuser", email:"test@test.com", password:"test@test.com", city: "Berlin")
