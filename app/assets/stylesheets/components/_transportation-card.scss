@@ -56,14 +56,13 @@
   background-color: $green;
   position: absolute;
   top: -30px;
-  left: calc(80vw / 2 - 50px);
+  left: calc(80vw / 2 - 80px);
   p {
     margin: 0;
   }
   height: 60px;
   min-width: 100px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
   border-radius: 10px;
@@ -72,9 +71,18 @@
     background: transparent;
     border: none;
     color: $black;
+    width: 80px;
+    box-shadow: none;
+    &::placeholder {
+      color: $black;
+    }
   }
   .co2-icon {
     height: 40px;
     width: 40px;
   }
+}
+
+#carbon-kg {
+  display: none;
 }

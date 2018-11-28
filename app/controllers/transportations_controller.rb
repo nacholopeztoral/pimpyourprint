@@ -5,7 +5,8 @@ class TransportationsController < ApplicationController
   end
 
   def create
-    @transportation = Transportation.new(transportation_params)
+    carbon_g = transportation_params[:carbon].to_f * 1000
+    @transportation = Transportation.new(carbon: carbon_g)
     @transportation.user_id = current_user.id
     authorize @transportation
     if @transportation.save!

@@ -44,7 +44,7 @@
 
       <div class="co2-transp-info">
         <%= image_tag("co2.svg", class: 'co2-icon') %>&nbsp;
-        <%= f.input :carbon, input_html: { id: 'totalTranspCarbon' || 0 }, label: false %>
+        <%= f.input :carbon, input_html: { id: 'totalTranspCarbon' || 0 }, label: false, placeholder: '0' %>
       </div>
     <% end %>
   </div>
