@@ -11,11 +11,9 @@ const calculateCarbon = (modeOfTransport) => {
         const carbonPerVehicle = Number(vehicle.value);
         const carbonKg = carbonPerKm[modeOfTransport] * 0.001;
         const calculated = Math.round(carbonPerVehicle*carbonKg * 10) / 10;
-        console.log(calculated);
-        let total = Number(carbonDisplay.innerText)
+        let total = Number(carbonDisplay.value)
         total += calculated
-        console.log(total);
-        carbonDisplay.innerText = total;
+        carbonDisplay.value = total;
     });
   };
 };

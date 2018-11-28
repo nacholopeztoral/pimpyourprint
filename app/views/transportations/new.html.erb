@@ -1,6 +1,4 @@
-<% transportation = Transportation.first %>
-
- <div class="challenge-container">
+<div class="challenge-container">
   <div class="transportation-body">
     <div class="transportation-title">
       Today's mode of transport
@@ -8,46 +6,46 @@
     <div class="transportation-modes">
       <ul class="list-unstyled">
         <li>
-            <p class="mode">Walking</p>
+            <p class="mode"><i class="fas fa-walking"></i>&nbsp;Walking</p>
             <div class="transportation-co2"><input type="text" class="form-control">&nbsp;km</div>
         </li>
         <li>
-          <p class="mode">Cycling</p>
+          <p class="mode"><i class="fas fa-bicycle"></i>&nbsp;Cycling</p>
           <div class="transportation-co2"><input type="text" class="form-control">&nbsp;km</div>
         </li>
         <li>
-          <p class="mode">Scooter</p>
+          <p class="mode"><i class="fas fa-motorcycle"></i>&nbsp;Scooter</p>
           <div class="transportation-co2"><input type="text" class="form-control" id="mode-scooter">&nbsp;km</div>
         </li>
         <li>
-          <p class="mode">Car</p>
+          <p class="mode"><i class="fas fa-car"></i>&nbsp;Car</p>
           <div class="transportation-co2"><input type="text" class="form-control" id="mode-car">&nbsp;km</div>
         </li>
         <li>
-          <p class="mode">Bus</p>
+          <p class="mode"><i class="fas fa-bus"></i>&nbsp;Bus</p>
           <div class="transportation-co2"><input type="text" class="form-control" id="mode-bus">&nbsp;km</div>
         </li>
         <li>
-          <p class="mode">Tram</p>
+          <p class="mode"><i class="fas fa-subway"></i>&nbsp;Tram</p>
           <div class="transportation-co2"><input type="text" class="form-control" id="mode-tram">&nbsp;km</div>
         </li>
         <li>
-          <p class="mode">Train</p>
+          <p class="mode"><i class="fas fa-train"></i>&nbsp;Train</p>
           <div class="transportation-co2"><input type="text" class="form-control" id="mode-train">&nbsp;km</div>
         </li>
         <li>
-          <p class="mode">Plane</p>
+          <p class="mode"><i class="fas fa-plane"></i>&nbsp;Plane</p>
           <div class="transportation-co2"><input type="text" class="form-control" id="mode-plane">min</div>
         </li>
       </ul>
     </div>
-    <div class="btn btn-secondary">
-      Submit!
-    </div>
-    <div class="co2-info">
-      <%= image_tag("co2.svg", class: 'co2-icon') %>
-      <p id="totalTranspCarbon">0</p>
-      <% -(transportation.carbon) %>
-    </div>
+    <%= simple_form_for(Transportation.new) do |f| %>
+        <%= f.submit 'Submit', class: "btn btn-secondary" %>
+
+      <div class="co2-transp-info">
+        <%= image_tag("co2.svg", class: 'co2-icon') %>&nbsp;
+          <%= f.input :carbon, input_html: { id: 'totalTranspCarbon' } %>
+      </div>
+    <% end %>
   </div>
 </div>
