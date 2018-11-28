@@ -2,14 +2,23 @@
   <div class="side-navbar" id="transition">
     <ul style="list-style: none; display: inline-block; padding-left: 30%;">
       <br>
-      <li>Challenges</li>
+
+      <% if user_signed_in? %>
+        <%= link_to "Daily challenge", my_challenge_path, class: "" %>
       <hr style="border: 1px solid black;">
-      <li>Dashboard</li>
+        <%= link_to "Dasboard", new_user_session_path, class: "" %>
       <hr style="border: 1px solid black;">
-      <li>Whatever</li>
+      <%= link_to "Events", new_user_session_path, class: "" %>
       <hr style="border: 1px solid black;">
+      <%= link_to "Calculator", new_transportation_path, class: "" %>
+      <hr style="border: 1px solid black;">
+      <%= link_to "Past chanllenges", new_user_session_path, class: "" %>
+      <hr style="border: 1px solid black;">
+      <%= link_to t(".sign_in", default: "Logout"), destroy_user_session_path, class: "" %>
+      <hr style="border: 1px solid black;">
+      <%else %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "" %>
-      <hr style="border: 1px solid black;">
+      <% end %>
     </ul>
   </div>
 </div>
