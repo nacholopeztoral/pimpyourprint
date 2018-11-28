@@ -8,7 +8,7 @@
       <%= challenge.title %>
     </div>
     <div class="challenge-picture">
-      <%= challenge.picture %>
+      <%= cl_image_tag challenge.picture, height: 200, crop: :fill %>
     </div>
     <div class="challenge-description">
       <%= challenge.description %>
