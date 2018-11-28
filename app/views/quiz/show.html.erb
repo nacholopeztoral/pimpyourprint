@@ -1,48 +1,70 @@
-<div class="container">
-  <h1>Eco quiz</h1>
+<div class="banner-quiz">
+
+  <div class=" quiz container">
+    <div class="questions">
 
 
-<%= form_tag quiz_results_path, options = { method: "get" } do  %>
-  <div class="question1">
-    <label for="Transport">Way of moving:</label>
-      <% [ 'Bike', 'My feet', 'Gas vehicle', 'Public Transport', 'My private jet' ].each do |transport| %>
-        <br><%= radio_button_tag 'transport', transport, @transport == transport %>
-      <%= transport.humanize %>
-    <% end %>
+      <h1>Eco quiz</h1>
+
+
+      <%= form_tag quiz_results_path, options = { method: "get" } do  %>
+      <div class="question">
+
+        <div class="answer">
+          <label for="Transport">Way of moving:</label>
+          <% [ 'Bike', 'My feet', 'Gas vehicle', 'Public Transport', 'My private jet' ].each do |transport| %>
+          <br><%= radio_button_tag 'transport', transport, @transport == transport, class: "next" %>
+          <%= transport.humanize %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="answer">
+          <label for="Flight">Average amount of hours flying per year?</label>
+          <% [ 'I do not fly', 'Less than 10 hours (2 flights)', 'Between 10-40 (1 or 2 long distance flights)', 'More than 50 '].each do |flight| %>
+          <br><%= radio_button_tag 'flight', flight, @flight == flight, class: "next" %>
+          <%= flight.humanize %>
+          <% end %>
+        </div>
+
+      </div>
+
+      <div class="question">
+        <div class="answer">
+          <label for="Smoker">Do you smoke?</label>
+          <% [  'ALWAYS', 'Sometimes', 'Never'].each do |smoker| %>
+          <br><%= radio_button_tag 'smoker', smoker, @smoker == smoker, class: "next" %>
+          <%= smoker.humanize %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="answer">
+          <label for="Diet:">Meat consumtion:</label>
+          <% [ 'Always','Around 5', '1 to 2 meals per week', 'Never' ].each do |diet| %>
+          <br><%= radio_button_tag 'diet', diet, @diet == diet, class: "next" %>
+          <%= diet.humanize %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="answer">
+          <label for="Recicle">How often do you recicle?:</label>
+          <% [ 'ALWAYS', 'MOST OF THE TIME', 'SOMETIMES', 'NEVER' ].each do |recicle| %>
+          <br><%= radio_button_tag 'recicle', recicle, @recicle == recicle%>
+          <%= recicle.humanize %>
+          <% end %>
+          <br>
+          <br>
+          <%= submit_tag "Submit", class: "btn btn-primary" %>
+        </div>
+      </div>
+      <!-- form_tag  -->
+      <% end %>
+      <!-- container div -->
+    </div>
   </div>
-
-  <div class="question2"><label for="Flight">Average amount of hours flying per year?</label>
-    <% [ 'I do not fly', 'Less than 10 hours (2 flights)', 'Between 10-40 (1 or 2 long distance flights)', 'More than 50 '].each do |flight| %>
-      <br><%= radio_button_tag 'flight', flight, @flight == flight %>
-      <%= flight.humanize %>
-    <% end %>
-  </div>
-
-  <div class="question3">
-    <label for="Smoker">Do you smoke?</label>
-    <% [  'ALWAYS', 'Sometimes', 'Never'].each do |smoker| %>
-      <br><%= radio_button_tag 'smoker', smoker, @smoker == smoker %>
-      <%= smoker.humanize %>
-    <% end %>
-  </div>
-
-  <div class="question4">
-    <label for="Diet:">Meat consumtion:</label>
-    <% [ 'Always','Around 5', '1 to 2 meals per week', 'Never' ].each do |diet| %>
-      <br><%= radio_button_tag 'diet', diet, @diet == diet %>
-      <%= diet.humanize %>
-    <% end %>
-  </div>
-
-  <div class="question5">
-    <label for="Recicle">How often do you recicle?:</label>
-    <% [ 'ALWAYS', 'MOST OF THE TIME', 'SOMETIMES', 'NEVER' ].each do |recicle| %>
-      <br><%= radio_button_tag 'recicle', recicle, @recicle == recicle %>
-      <%= recicle.humanize %>
-    <% end %>
-    <%= submit_tag "Submit" %>
-  </div>
-  <!-- form_tag  -->
-<% end %>
-<!-- container div -->
 </div>

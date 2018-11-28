@@ -3,7 +3,7 @@ class CreateChallenges < ActiveRecord::Migration[5.2]
     create_table :challenges do |t|
       t.string :category
       t.text :description
-      t.integer :carbon
+      t.integer :carbon, default: 0
       t.string :picture
 
       t.timestamps

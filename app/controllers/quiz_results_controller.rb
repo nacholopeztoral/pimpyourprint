@@ -2,7 +2,11 @@ class QuizResultsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
   def show
   authorize :quiz_results, :show?
-  @score = points
+   @score = points
+   if
+    @score.nil?
+    redirect_to quiz_path, alert: "Please answer all questions"
+  end
   end
 
   private
@@ -13,6 +17,10 @@ class QuizResultsController < ApplicationController
              'Diet' => { 'Always' => 10,'Around 5' => 7, '1 to 2 meals per week' => 3 , 'Never' => 0},
              'Recicle' => { 'ALWAYS' => 0, 'MOST OF THE TIME' => 3, 'SOMETIMES' => 5, 'NEVER' => 10 }
              }
-  score = points['Transport'][params[:transport]] + points['Flight'][params[:flight]] + points['Smoker'][params[:smoker]] + points['Diet'][params[:diet]] + points['Recicle'][params[:recicle]]
+  if points['Transport'][params[:transport]]|| points['Flight'][params[:flight]]|| points['Smoker'][params[:smoker]]|| points['Diet'][params[:diet]]|| points['Recicle'][params[:recicle]]
+    score = points['Transport'][params[:transport]] + points['Flight'][params[:flight]] + points['Smoker'][params[:smoker]] + points['Diet'][params[:diet]] + points['Recicle'][params[:recicle]]
+   else
+    score = nil
+   end
   end
 end

@@ -1,14 +1,17 @@
+<div class="banner-quiz">
 
-<div class="container">
-  <h4 id="quiz_result"> Based on our super complicated algorithm your score is: <%= @score %> points</h1>
-  <% case @score %>
-  <% when <= 5 status = " My friend you are ZERO emissions " %>
-  <h4 id="quiz_status"><%= status %></h4>
-  <% when  <= 10 status = " OMFG YOU are so green " %>
-  <h4 id="quiz_status"><%= status %></h4>
-  <% when  <= 30 status = " You need to work on it... " %>
-  <h4 id="quiz_status"><%= status %></h4>
-  <% when  <= 50 status = " Oh boy... We have work to do... " %>
-  <h4 ><%= status %></h4>
-  <% end %>
+  <div class="container quiz_result">
+    <% case %>
+      <% when @score <= 5  then status = " My friend you are ZERO emissions " %>
+        <h4 id="quiz_status"><%= status %></h4>
+        <% when @score <= 10 then status = " OMFG YOU are so green " %>
+        <h4 id="quiz_status"><%= status %></h4>
+        <% when @score <= 30 then status = " Not, that bad...we can help you work on it... " %>
+        <% when @score <= 30 then status = " You need to work on it... " %>
+        <h4 id="quiz_status"><%= status %></h4>
+        <% when @score <= 50 then status = " Oh boy... We have work to do... " %>
+        <h4 ><%= status %></h4>
+    <% end %>
+    <%= link_to "Sing up, be green", new_user_registration_path , class: "btn btn-success quiz_singup"  %>
+  </div>
 </div>

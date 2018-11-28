@@ -1,0 +1,54 @@
+.challenges-container {
+  max-width: 700px;
+}
+
+.challenges-list {
+  position: relative;
+  min-height: 90px;
+  background-color: #EAEAEA;
+  border-radius: 5px;
+  border: 2px solid $gray;
+  margin: 5px 0px;
+}
+
+.challenges-name {
+  position: absolute;
+  height: 100%;
+  padding: 10px;
+  top: 0px;
+  width: 65vw;
+}
+
+.challenges-activate {
+  height: 100%;
+  position: absolute;
+  background-color: $blue;
+  color: $white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 20px 10px;
+  right: 0;
+}
+
+.challenges-title {
+  color: $gray;
+  text-align: center;
+}
+
+.activation-link {
+  color: $white;
+  &:hover {
+    color: $darkblue;
+  }
+}
+
+.challenges-button-container {
+  max-width: 700px;
+  text-align: center;
+  position: relative;
+}
+
+.challenges-right {
+  position: absolute;
+  right: 10px;
+}
