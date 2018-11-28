@@ -4,8 +4,10 @@
     <%= image_tag "https://cdn160.picsart.com/upscale-236522211028212.png?r1024x1024", height: 50 %>
   <% end %>
 
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+
 
     <% if user_signed_in? %>
 
@@ -32,7 +34,9 @@
           </ul>
         </div>
       </div>
+
     <% else %>
+      
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
@@ -42,4 +46,5 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" id="js-dropdown" data-toggle="dropdown"></i>
     </div>
+
 </div>
