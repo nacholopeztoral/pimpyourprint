@@ -4,8 +4,12 @@
     <%= image_tag "https://cdn160.picsart.com/upscale-236522211028212.png?r1024x1024", height: 50 %>
   <% end %>
 
+<div>
+  <p class="logo-font"><span style="color: #50B774;">P</span>imp<span style="color: #50B774;">Y</span>our<span style="color: #50B774;">P</span>rint</p style="font-size: 15px;">
+</div>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+
 
     <% if user_signed_in? %>
 
@@ -32,7 +36,9 @@
           </ul>
         </div>
       </div>
+
     <% else %>
+
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
@@ -42,4 +48,5 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" id="js-dropdown" data-toggle="dropdown"></i>
     </div>
+
 </div>

@@ -1,18 +1,15 @@
 <div class="sd-navbar">
   <div class="side-navbar" id="transition">
-    <ul>
-      <br>
+    <ul style="list-style: none; display: inline-block; padding-left: 30%;">
       <br>
       <li>Challenges</li>
-      <br>
-      <br>
+      <hr style="border: 1px solid black;">
       <li>Dashboard</li>
-      <br>
-      <br>
+      <hr style="border: 1px solid black;">
       <li>Whatever</li>
-      <br>
-      <br>
-      
+      <hr style="border: 1px solid black;">
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "" %>
+      <hr style="border: 1px solid black;">
     </ul>
   </div>
 </div>
