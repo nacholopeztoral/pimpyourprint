@@ -10,7 +10,7 @@
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.03);
   height: 50vh;
   width: 78vw;
-  overflow: scroll;
+  overflow: hidden;
 
 }
 
@@ -34,6 +34,10 @@
   width: 78vw;
   display: grid;
 
+}
+
+.quiz_singup{
+    margin-left: 319px;
 }
 
 
