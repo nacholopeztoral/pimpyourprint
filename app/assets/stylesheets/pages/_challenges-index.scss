@@ -37,19 +37,18 @@
 
 .activation-link {
   color: $white;
-}
-
-.activation-link:hover {
-  color: $darkblue;
-}
-
-.right {
-  position: absolute;
-  right: 10px;
+  &:hover {
+    color: $darkblue;
+  }
 }
 
 .button-container {
   max-width: 700px;
   text-align: center;
   position: relative;
+}
+
+.right {
+  position: absolute;
+  right: 10px;
 }

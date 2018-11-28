@@ -15,6 +15,7 @@ class ChallengesController < ApplicationController
   end
 
   def new
+    # Any user can create a challenge but they will be by default unactive
     @challenge = Challenge.new
     authorize @challenge
   end
@@ -22,8 +23,14 @@ class ChallengesController < ApplicationController
   def create
     @challenge = Challenge.new(challenge_params)
     authorize @challenge
-    if @challenge.save!
-      redirect_to @challenge
+    # If User is Admin, redirect to the Challenge page
+    if @challenge.save
+      if current_user.admin?
+        redirect_to @challenge, alert: "Challenge was created, you still need to activate it to publish it."
+      else
+        # If User isn't an Admin, redirect to his dashboard when page is created.
+        redirect_to @challenge, alert: "Thank you for suggesting a new challenge!"
+      end
     else
       render 'new'
     end
