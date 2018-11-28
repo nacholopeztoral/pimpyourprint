@@ -1,9 +1,8 @@
 a {
   color: $gray;
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-  color: $darkblue;
+  &hover {
+    text-decoration: none;
+    color: $darkblue;
+  }
 }
