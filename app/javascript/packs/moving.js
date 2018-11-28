@@ -1,4 +1,4 @@
- if(window.location.pathname == 'http://localhost:3000/') {
+ if(window.location.pathname == '/')  {
         // script body here
     var img = new Image();
 
