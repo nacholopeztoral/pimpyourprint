@@ -3,10 +3,8 @@
 }
 
 .challenge-list {
-  display: flex;
   position: relative;
-  min-height: 80px;
-  max-height: 120px;
+  min-height: 90px;
   background-color: #EAEAEA;
   border-radius: 5px;
   border: 2px solid $gray;
@@ -18,11 +16,10 @@
   height: 100%;
   padding: 10px;
   top: 0px;
-  flex: 0 0 75%;
+  width: 65vw;
 }
 
 .challenge-activate {
-  flex: 0 0 25%;
   height: 100%;
   position: absolute;
   background-color: $blue;
@@ -44,4 +41,15 @@
 
 .activation-link:hover {
   color: $darkblue;
+}
+
+.right {
+  position: absolute;
+  right: 10px;
+}
+
+.button-container {
+  max-width: 700px;
+  text-align: center;
+  position: relative;
 }

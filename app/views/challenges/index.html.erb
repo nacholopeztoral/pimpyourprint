@@ -1,27 +1,41 @@
 <div class="container challenges-container">
+  <div class="button-container">
+    <div class="right">
+      <%= link_to challenges_path(anchor: 'unactive'), title: 'Go to Unactive challenges', class:"btn btn-primary jump-down" do %>
+        <i class="fas fa-arrow-down"></i>
+      <% end %>
+    </div>
+  </div>
 
-    <h1 class="text-center" style="text-decoration: underline">Active challenges</h1>
-    <% @challenges_active.each do |challenge|  %>
-      <div class="challenge-list">
-        <div class="challenge-name"><%= link_to challenge.title, challenge_path(challenge), class:'challenge-title' %>
-        </div>
-        <div class="challenge-activate">
-          <%= link_to activation_path(challenge) do %>
-            <span class="activation-link">Deactivate</span>
-          <% end %>
-        </div>
+  <h1 id="active" class="text-center" style="text-decoration: underline">Active challenges</h1>
+  <% @challenges_active.each do |challenge|  %>
+    <div class="challenge-list">
+      <div class="challenge-name"><%= link_to challenge.title, challenge_path(challenge), class:'challenge-title' %>
       </div>
-    <% end %>
+      <div class="challenge-activate">
+        <%= link_to activation_path(challenge) do %>
+          <span class="activation-link">Deactivate</span>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 
+  <div class="button-container">
+    <div class="right" style="padding-top:10px">
+      <%= link_to challenges_path(anchor: 'active'), title: 'Go to active challenges', class:"btn btn-primary jump-down" do %>
+      <i class="fas fa-arrow-up"></i>
+      <% end %>
+    </div>
+  </div>
 
-  <h1 class="text-center" style="text-decoration: underline">Unactive challenges</h1>
+  <h1 id="unactive" class="text-center" style="text-decoration: underline">Unactive challenges</h1>
   <% @challenges_unactive.each do |challenge|  %>
     <div class="challenge-list">
       <div class="challenge-name"><%= link_to challenge.title, challenge_path(challenge), class:'challenge-title' %>
       </div>
       <div class="challenge-activate">
         <%= link_to activation_path(challenge) do %>
-            <span class="activation-link">Activate</span>
+          <span class="activation-link">Activate</span>
         <% end %>
       </div>
     </div>

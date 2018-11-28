@@ -18,16 +18,18 @@
 
 .btn-primary {
   background-color: $blue;
-}
-
-.btn-primary:hover {
-  background-color: $darkblue;
+  &:hover {
+    background-color: $darkblue;
+  }
 }
 
 .btn-secondary {
   background-color: $green;
+  &:hover {
+    background-color: $darkgreen;
+  }
 }
 
-.btn-secondary:hover {
-  background-color: $darkgreen;
+.jump-down {
+  border-radius: 0;
 }
