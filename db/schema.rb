@@ -63,9 +63,9 @@ ActiveRecord::Schema.define(version: 2018_11_28_115646) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
-    t.integer "score"
+    t.integer "score", default: 0
     t.string "city"
-    t.boolean "admin"
+    t.boolean "admin", default: false
     t.integer "streak"
     t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
