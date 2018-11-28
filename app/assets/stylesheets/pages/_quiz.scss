@@ -6,27 +6,34 @@
  background-color: white;
   text-align: center;
   opacity: 0.9;
-  padding: 22px 0;
   border-radius:0 0 5px 5px;
-}
-  .container{
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.03);
+  height: 50vh;
+  width: 78vw;
+  overflow: scroll;
+
+}
+
+  .questions{
+    height: 250vh;
+    width: 74vw;
+    transition: transform 2s cubic-bezier(0.25, 0.1, 0, 1.15);
   }
 
-.question1{
- display: block
-}
-.question2{
- display: none
-}
-.question3{
- display: none
-}
-.question4{
- display: none
-}
-.question5{
- display: none
+  .question{
+    height: 300px;
+  }
+
+.quiz_result{
+ background-color: white;
+  text-align: center;
+  opacity: 0.9;
+  border-radius:0 0 5px 5px;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.03);
+  height: 50vh;
+  width: 78vw;
+  display: grid;
+
 }
 
 
