@@ -1,26 +1,36 @@
 const carbonPerKm = {'car': 130, 'bus': 70, 'train': 28,
   'scooter': 77, 'tram': 20, 'plane': 1500};
 
-const carbonDisplay = document.getElementById('totalTranspCarbon');
 
 const calculateCarbon = (modeOfTransport) => {
+  const carbonDisplay = document.getElementById('totalTranspCarbon');
+  if (carbonDisplay) {
     const vehicleId = `mode-${modeOfTransport}`;
     const vehicle = document.getElementById(vehicleId);
-    if(vehicle) {
-      vehicle.addEventListener('keyup', (event) => {
-        const carbonPerVehicle = Number(vehicle.value);
-        const carbonKg = carbonPerKm[modeOfTransport] * 0.001;
-        const calculated = Math.round(carbonPerVehicle*carbonKg * 10) / 10;
-        let total = Number(carbonDisplay.value)
-        total += calculated
-        carbonDisplay.value = total;
-    });
+    if (Number(vehicle.value)) {
+      const carbonPerVehicle = Number(vehicle.value);
+      const carbonKg = carbonPerKm[modeOfTransport] * 0.001;
+      const calculated = (carbonPerVehicle*carbonKg * 10) / 10;
+      return calculated;
+    } else {
+      return 0;
+    }
   };
 };
 
-const car = calculateCarbon('car');
-const bus = calculateCarbon('bus');
-const train = calculateCarbon('train');
-const scooter = calculateCarbon('scooter');
-const tram = calculateCarbon('tram');
-const plane = calculateCarbon('plane');
+function listenToTransporationInputs() {
+  const elements = document.querySelectorAll(".transportation-input")
+  const carbon = document.getElementById('totalTranspCarbon');
+  elements.forEach((element) => {
+    element.addEventListener('keyup', (event) => {
+      total = 0;
+      Object.keys(carbonPerKm).forEach((key) => {
+        const value = calculateCarbon(key);
+        total += value;
+      })
+      carbon.value = total;
+    })
+  })
+}
+
+listenToTransporationInputs();
