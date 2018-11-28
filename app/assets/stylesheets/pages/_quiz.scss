@@ -1,5 +1,6 @@
 .banner-quiz{
  background-image: url('https://images.unsplash.com/photo-1464419014442-769c523d575b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f81f0e192a716f797b429deb58aea5d9&auto=format&fit=crop&w=1350&q=80');
+ background-size: cover;
  height: 100vh;
 }
 .quiz{
@@ -21,7 +22,7 @@
 }
 
 .question{
-  height: 300px;
+  height: 400px;
   .answer{
     max-width: max-content;
     text-align: left;
