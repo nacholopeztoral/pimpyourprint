@@ -1,4 +1,4 @@
-<div class="forms">
+<div class="form">
   <%= form_for challenge do |f| %>
 
     <div class="form-inputs">
@@ -19,6 +19,11 @@
     <div class="form-inputs">
       <%= f.label :category %>
       <%= f.select :category, ['plastic', 'energy', 'nutrition', 'other'], class: "form-control" %>
+    </div>
+
+    <div class="form-inputs">
+      <%= f.label :active %>
+      <%= f.select :active, [true, false], class: "form-control" %>
     </div>
 
     <div class="form-inputs align-center">

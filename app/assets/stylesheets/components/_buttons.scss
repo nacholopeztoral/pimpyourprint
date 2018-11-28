@@ -15,24 +15,23 @@
   line-height: 1.42857;
   max-width: fit-content;
   max-height: 43px;
+  color: $white;
 }
 
 .btn-primary {
-  color: $white;
   background-color: $blue;
-}
-
-.btn-primary:hover {
-  color: $white;
-  background-color: $darkblue;
+  &:hover {
+    background-color: $darkblue;
+  }
 }
 
 .btn-secondary {
-  color: $white;
   background-color: $green;
+  &:hover {
+    background-color: $darkgreen;
+  }
 }
 
-.btn-secondary:hover {
-  color: $white;
-  background-color: $darkgreen;
+.jump-down {
+  border-radius: 0;
 }
