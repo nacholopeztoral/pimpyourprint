@@ -1,4 +1,6 @@
-var img = new Image();
+ if(window.location.pathname == 'http://localhost:3000/') {
+        // script body here
+    var img = new Image();
 
 // User Variables - customize these to change the image being scrolled, its
 // direction, and the speed.
@@ -83,4 +85,5 @@ function draw() {
     ctx.drawImage(img, x, y,imgW, imgH);
     // amount to move
     x += dx;
+}
 }
