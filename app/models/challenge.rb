@@ -1,4 +1,6 @@
 class Challenge < ApplicationRecord
+  mount_uploader :picture, PhotoUploader
+
   has_many :tips
   has_many :user_challenges
 
@@ -9,14 +11,4 @@ class Challenge < ApplicationRecord
   validates :picture, presence: true
 
   scope :not_taken_by, -> (user) { includes(:user_challenges).where(user_challenges: { user: user }).or(self.includes(:user_challenges).where.not(user_challenges: nil)) }
-
-  # def activate
-  #   @challenge = Challenge.find(params[:id])
-  #   @challenge.active = true
-  # end
-
-  # def deactivate
-  #   @challenge = Challenge.find(params[:id])
-  #   @challenge.active = false
-  # end
 end

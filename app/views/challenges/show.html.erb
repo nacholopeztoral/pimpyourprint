@@ -1,1 +1,24 @@
 <h1><%= @challenge.title %></h1>
+<div class="challenge-container">
+  <div class="challenge-body">
+    <div class="challenge-title">
+      <%= @challenge.title %>
+    </div>
+    <div class="challenge-picture">
+      <%= cl_image_tag @challenge.picture, height: 200, crop: :fill %>
+    </div>
+    <div class="challenge-description">
+      <%= @challenge.description %>
+    </div>
+    <div class="co2-info">
+      <%= image_tag("co2.svg", class: 'co2-icon') %>
+      <%= @challenge.carbon %>
+    </div>
+    <div class="btn btn-secondary">
+      Done!
+    </div>
+    <div class="challenge-tip"><i class="fas fa-info-circle"></i></div>
+  </div>
+</div>
+
+
