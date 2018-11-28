@@ -30,7 +30,15 @@
   justify-content: space-between;
 }
 
+.logo-font {
+  font-size: 25px;
+}
 /* Basic navbar item */
+@media only screen and (max-width:1030px) {
+  .logo-font {
+    font-size: 15px;
+
+  }}
 .navbar-wagon-item {
   cursor: pointer;
   padding: 0 20px;
@@ -42,6 +50,9 @@
   color: #616668;
   font-size: 21px;
 }
+
+
+
 .navbar-wagon-link:hover {
   color: $green;
   text-decoration: none;

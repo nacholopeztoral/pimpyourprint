@@ -18,12 +18,12 @@ ActiveRecord::Schema.define(version: 2018_11_28_115646) do
   create_table "challenges", force: :cascade do |t|
     t.string "category"
     t.text "description"
-    t.integer "carbon", default: 0
+    t.integer "carbon"
     t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
-    t.boolean "active", default: false
+    t.boolean "active", default: true
   end
 
   create_table "tips", force: :cascade do |t|

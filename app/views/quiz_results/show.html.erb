@@ -1,13 +1,13 @@
 <div class="banner-quiz">
 
   <div class="container quiz_result">
-    <p id="quiz_result"> Based on our super complicated algorithm, your score is: <%= @score %> points</p>
     <% case %>
       <% when @score <= 5  then status = " My friend you are ZERO emissions " %>
         <h4 id="quiz_status"><%= status %></h4>
         <% when @score <= 10 then status = " OMFG YOU are so green " %>
         <h4 id="quiz_status"><%= status %></h4>
         <% when @score <= 30 then status = " Not, that bad...we can help you work on it... " %>
+        <% when @score <= 30 then status = " You need to work on it... " %>
         <h4 id="quiz_status"><%= status %></h4>
         <% when @score <= 50 then status = " Oh boy... We have work to do... " %>
         <h4 ><%= status %></h4>
