@@ -8,4 +8,8 @@ class MyChallengesController < ApplicationController
     @challenge = user_challenge.challenge if user_challenge.present?
     authorize @challenge
   end
+
+  def index
+    @challenges =
+  end
 end

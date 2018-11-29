@@ -137,4 +137,27 @@ dry_hair = Challenge.new(title: "Dry your hair with a towel instead of a blow dr
 dry_hair.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543423070/PimpYourPrint/dry-hair.jpg'
 dry_hair.save!
 
+u1 = UserChallenge.new(user_id: admin.id, completed: true, challenge_id: sticker.id)
+u1.created_at = 1.day.ago
+u1.save
+
+u2 = UserChallenge.new(user_id: admin.id, completed: true, challenge_id: dry_hair.id)
+u2.created_at = 2.days.ago
+u2.save
+
+u3 = UserChallenge.new(user_id: admin.id, completed: false, challenge_id: heating.id)
+u3.created_at = 3.days.ago
+u3.save
+
+u4 = UserChallenge.new(user_id: admin.id, completed: true, challenge_id: dry_clothes.id)
+u4.created_at = 4.days.ago
+u4.save
+
+u5 = UserChallenge.new(user_id: admin.id, completed: true, challenge_id: car.id)
+u5.created_at = 5.days.ago
+u5.save
+
+u6 = UserChallenge.new(user_id: admin.id, completed: true, challenge_id: cup.id)
+u6.created_at = 6.days.ago
+
 puts "Seeding completed"
