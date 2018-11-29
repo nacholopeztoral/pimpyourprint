@@ -11,11 +11,21 @@ user = User.new(username: "Testuser", email:"test@test.com", password:"test@test
 user.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543416493/PimpYourPrint/bunny.jpg'
 user.save!
 
-Transportation.new(user_id: admin.id, carbon: 147).save!
-Transportation.new(user_id: admin.id, carbon: 512).save!
-Transportation.new(user_id: admin.id, carbon: 18).save!
-Transportation.new(user_id: admin.id, carbon: 0).save!
-Transportation.new(user_id: admin.id, carbon: 22).save!
+t1 = Transportation.new(user_id: admin.id, carbon: 147)
+t1.created_at = (rand*10).days.ago
+t1.save
+t2 = Transportation.new(user_id: admin.id, carbon: 512)
+t2.created_at = (rand*10).days.ago
+t2.save
+t3 = Transportation.new(user_id: admin.id, carbon: 18)
+t3.created_at = (rand*10).days.ago
+t3.save
+t4 = Transportation.new(user_id: admin.id, carbon: 0)
+t4.created_at = (rand*10).days.ago
+t4.save
+t5 = Transportation.new(user_id: admin.id, carbon: 22)
+t5.created_at = (rand*10).days.ago
+t5.save
 
 Transportation.new(user_id: user.id, carbon: 53).save!
 Transportation.new(user_id: user.id, carbon: 12).save!
