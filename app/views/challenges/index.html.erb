@@ -1,10 +1,17 @@
 <div class="container challenges-container">
   <div class="challenges-button-container">
+    <div class="challenges-left">
+      <%= link_to new_challenge_path, title: 'Create a new Challenge', class:"btn btn-primary jump-down" do %>
+        <i class="fas fa-plus"></i>
+      <% end %>
+    </div>
+
     <div class="challenges-right">
       <%= link_to challenges_path(anchor: 'unactive'), title: 'Go to Unactive challenges', class:"btn btn-primary jump-down" do %>
         <i class="fas fa-arrow-down"></i>
       <% end %>
     </div>
+
   </div>
 
   <h1 id="active" class="text-center" style="text-decoration: underline">Active challenges</h1>
