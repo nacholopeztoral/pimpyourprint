@@ -16,7 +16,7 @@
       <hr style="border: 1px solid #0000009e;">
       <%= link_to "Past challenges", new_user_session_path, class: "" %>
       <hr style="border: 1px solid #0000009e;">
-      <%= link_to t(".sign_in", default: "Logout"), destroy_user_session_path, class: "" %>
+      <%= link_to t(".sign_in", default: "Logout"), destroy_user_session_path, method: :delete, class: "" %>
       <hr style="border: 1px solid #0000009e;">
       <%else %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "" %>
