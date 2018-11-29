@@ -1,26 +1,31 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "https://cdn160.picsart.com/upscale-236522211028212.png?r1024x1024", height: 50 %>
-  <% end %>
-
+<nav class="topnav">
+  <a href="#" onclick="openNav()">
+    <svg width="30" height="30" id="icoOpen">
+        <path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
+        <path d="M0,14 30,14" stroke="#000" stroke-width="5"/>
+        <path d="M0,23 30,23" stroke="#000" stroke-width="5"/>
+    </svg>
+  </a>
+  </nav>
 <div>
   <p class="logo-font"><span style="color: #50B774;">P</span>imp<span style="color: #50B774;">Y</span>our<span style="color: #50B774;">P</span>rint</p style="font-size: 15px;">
 </div>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-
     <% unless user_signed_in? %>
-
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
-
   <!-- Dropdown list appearing on mobile only -->
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" id="js-dropdown" data-toggle="dropdown"></i>
-    </div>
+
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    <%= image_tag "https://cdn160.picsart.com/upscale-236522211028212.png?r1024x1024", height: 50 %>
+  <% end %>
 
 </div>
+<!--     <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" id="js-dropdown" data-toggle="dropdown"></i>
+    </div> -->

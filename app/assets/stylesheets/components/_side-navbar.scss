@@ -1,38 +1,92 @@
-.sd-navbar {
-  top: 0px;
-  padding-top: 65px;
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  display: flex;
-  justify-content: flex-end;
-      // z-index: 4;
-
-
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
-.z-index {
-  z-index: 2;
-}
-.side-navbar {
-  background-color: #ffffff;
-  opacity: 0.9;
-  height: 100vh;
-  width: 20vw;
-  transform: translate(20vw);
-  transition: all ease 1s;
-  transition-timing-function:cubic-bezier(0.2,0.5,0.3,1);
 
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
 }
-.transformationNew {
-transform: translate(0vw) !important;
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
 }
-@media only screen and (max-width:1030px) {
-  .side-navbar{
-    width: 50vw;
-    transform: translate(50vw);
 
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 70px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+}
+svg#icoOpen{
+  transition:all .5s ease;}
+  svg#icoOpen:hover{
+    transition: 1s;
+    -moz-animation: spinoffPulse 1s;
+    // transform: rotateY(360deg);
   }
-  .transformNew {
-    transform: translate(-50vw);
+
+  @-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+#icoOpen:hover {
+  -webkit-animation: rotating 1s linear;
+  -moz-animation: rotating 1s linear;
+  -ms-animation: rotating 1s linear;
+  -o-animation: rotating 1s linear;
+  animation: rotating 1s linear;
+}
+.closebtn:hover {
+  -webkit-animation: rotating 1s linear;
+  -moz-animation: rotating 1s linear;
+  -ms-animation: rotating 1s linear;
+  -o-animation: rotating 1s linear;
+  animation: rotating 1s linear;
+}
+
+
+
