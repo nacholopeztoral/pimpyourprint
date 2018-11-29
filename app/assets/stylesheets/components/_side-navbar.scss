@@ -18,7 +18,8 @@
     font-size: 25px;
     color: #818181;
     display: block;
-    transition: 0.3s
+    transition: 0.3s;
+    text-shadow: 1px 1px #a7a7a7;
 }
 .sidenav a:hover, .offcanvas a:focus{
     color: #f1f1f1;
@@ -37,56 +38,36 @@
 #main {
     transition: margin-left .5s;
 }
-svg#icoOpen{
-  transition:all .5s ease;}
-  svg#icoOpen:hover{
-    transition: 1s;
-    -moz-animation: spinoffPulse 1s;
-    // transform: rotateY(360deg);
-  }
 
-  @-webkit-keyframes rotating /* Safari and Chrome */ {
-  from {
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+svg#icoOpen:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
-@keyframes rotating {
-  from {
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  to {
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-#icoOpen:hover {
-  -webkit-animation: rotating 1s linear;
-  -moz-animation: rotating 1s linear;
-  -ms-animation: rotating 1s linear;
-  -o-animation: rotating 1s linear;
-  animation: rotating 1s linear;
-}
-.closebtn:hover {
-  -webkit-animation: rotating 1s linear;
-  -moz-animation: rotating 1s linear;
-  -ms-animation: rotating 1s linear;
-  -o-animation: rotating 1s linear;
-  animation: rotating 1s linear;
+ #closebtn:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 
 
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
