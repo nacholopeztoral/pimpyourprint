@@ -10,7 +10,6 @@ class MyChallengesController < ApplicationController
   end
 
   def index
-    raise
     @challenges = UserChallenge.where(user: current_user.id, completed:"true")
     authorize @challenges
   end
