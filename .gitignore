@@ -13,3 +13,8 @@ node_modules
 yarn-error.log
 .byebug_history
 .env*
+<<<<<<< HEAD
+.env*
+.env*
+=======
+>>>>>>> d6cbf03bdf8a684e065e8cceead244f643d9cd83
