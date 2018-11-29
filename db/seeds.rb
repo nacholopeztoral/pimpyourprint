@@ -108,7 +108,7 @@ shower = Challenge.new(title: "Limit your shower to 5 minutes",
                     carbon: 9,
                     active: true
                     )
-shower.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543420779/PimpYourPrint/abigail-lynn-517207-unsplash.jpg'
+shower.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543420779/PimpYourPrint/shower.jpg'
 shower.save!
 
 elevator = Challenge.new(title: "Skip the elevator and take the stairs",

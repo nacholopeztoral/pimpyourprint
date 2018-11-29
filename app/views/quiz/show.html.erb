@@ -11,51 +11,61 @@
       <div class="question">
 
         <div class="answer">
-          <label for="Transport">Way of moving:</label>
+          <label for="Transport" class="quiz-title">Way of moving:</label>
           <% [ 'Bike', 'My feet', 'Gas vehicle', 'Public Transport', 'My private jet' ].each do |transport| %>
-          <br><%= radio_button_tag 'transport', transport, @transport == transport, class: "next" %>
+          <label class="option">
+            <%= radio_button_tag 'transport', transport, @transport == transport, class: "next" %>
           <%= transport.humanize %>
+          </label>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="question flight">
+        <div class="answer">
+          <label for="Flight" class="quiz-title">Average amount of <br> hours flying per year?</label>
+          <% [ 'I do not fly', 'Less than 10 hours', 'Between 10-40', 'More than 50 '].each do |flight| %>
+          <label class="option">
+            <%= radio_button_tag 'flight', flight, @flight == flight, class: "next" %>
+            <%= flight.humanize %>
+          </label>
+          <% end %>
+        </div>
+
+      </div>
+
+      <div class="question">
+        <div class="answer">
+          <label for="Smoker" class="quiz-title">Do you smoke?</label>
+          <% [  'Always', 'Sometimes', 'Never'].each do |smoker| %>
+          <label class="option">
+            <%= radio_button_tag 'smoker', smoker, @smoker == smoker, class: "next" %>
+            <%= smoker.humanize %>
+        </label>
           <% end %>
         </div>
       </div>
 
       <div class="question">
         <div class="answer">
-          <label for="Flight">Average amount of hours flying per year?</label>
-          <% [ 'I do not fly', 'Less than 10 hours (2 flights)', 'Between 10-40 (1 or 2 long distance flights)', 'More than 50 '].each do |flight| %>
-          <br><%= radio_button_tag 'flight', flight, @flight == flight, class: "next" %>
-          <%= flight.humanize %>
-          <% end %>
-        </div>
-
-      </div>
-
-      <div class="question">
-        <div class="answer">
-          <label for="Smoker">Do you smoke?</label>
-          <% [  'ALWAYS', 'Sometimes', 'Never'].each do |smoker| %>
-          <br><%= radio_button_tag 'smoker', smoker, @smoker == smoker, class: "next" %>
-          <%= smoker.humanize %>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="question">
-        <div class="answer">
-          <label for="Diet:">Meat consumtion:</label>
+          <label for="Diet" class="quiz-title">Meat consumtion:</label>
           <% [ 'Always','Around 5', '1 to 2 meals per week', 'Never' ].each do |diet| %>
-          <br><%= radio_button_tag 'diet', diet, @diet == diet, class: "next" %>
-          <%= diet.humanize %>
+          <label class="option">
+            <%= radio_button_tag 'diet', diet, @diet == diet, class: "next" %>
+            <%= diet.humanize %>
+          </label>
           <% end %>
         </div>
       </div>
 
       <div class="question">
         <div class="answer">
-          <label for="Recicle">How often do you recicle?:</label>
-          <% [ 'ALWAYS', 'MOST OF THE TIME', 'SOMETIMES', 'NEVER' ].each do |recicle| %>
-          <br><%= radio_button_tag 'recicle', recicle, @recicle == recicle%>
-          <%= recicle.humanize %>
+          <label for="Recicle" class="quiz-title">How often do you recycle?</label>
+          <% [ 'Always', 'Most of the time', 'Sometimes', 'Never' ].each do |recicle| %>
+          <label class="option">
+            <%= radio_button_tag 'recicle', recicle, @recicle == recicle, class: "last"%>
+            <%= recicle.humanize %>
+          </label>
           <% end %>
           <br>
           <br>
