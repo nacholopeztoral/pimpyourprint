@@ -1,12 +1,8 @@
 const reveal = document.getElementById("reveal");
-
-const unactiveCard = document.getElementById("unactive-challenge");
-const activeCard = document.getElementById("active-challenge");
+const flipCardContainer = document.getElementById('flipcard')
 
 if (reveal) {
   reveal.addEventListener("click", (event) => {
-    unactiveCard.style.display = "inline";
-    activeCard.style.display = "none";
+    flipCardContainer.classList.add('flipped');
   });
 };
-
