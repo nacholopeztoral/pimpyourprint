@@ -1,31 +1,35 @@
-<div class="container">
-  <h1>Your daily challenge</h1>
-  <div id="active-challenge" class="challenge-container">
-    <div class="challenge-body unactive">
-      <div id='reveal'> <%= link_to "Reveal Challenge", challenge_user_challenges_path(@challenge), method: :post, class: 'btn btn-primary' %></div>
+<div class="container-fluid">
+  <div class="row">
+    <h1 class="text-center">Your daily challenge</h1>
+    <div id="card-container" class="card-container">
+      <div id="flipcard" class="flipcard">
+        <div class="challenge-body front-side" style="background-color: #c9c9c9;">
+          <div id='reveal'> <%= link_to "Reveal Challenge", challenge_user_challenges_path(@challenge), method: :post, class: 'btn btn-primary' %>
+          </div>
+          <div class="co2-info" style="background-color: #c9c9c9">
+          </div>
+        </div>
+        <div class="challenge-body back-side">
+          <div class="challenge-title">
+            <%= @challenge.title %>
+          </div>
+          <div class="challenge-picture">
+            <%= cl_image_tag @challenge.picture, height: 110, crop: :fill %>
+          </div>
+          <div class="challenge-description">
+            <%= @challenge.description %>
+          </div>
+          <div class="co2-info">
+            <%= image_tag("co2.svg", class: 'co2-icon') %>
+            <%= @challenge.carbon %>
+          </div>
+          <div class="btn btn-secondary">
+            Mark as done!
+          </div>
+          <div class="challenge-tip"><i class="fas fa-info-circle"></i></div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div id="unactive-challenge" class="challenge-container">
-    <div class="challenge-body">
-      <div class="challenge-title">
-        <%= @challenge.title %>
-      </div>
-      <div class="challenge-picture">
-        <%= @challenge.picture %>
-      </div>
-      <div class="challenge-description">
-        <%= @challenge.description %>
-      </div>
-      <div class="co2-info">
-        <%= image_tag("co2.svg", class: 'co2-icon') %>
-        <%= @challenge.carbon %>
-      </div>
-      <div class="btn btn-secondary">
-        Mark as done!
-      </div>
-      <div class="challenge-tip"><i class="fas fa-info-circle"></i></div>
-    </div>
-  </div>
-
 </div>
+

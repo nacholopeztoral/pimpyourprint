@@ -1,22 +1,21 @@
-.banner-quiz{
- background-image: url('https://images.unsplash.com/photo-1464419014442-769c523d575b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f81f0e192a716f797b429deb58aea5d9&auto=format&fit=crop&w=1350&q=80');
- background-size: cover;
- height: 100vh;
-}
-.quiz{
- background-color: white;
-
- text-align: center;
- opacity: 0.9;
- border-radius:0 0 5px 5px;
- box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.03);
- height: 50vh;
- width: 78vw;
- overflow: hidden;
-
+.banner-quiz {
+  background-image: url('https://images.unsplash.com/photo-1464419014442-769c523d575b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f81f0e192a716f797b429deb58aea5d9&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  height: 100vh;
 }
 
-.questions{
+.quiz {
+  background-color: white;
+  text-align: center;
+  opacity: 0.9;
+  border-radius:0 0 5px 5px;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.03);
+  height: 50vh;
+  width: 78vw;
+  overflow: hidden;
+}
+
+.questions {
   height: 250vh;
   width: 74vw;
   transition: transform 2s cubic-bezier(0.25, 0.1, 0, 1.15);
@@ -35,15 +34,14 @@
 }
 
 .quiz_result {
- background-color: white;
- text-align: center;
- opacity: 0.9;
- border-radius:0 0 5px 5px;
- box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.03);
- height: 50vh;
- width: 78vw;
- display: grid;
-
+  background-color: white;
+  text-align: center;
+  opacity: 0.9;
+  border-radius:0 0 5px 5px;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.03);
+  height: 50vh;
+  width: 78vw;
+  display: grid;
   text-align: center;
   opacity: 0.9;
   border-radius:0 0 5px 5px;
@@ -51,21 +49,20 @@
   height: 50vh;
   width: 78vw;
   overflow: hidden;
-
 }
 
-  .questions{
-    height: 250vh;
-    width: 74vw;
-    transition: transform 2s cubic-bezier(0.25, 0.1, 0, 1.15);
-  }
+.questions {
+  height: 250vh;
+  width: 74vw;
+  transition: transform 2s cubic-bezier(0.25, 0.1, 0, 1.15);
+}
 
-  .question{
-    height: 300px;
-  }
+.question {
+  height: 300px;
+}
 
-.quiz_result{
- background-color: white;
+.quiz_result {
+  background-color: white;
   text-align: center;
   opacity: 0.9;
   border-radius:0 0 5px 5px;
