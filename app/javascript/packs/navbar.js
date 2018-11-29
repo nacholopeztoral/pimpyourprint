@@ -7,29 +7,9 @@ function navBouncer() {
      sidenavbar.classList.toggle("transformationNew");
      //  animation start
      this.classList.toggle('bubble')
+     sidenavbar.classList.add('z-index');
 
   });}
 }
-function zIndex(){
-  const sidenavbar = document.getElementById('transition');
-  sidenavbar.classList.add('z-index');
 
-};
-function zIndexRemove(){
-  const sidenavbar = document.getElementById('transition');
-  sidenavbar.classList.remove('z-index');
-
-};
-
-
-
-
-navBouncer()
-
-
-if(window.location.pathname == '/users/sign_in') {
-  zIndex();
-}
-  else{
-    zIndexRemove();
-  };
+navBouncer();
