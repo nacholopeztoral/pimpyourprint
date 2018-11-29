@@ -1,12 +1,12 @@
-<h1><%= @challenge.title %></h1>
+<h1 class="text-center"><%= @challenge.title %></h1>
 
-<div class="challenge-container">
-  <div class="challenge-body">
+<div class="challenge-container" >
+  <div class="challenge-body" >
     <div class="challenge-title">
       <%= @challenge.title %>
     </div>
     <div class="challenge-picture">
-      <%= cl_image_tag @challenge.picture, height: 200, crop: :fill %>
+      <%= cl_image_tag @challenge.picture, height: 110, crop: :fill %>
     </div>
     <div class="challenge-description">
       <%= @challenge.description %>
