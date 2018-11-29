@@ -1,0 +1,37 @@
+<h1><%= @user.username %></h1>
+  <%= cl_image_tag @user.avatar, height: 100, width: 100 %>
+
+<p>Your score: <%= @user.score %></p>
+<p>Your current streak: <%= @user.streak %></p>
+
+<% carbon_saved = 0 %>
+<% challenges_completed = 0 %>
+
+<% @user.user_challenges.each do |c| %>
+  <% challenges_completed += 1 if c.completed? %>
+  <% carbon_saved += c.challenge.carbon if c.completed? %>
+<% end %>
+
+<p>Challenges completed: <%= challenges_completed %></p>
+<p>Carbon saved: <%= carbon_saved %></p>
+
+<p>Carbon from transportation: </p>
+<% @user.transportations.each do |t| %>
+  <%= t.carbon %> <br>
+<% end %>
+
+<% total_carbon_saved = 0 %>
+<% User.all.each do |u| %>
+  <% u.user_challenges.each do |c| %>
+    <% total_carbon_saved += c.challenge.carbon if c.completed? %>
+  <% end %>
+<% end %>
+
+<p>Carbon saved by PYP users: <%= total_carbon_saved %></p>
+<p>Carbon saved by average PYP user: <%= average_carbon = total_carbon_saved / User.all.count %></p>
+
+<% if carbon_saved > average_carbon %>
+  <p>You're doing better than the average PYP user! Keep up the good work!</p>
+<% else %>
+  <p>You're doing worse than the average user. Time to step up your game!</p>
+<% end %>
