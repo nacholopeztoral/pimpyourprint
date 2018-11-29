@@ -1,0 +1,63 @@
+.dashboard-container {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-card {
+  margin: 10px;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  border-radius: 10px;
+  box-shadow: 1px 1px 17px rgba(0,0,0,0.1);
+  .dashboard-user {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 0;
+    h1 {
+      color: $blue;
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.dashboard-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 30px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  .dashboard-column {
+    display: flex;
+    max-width: 170px;
+    min-width: 100px;
+    .statistic-description {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .statistic-text {
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+    }
+    .statistic-number {
+      font-size: 30px;
+      color: $green;
+      margin: 0;
+    }
+    .green-text {
+      color: $green;
+    }
+    .red-text {
+      color: $red;
+    }
+  }
+}

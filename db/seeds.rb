@@ -3,13 +3,50 @@ Challenge.destroy_all
 User.destroy_all
 
 puts "Creating Challenges and Users..."
-admin = User.new(username: "AdminUser", email:"admin@test.com", password:"admin@test.com", city: "Berlin", admin: true)
+admin = User.new(username: "AdminUser", email:"admin@test.com", password:"admin@test.com", city: "Berlin", admin: true, score: 188, streak: 4)
 admin.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543416288/PimpYourPrint/bala.jpg'
 admin.save!
 
-user = User.new(username: "Testuser", email:"test@test.com", password:"test@test.com", city: "Berlin")
+user = User.new(username: "Testuser", email:"test@test.com", password:"test@test.com", city: "Berlin", score: 55, streak: 3)
 user.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543416493/PimpYourPrint/bunny.jpg'
 user.save!
+
+t1 = Transportation.new(user_id: admin.id, carbon: 147)
+t1.created_at = (rand*10).days.ago
+t1.save
+t2 = Transportation.new(user_id: admin.id, carbon: 280)
+t2.created_at = (rand*10).days.ago
+t2.save
+t3 = Transportation.new(user_id: admin.id, carbon: 18)
+t3.created_at = (rand*10).days.ago
+t3.save
+t4 = Transportation.new(user_id: admin.id, carbon: 0)
+t4.created_at = (rand*10).days.ago
+t4.save
+t5 = Transportation.new(user_id: admin.id, carbon: 22)
+t5.created_at = (rand*10).days.ago
+t5.save
+t6 = Transportation.new(user_id: admin.id, carbon: 35)
+t6.created_at = (rand*10).days.ago
+t6.save
+t7 = Transportation.new(user_id: admin.id, carbon: 11)
+t7.created_at = (rand*10).days.ago
+t7.save
+t8 = Transportation.new(user_id: admin.id, carbon: 101)
+t8.created_at = (rand*10).days.ago
+t8.save
+t9 = Transportation.new(user_id: admin.id, carbon: 177)
+t9.created_at = (rand*10).days.ago
+t9.save
+t10 = Transportation.new(user_id: admin.id, carbon: 32)
+t10.created_at = (rand*10).days.ago
+t10.save
+
+Transportation.new(user_id: user.id, carbon: 53).save!
+Transportation.new(user_id: user.id, carbon: 12).save!
+Transportation.new(user_id: user.id, carbon: 99).save!
+Transportation.new(user_id: user.id, carbon: 163).save!
+Transportation.new(user_id: user.id, carbon: 12).save!
 
 meat = Challenge.new(title: "A day without eating meat",
                     category: "nutrition",
@@ -136,5 +173,19 @@ dry_hair = Challenge.new(title: "Dry your hair with a towel instead of a blow dr
                     )
 dry_hair.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543423070/PimpYourPrint/dry-hair.jpg'
 dry_hair.save!
+
+UserChallenge.new(user_id: admin.id, completed: true, challenge_id: sticker.id).save!
+UserChallenge.new(user_id: admin.id, completed: true, challenge_id: dry_hair.id).save!
+UserChallenge.new(user_id: admin.id, completed: false, challenge_id: heating.id).save!
+UserChallenge.new(user_id: admin.id, completed: true, challenge_id: dry_clothes.id).save!
+UserChallenge.new(user_id: admin.id, completed: true, challenge_id: car.id).save!
+UserChallenge.new(user_id: admin.id, completed: true, challenge_id: cup.id).save!
+
+UserChallenge.new(user_id: user.id, completed: true, challenge_id: sticker.id).save!
+UserChallenge.new(user_id: user.id, completed: false, challenge_id: dry_hair.id).save!
+UserChallenge.new(user_id: user.id, completed: true, challenge_id: heating.id).save!
+UserChallenge.new(user_id: user.id, completed: true, challenge_id: dry_clothes.id).save!
+UserChallenge.new(user_id: user.id, completed: false, challenge_id: car.id).save!
+
 
 puts "Seeding completed"
