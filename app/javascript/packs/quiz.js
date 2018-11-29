@@ -4,8 +4,21 @@ const nexts = document.querySelectorAll(".next")
   if (nexts){nexts.forEach(function(next){
     next.addEventListener("click", (event) => {
       console.log("hello");
-    questions.style.transform += "translateY(-400px)" ;
+    questions.style.transform += "translateY(-300px)" ;
   });
  });
 };
 
+  all = document.querySelectorAll('.option')
+
+  all.forEach(function(x){
+    x.addEventListener('click',function(){
+
+      all.forEach(function(y){
+        y.style.backgroundColor = "white"
+        y.style.color = "#000000";
+      })
+      x.style.backgroundColor = '#6AA8C5';
+      x.style.color = "white";
+    })
+  })
