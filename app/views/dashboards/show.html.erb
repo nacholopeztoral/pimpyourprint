@@ -1,47 +1,107 @@
-<!-- <div class="dashboard-container">
-  <div class="dashboard-card"> -->
+<!-- get data for user based on the challenges they've undertaken -->
+<% carbon_saved = 0 %>
+<% challenges_completed = 0 %>
+
+<% @user.user_challenges.each do |c| %>
+  <% challenges_completed += 1 if c.completed? %>
+  <% carbon_saved += c.challenge.carbon if c.completed? %>
+<% end %>
+
+<!-- get data for user based on their transportation habits -->
+<% transportation_carbon = [] %>
+<% count = 0 %>
+<% total_carbon = 0 %>
+<% @user.transportations.each do |t| %>
+  <% key = "#{t.created_at.year}.#{t.created_at.month}.#{t.created_at.day}"%>
+  <% transportation_carbon << [key, t.carbon] %>
+  <% total_carbon += t.carbon %>
+  <% count += 1 %>
+  <% break if count == 6 %>
+<% end %>
+
+<!-- get data for all app users -->
+<% total_carbon_saved = 0 %>
+<% User.all.each do |u| %>
+  <% u.user_challenges.each do |c| %>
+    <% total_carbon_saved += c.challenge.carbon if c.completed? %>
+  <% end %>
+<% end %>
+<% average_carbon = total_carbon_saved / User.all.count %>
+
+<div class="dashboard-container">
+  <div class="dashboard-card">
     <div class="dashboard-user">
+      <%= cl_image_tag @user.avatar, class: 'avatar-dashboard' %>
       <h1><%= @user.username %></h1>
-      <%= cl_image_tag @user.avatar, class: 'avatar' %>
     </div>
-
-    <p>Your score: <%= @user.score %></p>
-    <p>Your current streak: <%= @user.streak %></p>
-
-    <% carbon_saved = 0 %>
-    <% challenges_completed = 0 %>
-
-    <% @user.user_challenges.each do |c| %>
-      <% challenges_completed += 1 if c.completed? %>
-      <% carbon_saved += c.challenge.carbon if c.completed? %>
-    <% end %>
-
-    <p>Challenges completed: <%= challenges_completed %></p>
-    <p>Carbon saved: <%= carbon_saved %></p>
-
-    <p>Carbon from transportation: </p>
-    <% transportation_carbon = [] %>
-    <% @user.transportations.each do |t| %>
-      <% key = "#{t.created_at.year}.#{t.created_at.month}.#{t.created_at.day}"%>
-      <% transportation_carbon << [key, t.carbon] %>
-    <% end %>
-
-    <%= area_chart transportation_carbon, colors: ['#6AA8C5'], suffix: 'kg' %>
-
-    <% total_carbon_saved = 0 %>
-    <% User.all.each do |u| %>
-      <% u.user_challenges.each do |c| %>
-        <% total_carbon_saved += c.challenge.carbon if c.completed? %>
+    <div class="dashboard-row">
+      <div class="dashboard-column">
+        <div class="statistic-description">
+          <i class="fas fa-trophy"></i>
+          <p class="statistic-text">Score&nbsp;&nbsp;</p>
+        </div>
+        <p class="statistic-number"><%= @user.score %></p>
+      </div>
+      <div class="dashboard-column">
+        <div class="statistic-description">
+          <i class="fas fa-star"></i>
+          <p class="statistic-text">Streak&nbsp;&nbsp;</p>
+        </div>
+        <p class="statistic-number"><%= @user.streak %></p>
+      </div>
+    </div>
+    <div class="dashboard-row">
+      <div class="dashboard-column">
+        <div class="statistic-description">
+          <i class="fas fa-check-square"></i>
+          <p class="statistic-text">challenges&nbsp;&nbsp;</p>
+        </div>
+        <p class="statistic-number"><%= challenges_completed %></p>
+      </div>
+      <div class="dashboard-column">
+        <div class="statistic-description">
+          <i class="fas fa-leaf"></i>
+          <p class="statistic-text">CO2 saved&nbsp;&nbsp;</p>
+        </div>
+        <p class="statistic-number"><%= carbon_saved %></p>
+      </div>
+    </div>
+    <div class="dashboard-row">
+      <div class="dashboard-column">
+        <div class="statistic-description">
+          <p class="statistic-text">CO2 released from commuting in last 5 days</p>
+        </div>
+        <p class="statistic-number"><%= total_carbon %></p>
+      </div>
+    </div>
+    <%= area_chart transportation_carbon, colors: ['#6AA8C5'], suffix: 'kg', id: "myChart" %>
+    <div class="dashboard-row">
+      <h3>All PyP users</h3>
+    </div>
+    <div class="dashboard-row">
+      <div class="dashboard-column">
+        <div class="statistic-description">
+          <p class="statistic-text">CO2 saved</p>
+        </div>
+        <p class="statistic-number"><%= total_carbon_saved %></p>
+      </div>
+    </div>
+    <div class="dashboard-row">
+      <div class="dashboard-column">
+        <div class="statistic-description">
+          <p class="statistic-text">CO2 saved by average user</p>
+        </div>
+        <p class="statistic-number"><%= average_carbon %></p>
+      </div>
+    </div>
+    <div class="dashboard-row">
+      <div class="dashboard-column">
+      <% if carbon_saved > average_carbon %>
+        <p class='green-text'>You're doing better than the average PYP user! Keep up the good work!</p>
+      <% else %>
+        <p class='red-text'>You're doing worse than the average user. Time to step up your game!</p>
       <% end %>
-    <% end %>
-
-    <p>Carbon saved by PYP users: <%= total_carbon_saved %></p>
-    <p>Carbon saved by average PYP user: <%= average_carbon = total_carbon_saved / User.all.count %></p>
-
-    <% if carbon_saved > average_carbon %>
-      <p>You're doing better than the average PYP user! Keep up the good work!</p>
-    <% else %>
-      <p>You're doing worse than the average user. Time to step up your game!</p>
-    <% end %>
-<!--   </div>
-</div> -->
+      </div>
+    </div>
+  </div>
+</div>

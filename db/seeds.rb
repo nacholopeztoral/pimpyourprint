@@ -14,7 +14,7 @@ user.save!
 t1 = Transportation.new(user_id: admin.id, carbon: 147)
 t1.created_at = (rand*10).days.ago
 t1.save
-t2 = Transportation.new(user_id: admin.id, carbon: 512)
+t2 = Transportation.new(user_id: admin.id, carbon: 280)
 t2.created_at = (rand*10).days.ago
 t2.save
 t3 = Transportation.new(user_id: admin.id, carbon: 18)
@@ -26,6 +26,21 @@ t4.save
 t5 = Transportation.new(user_id: admin.id, carbon: 22)
 t5.created_at = (rand*10).days.ago
 t5.save
+t6 = Transportation.new(user_id: admin.id, carbon: 35)
+t6.created_at = (rand*10).days.ago
+t6.save
+t7 = Transportation.new(user_id: admin.id, carbon: 11)
+t7.created_at = (rand*10).days.ago
+t7.save
+t8 = Transportation.new(user_id: admin.id, carbon: 101)
+t8.created_at = (rand*10).days.ago
+t8.save
+t9 = Transportation.new(user_id: admin.id, carbon: 177)
+t9.created_at = (rand*10).days.ago
+t9.save
+t10 = Transportation.new(user_id: admin.id, carbon: 32)
+t10.created_at = (rand*10).days.ago
+t10.save
 
 Transportation.new(user_id: user.id, carbon: 53).save!
 Transportation.new(user_id: user.id, carbon: 12).save!
