@@ -37,7 +37,6 @@
   margin-top: 5px;
   .dashboard-column {
     display: flex;
-    max-width: 170px;
     min-width: 100px;
     .statistic-description {
       display: flex;
@@ -47,10 +46,12 @@
       .statistic-text {
         text-transform: uppercase;
         font-size: 12px;
+        max-width: 100px;
       }
-    }
-    .full-width {
-
+      .statistic-text.long-text {
+        max-width: 130px;
+        text-align: center;
+      }
     }
     .statistic-number {
       font-size: 30px;
@@ -59,9 +60,11 @@
     }
     .green-text {
       color: $green;
+      text-align: center;
     }
     .red-text {
       color: $red;
+      text-align: center;
     }
   }
 }
