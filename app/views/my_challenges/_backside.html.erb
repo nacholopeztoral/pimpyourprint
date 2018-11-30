@@ -2,9 +2,7 @@
   <div class="challenge-title">
     <%= challenge.title %>
   </div>
-  <div class="challenge-picture">
-    <%= cl_image_tag challenge.picture, height: 110, crop: :fill %>
-  </div>
+    <div class="challenge-picture" style="background-image: url(<%= cl_image_path @challenge.picture, height: 180, crop: :fill %>); background-repeat: no-repeat; background-size: cover"></div>
   <div class="challenge-description">
     <%= challenge.description %>
   </div>
