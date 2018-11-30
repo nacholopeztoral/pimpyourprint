@@ -2,7 +2,8 @@ class QuizResultsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
   def show
   authorize :quiz_results, :show?
-    if !points.nil?
+   recicle = params[:recicle]
+    if !recicle.nil?
       @score = points
       else
       redirect_to quiz_path, alert: "Please answer all questions"
