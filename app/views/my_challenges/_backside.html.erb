@@ -1,0 +1,21 @@
+<div class="challenge-body back-side">
+  <div class="challenge-title">
+    <%= challenge.title %>
+  </div>
+  <div class="challenge-picture">
+    <%= cl_image_tag challenge.picture, height: 110, crop: :fill %>
+  </div>
+  <div class="challenge-description">
+    <%= challenge.description %>
+  </div>
+  <div class="co2-info">
+    <%= image_tag("co2.svg", class: 'co2-icon') %>
+    <%= challenge.carbon %>
+  </div>
+  <% if  user_challenge && !user_challenge&.completed %>
+    <%= link_to 'Mark as done!', completed_path(user_challenge), method: :post, class:'btn btn-secondary' %>
+  <% else %>
+    <%= link_to 'To Dashboard', dashboard_path, class:'btn btn-secondary' %>
+  <% end %>
+  <div class="challenge-tip"><i class="fas fa-info-circle"></i></div>
+</div>

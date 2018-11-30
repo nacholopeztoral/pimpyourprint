@@ -1,0 +1,5 @@
+const backside = document.getElementById("backside");
+
+if (backside) {
+  backside.innerHTML = "<%= j render 'my_challenges/backside', challenge: @challenge, user_challenge: @user_challenge %>"
+}
