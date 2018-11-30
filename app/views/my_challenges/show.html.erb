@@ -1,6 +1,6 @@
 <div class="container-fluid">
-  <div class="row">
-    <h1 class="text-center">Your daily challenge</h1>
+  <div class="challenge-row">
+    <h3 class="text-center">Your daily challenge</h1>
     <div id="card-container" class="card-container">
       <% flipped = UserChallenge.today.where(user: current_user).first %>
       <div id="flipcard" class="flipcard <%= 'flipped' if flipped %>">
