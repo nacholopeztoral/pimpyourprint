@@ -12,7 +12,6 @@ Rails.application.routes.draw do
 
   get 'activation/:id', to: 'challenges#activation', as: :activation
 
-  # get '/my_challenge', to: 'my_challenge#show'
   resource :my_challenge, only: :show
 # /my_challenge --> mychallenge#show
   resources :my_challenges, only: :index
