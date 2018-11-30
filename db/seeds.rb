@@ -174,7 +174,6 @@ dry_hair = Challenge.new(title: "Dry your hair with a towel instead of a blow dr
 dry_hair.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543423070/PimpYourPrint/dry-hair.jpg'
 dry_hair.save!
 
-<<<<<<< HEAD
 u1 = UserChallenge.new(user_id: admin.id, completed: true, challenge_id: sticker.id)
 u1.created_at = 1.day.ago
 u1.save
