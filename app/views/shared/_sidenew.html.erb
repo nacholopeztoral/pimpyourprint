@@ -3,7 +3,8 @@
 <ul>
       <br>
       <% if user_signed_in? %>
-      <%= image_tag "https://images.unsplash.com/photo-1534958210670-31215027cb02?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d2ad6234771390be3df4b625b820c4d4&auto=format&fit=crop&w=1294&q=80", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+      <%= image_tag current_user.avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+
 <!--       <div class="hr-width">
         <hr style="border: 1px solid #eeeeee78;">
       </div> -->
