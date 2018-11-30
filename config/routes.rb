@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   get 'activation/:id', to: 'challenges#activation', as: :activation
+  post 'completed/:id', to: 'user_challenges#completed', as: :completed
 
   resource :my_challenge, only: :show
 # /my_challenge --> mychallenge#show

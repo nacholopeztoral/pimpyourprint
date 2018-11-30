@@ -12,6 +12,14 @@ user = User.new(username: "Testuser", email:"test@test.com", password:"test@test
 user.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543416493/PimpYourPrint/bunny.jpg'
 user.save!
 
+jadwiga = User.new(username: "Jadwiga", email:"jadwiga@coumert.com", password:"jadwiga@coumert.com", city: "Berlin", score: 155, streak: 3)
+jadwiga.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543580300/profil-picture.jpg'
+jadwiga.save!
+
+captainplanet = User.new(username: "SuperGreen", email:"green@green.com", password:"green@green.com", city: "Berlin", score: 155, streak: 3)
+captainplanet.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543580300/profil-picture.jpg'
+captainplanet.save!
+
 t1 = Transportation.new(user_id: admin.id, carbon: 147)
 t1.created_at = (rand*10).days.ago
 t1.save
@@ -42,6 +50,25 @@ t9.save
 t10 = Transportation.new(user_id: admin.id, carbon: 32)
 t10.created_at = (rand*10).days.ago
 t10.save
+
+jadwiga_t1 = Transportation.new(user_id: jadwiga.id, carbon: 147)
+jadwiga_t1.created_at = 1.day.ago
+jadwiga_t1.save
+jadwiga_t2 = Transportation.new(user_id: jadwiga.id, carbon: 280)
+jadwiga_t2.created_at = 2.days.ago
+jadwiga_t2.save
+jadwiga_t3 = Transportation.new(user_id: jadwiga.id, carbon: 18)
+jadwiga_t3.created_at = 3.days.ago
+jadwiga_t3.save
+jadwiga_t4 = Transportation.new(user_id: jadwiga.id, carbon: 0)
+jadwiga_t4.created_at = 4.days.ago
+jadwiga_t4.save
+jadwiga_t5 = Transportation.new(user_id: jadwiga.id, carbon: 22)
+jadwiga_t5.created_at = 5.days.ago
+jadwiga_t5.save
+jadwiga_t6 = Transportation.new(user_id: jadwiga.id, carbon: 35)
+jadwiga_t6.created_at = 6.days.ago
+jadwiga_t6.save
 
 Transportation.new(user_id: user.id, carbon: 53).save!
 Transportation.new(user_id: user.id, carbon: 12).save!
@@ -174,6 +201,19 @@ dry_hair = Challenge.new(title: "Dry your hair with a towel instead of a blow dr
                     )
 dry_hair.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543423070/PimpYourPrint/dry-hair.jpg'
 dry_hair.save!
+
+fake = Challenge.new(title: "Dry your hair with a towel instead of a blow dryer",
+                    category: "energy",
+                    description:"It's better for the earth, for your hair and for your energy bill!",
+                    carbon: 40583,
+                    active: false
+                    )
+fake.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543423070/PimpYourPrint/dry-hair.jpg'
+fake.save!
+
+fakechallenge = UserChallenge.new(user_id: captainplanet.id, completed: true, challenge_id: fake.id)
+fakechallenge.created_at = 1.day.ago
+fakechallenge.save
 
 u1 = UserChallenge.new(user_id: admin.id, completed: true, challenge_id: sticker.id)
 u1.created_at = 1.day.ago

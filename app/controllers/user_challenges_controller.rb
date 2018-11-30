@@ -19,4 +19,13 @@ class UserChallengesController < ApplicationController
       # Congratulation, you have successfully fulfilled all challenges?
     end
   end
+
+  def completed
+    @user_challenge = UserChallenge.find(params[:id])
+    @user_challenge.completed = true
+    authorize @user_challenge
+    if @user_challenge.save
+      redirect_to new_transportation_path
+    end
+  end
 end

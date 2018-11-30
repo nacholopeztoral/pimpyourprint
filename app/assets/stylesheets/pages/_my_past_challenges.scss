@@ -1,0 +1,16 @@
+.past-challenges-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: absolute;
+  justify-content: space-between;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.past-challenge {
+  display: flex;
+  margin-top: 70px !important;
+  position: relative;
+}
