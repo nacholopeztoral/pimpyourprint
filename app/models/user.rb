@@ -17,6 +17,6 @@ class User < ApplicationRecord
   private
 
   def assign_url
-   self.remote_photo_url = 'https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fc1.staticflickr.com%2F1%2F68%2F158034360_1cfd317f3e_b.jpg&f=1' if photo_url.nil?
+   self.remote_avatar_url = 'https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fc1.staticflickr.com%2F1%2F68%2F158034360_1cfd317f3e_b.jpg&f=1' if avatar_url.nil?
   end
 end

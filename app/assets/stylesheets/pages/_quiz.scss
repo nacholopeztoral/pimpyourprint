@@ -15,12 +15,6 @@
   overflow: hidden;
 }
 
-.questions {
-  height: 250vh;
-  width: 74vw;
-  transition: transform 2s cubic-bezier(0.25, 0.1, 0, 1.15);
-}
-
 .question {
   height: 300px;
     .answer {
@@ -93,6 +87,12 @@
   position: relative; left: 50%;
   transform: translateX(-50%);
   top: 50px;
+}
+
+.quiz-btn{
+  position: relative; left: 19%;
+  transform: translateX(-50%);
+  bottom: 28px;
 }
 
 
