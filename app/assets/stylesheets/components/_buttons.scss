@@ -1,30 +1,30 @@
 .btn {
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: normal;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  background: none;
-  background-color: none !important;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  padding: 4px 12px;
-  font-size: 18px;
-  line-height: 0.5;
-  max-width: fit-content;
-  max-height: 43px;
-  color: white !important;
+
+}
+.btn {
   background: none;
   border: none;
   cursor: pointer;
   padding: 1em 2em;
   letter-spacing: 0.05rem;
+  color: white !important;
 
   &:focus { outline: 2px dotted #55d7dc; }
 }
 
+.btn-primary {
+  background-color: $blue;
+  &:hover {
+    background-color: $darkblue;
+  }
+}
 
+.btn-secondary {
+  background-color: $green;
+  &:hover {
+    background-color: $darkgreen;
+  }
+}
 
 .jump-down {
   border-radius: 0;
@@ -64,7 +64,6 @@
 
   &:hover {
     color: $hover;
-    background-color: none !important;
 
     &::before,
     &::after {
@@ -81,11 +80,20 @@
 }
 
 .btn-primary {
-  @include btn-border-drawing(#58afd1, #68d1f1, 4px, bottom, right);
+  @include btn-border-drawing(#58afd1, #b6cdd6, 4px, bottom, right);
 }
 
 //=== Button styling, semi-ignore
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
 
+  padding: 1em 2em;
+  letter-spacing: 0.05rem;
+
+  &:focus { outline: 2px dotted #55d7dc; }
+}
 
 //=== Pen styling, ignore
 
