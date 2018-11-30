@@ -18,14 +18,24 @@
 
 /* Logo */
 .navbar-wagon-brand img {
-  height: 50px;
+
+  height: 55px;
+  padding-bottom: 12px;
+}
+div.justify_logo {
+  width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
 /* User Avatar */
-.navbar-wagon .avatar {
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
+
+img#navbar-wagon-menu {
+    width: 85px;
+    border-radius: 50%;
+    height: 75px;
+    margin-left: 44px;
+    margin-bottom: 45px;
 }
 
 /* Right section */
@@ -40,9 +50,14 @@
   font-size: 25px;
 }
 /* Basic navbar item */
-@media only screen and (max-width:1030px) {
-  .logo-font {
-    font-size: 15px;
+@media only screen and (max-width:400px) {
+  .navbar-wagon-brand img {
+    height: 42px;
+
+  }}
+@media only screen and (max-width:350px) {
+  .navbar-wagon-brand img {
+    height: 42px;
 
   }}
 .navbar-wagon-item {

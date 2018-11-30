@@ -4,30 +4,54 @@
       <br>
       <% if user_signed_in? %>
       <%= image_tag "https://images.unsplash.com/photo-1534958210670-31215027cb02?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d2ad6234771390be3df4b625b820c4d4&auto=format&fit=crop&w=1294&q=80", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-      <hr style="border: 1px solid #0000009e;">
-        <%= link_to "Daily challenge", my_challenge_path, class: "" %>
-      <hr style="border: 1px solid #0000009e;">
-        <%= link_to "Dasboard", new_user_session_path, class: "" %>
-      <hr style="border: 1px solid #0000009e;">
-      <%= link_to "Events", new_user_session_path, class: "" %>
-      <hr style="border: 1px solid #0000009e;">
-      <%= link_to "Calculator", new_transportation_path, class: "" %>
-      <hr style="border: 1px solid #0000009e;">
-      <%= link_to "Past challenges", new_user_session_path, class: "" %>
-      <hr style="border: 1px solid #0000009e;">
-      <%= link_to t(".sign_in", default: "Logout"), destroy_user_session_path, method: :delete, class: "" %>
-      <hr style="border: 1px solid #0000009e;">
+<!--       <div class="hr-width">
+        <hr style="border: 1px solid #eeeeee78;">
+      </div> -->
+        <%= link_to "My challenge", my_challenge_path, class: "link-side-bar" %>
+<!--       <div class="hr-width">
+        <hr style="border: 1px solid #eeeeee78;">
+      </div> -->
+        <%= link_to "Dashboard", new_user_session_path, class: "link-side-bar" %>
+<!--       <div class="hr-width">
+        <hr style="border: 1px solid #eeeeee78;">
+      </div> -->
+      <%= link_to "Events", new_user_session_path, class: "link-side-bar" %>
+<!--       <div class="hr-width">
+        <hr style="border: 1px solid #eeeeee78;">
+      </div> -->
+      <%= link_to "Calculator", new_transportation_path, class: "link-side-bar" %>
+<!--       <div class="hr-width">
+        <hr style="border: 1px solid #eeeeee78;">
+      </div> -->
+      <%= link_to "Past challenges", new_user_session_path, class: "link-side-bar" %>
+<!--       <div class="hr-width">
+        <hr style="border: 1px solid #eeeeee78;">
+      </div> -->
+      <%= link_to t(".sign_in", default: "Logout"), destroy_user_session_path, method: :delete, class: "link-side-bar" %>
+<!--       <div class="hr-width">
+        <hr style="border: 1px solid #eeeeee78;">
+      </div> -->
       <%else %>
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "" %>
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "link-side-bar" %>
       <% end %>
     </ul>
 </div>
 <!-- Was having some problems running this code in a file.js -->
 <script>
 function openNav() {
-    document.getElementById("sideNavigation").style.width = "250px";
+  var width = window.innerWidth;
+
+  if (width < 1030) {
+    document.getElementById("sideNavigation").style.width = "100vw";
+    document.getElementById("sideNavigation").style.zIndex = "101";
+    document.getElementById("sideNavigation").style.display = "flex";
+    document.getElementById("sideNavigation").style.justifyContent = "center";
     document.getElementById("main").style.marginLeft = "250px";
-}
+  }
+  else {
+    document.getElementById("sideNavigation").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px"; }
+  }
 
 function closeNav() {
     document.getElementById("sideNavigation").style.width = "0";
