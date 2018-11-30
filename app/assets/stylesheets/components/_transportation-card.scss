@@ -57,6 +57,7 @@
   }
 }
 
+
 .co2-transp-info {
   background-color: $green;
   position: absolute;
@@ -74,11 +75,11 @@
   padding: 10px 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 4px #616161;
-  input {
+  input.readonly {
     background: transparent;
     border: none;
     color: $black;
-    width: 80px;
+    width: 115px;
     box-shadow: none;
     &::placeholder {
       color: $black;
