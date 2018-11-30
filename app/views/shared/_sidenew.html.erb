@@ -8,7 +8,7 @@
 <!--       <div class="hr-width">
         <hr style="border: 1px solid #eeeeee78;">
       </div> -->
-        <%= link_to "My challenge", my_challenge_path, class: "link-side-bar" %>
+        <%= link_to "Daily challenge", my_challenge_path, class: "link-side-bar" %>
 <!--       <div class="hr-width">
         <hr style="border: 1px solid #eeeeee78;">
       </div> -->
@@ -43,8 +43,8 @@ function openNav() {
   var width = window.innerWidth;
 
   if (width < 1030) {
-    document.getElementById("sideNavigation").style.width = "100vw";
     document.getElementById("sideNavigation").style.zIndex = "101";
+    document.getElementById("sideNavigation").style.width = "100vw";
     document.getElementById("sideNavigation").style.display = "flex";
     document.getElementById("sideNavigation").style.justifyContent = "center";
     document.getElementById("main").style.marginLeft = "250px";

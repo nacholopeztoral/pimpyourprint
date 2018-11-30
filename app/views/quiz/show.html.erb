@@ -11,8 +11,8 @@
       <div class="question">
 
         <div class="answer">
-          <label for="Transport" class="quiz-title">Way of moving:</label>
-          <% [ 'Bike', 'My feet', 'Gas vehicle', 'Public Transport', 'My private jet' ].each do |transport| %>
+          <label for="Transport" class="quiz-title">Daily Transportation:</label>
+          <% [ 'Cycle', 'Walking', 'Drive', 'Public Transportation', 'My private jet' ].each do |transport| %>
           <label class="option">
             <%= radio_button_tag 'transport', transport, @transport == transport, class: "next" %>
           <%= transport.humanize %>
@@ -23,8 +23,8 @@
 
       <div class="question flight">
         <div class="answer">
-          <label for="Flight" class="quiz-title">Average amount of <br> hours flying per year?</label>
-          <% [ 'I do not fly', 'Less than 10 hours', 'Between 10-40', 'More than 50 '].each do |flight| %>
+          <label for="Flight" class="quiz-title">Average hours flying per year:</label>
+          <% [ 'None', 'Less than 10 hours', 'Between 10-40 hours', 'More than 40 hours'].each do |flight| %>
           <label class="option">
             <%= radio_button_tag 'flight', flight, @flight == flight, class: "next" %>
             <%= flight.humanize %>
@@ -37,7 +37,7 @@
       <div class="question">
         <div class="answer">
           <label for="Smoker" class="quiz-title">Do you smoke?</label>
-          <% [  'Always', 'Sometimes', 'Never'].each do |smoker| %>
+          <% ['Never', 'Sometimes', 'Regurlaly'].each do |smoker| %>
           <label class="option">
             <%= radio_button_tag 'smoker', smoker, @smoker == smoker, class: "next" %>
             <%= smoker.humanize %>
@@ -48,8 +48,8 @@
 
       <div class="question">
         <div class="answer">
-          <label for="Diet" class="quiz-title">Meat consumtion:</label>
-          <% [ 'Always','Around 5', '1 to 2 meals per week', 'Never' ].each do |diet| %>
+          <label for="Diet" class="quiz-title">How often do you eat meat?</label>
+          <% [ 'Never', '1 to 2 meals per week','More than 3 meals per week', 'Every meal'].each do |diet| %>
           <label class="option">
             <%= radio_button_tag 'diet', diet, @diet == diet, class: "next" %>
             <%= diet.humanize %>
@@ -61,7 +61,7 @@
       <div class="question">
         <div class="answer">
           <label for="Recicle" class="quiz-title">How often do you recycle?</label>
-          <% [ 'Always', 'Most of the time', 'Sometimes', 'Never' ].each do |recicle| %>
+          <% [ 'Never', 'Sometimes', 'Most of the time', 'Always' ].each do |recicle| %>
           <label class="option">
             <%= radio_button_tag 'recicle', recicle, @recicle == recicle, class: "last"%>
             <%= recicle.humanize %>
