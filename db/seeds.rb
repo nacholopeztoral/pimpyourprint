@@ -1,6 +1,7 @@
 UserChallenge.destroy_all
 Challenge.destroy_all
 User.destroy_all
+Transportation.destroy_all
 
 puts "Creating Challenges and Users..."
 admin = User.new(username: "AdminUser", email:"admin@test.com", password:"admin@test.com", city: "Berlin", admin: true, score: 188, streak: 4)
@@ -174,18 +175,47 @@ dry_hair = Challenge.new(title: "Dry your hair with a towel instead of a blow dr
 dry_hair.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543423070/PimpYourPrint/dry-hair.jpg'
 dry_hair.save!
 
-UserChallenge.new(user_id: admin.id, completed: true, challenge_id: sticker.id).save!
-UserChallenge.new(user_id: admin.id, completed: true, challenge_id: dry_hair.id).save!
-UserChallenge.new(user_id: admin.id, completed: false, challenge_id: heating.id).save!
-UserChallenge.new(user_id: admin.id, completed: true, challenge_id: dry_clothes.id).save!
-UserChallenge.new(user_id: admin.id, completed: true, challenge_id: car.id).save!
-UserChallenge.new(user_id: admin.id, completed: true, challenge_id: cup.id).save!
+u1 = UserChallenge.new(user_id: admin.id, completed: true, challenge_id: sticker.id)
+u1.created_at = 1.day.ago
+u1.save
 
-UserChallenge.new(user_id: user.id, completed: true, challenge_id: sticker.id).save!
-UserChallenge.new(user_id: user.id, completed: false, challenge_id: dry_hair.id).save!
-UserChallenge.new(user_id: user.id, completed: true, challenge_id: heating.id).save!
-UserChallenge.new(user_id: user.id, completed: true, challenge_id: dry_clothes.id).save!
-UserChallenge.new(user_id: user.id, completed: false, challenge_id: car.id).save!
+u2 = UserChallenge.new(user_id: admin.id, completed: true, challenge_id: dry_hair.id)
+u2.created_at = 2.days.ago
+u2.save
 
+u3 = UserChallenge.new(user_id: admin.id, completed: false, challenge_id: heating.id)
+u3.created_at = 3.days.ago
+u3.save
+
+u4 = UserChallenge.new(user_id: admin.id, completed: true, challenge_id: dry_clothes.id)
+u4.created_at = 4.days.ago
+u4.save
+
+u5 = UserChallenge.new(user_id: admin.id, completed: true, challenge_id: car.id)
+u5.created_at = 5.days.ago
+u5.save
+
+u6 = UserChallenge.new(user_id: admin.id, completed: true, challenge_id: cup.id)
+u6.created_at = 6.days.ago
+
+u7 = UserChallenge.new(user_id: user.id, completed: true, challenge_id: sticker.id)
+u7.created_at = 1.day.ago
+u7.save
+
+u8 = UserChallenge.new(user_id: user.id, completed: false, challenge_id: dry_hair.id)
+u8.created_at = 2.days.ago
+u8.save
+
+u9 = UserChallenge.new(user_id: user.id, completed: true, challenge_id: heating.id)
+u9.created_at = 3.days.ago
+u9.save
+
+u10 = UserChallenge.new(user_id: user.id, completed: true, challenge_id: dry_clothes.id)
+u10.created_at = 4.days.ago
+u10.save
+
+u11 = UserChallenge.new(user_id: user.id, completed: false, challenge_id: car.id)
+u11.created_at = 5.days.ago
+u11.save
 
 puts "Seeding completed"

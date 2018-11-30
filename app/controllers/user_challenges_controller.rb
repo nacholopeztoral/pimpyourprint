@@ -7,10 +7,16 @@ class UserChallengesController < ApplicationController
     authorize @user_challenge
 
     if @user_challenge.save
-      redirect_to my_challenge_path
+      respond_to do |format|
+        format.js
+        format.html { redirect_to my_challenge_path }
+      end
     else
-      # In which case could the user_challenge not be saved and if it happens,
+      # redirect_to my_challenge_path
+      # If there is no challenge available to give to the user
+      # User has done all available challenges for example
       # What do we do?
+      # Congratulation, you have successfully fulfilled all challenges?
     end
   end
 end

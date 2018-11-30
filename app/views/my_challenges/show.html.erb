@@ -2,9 +2,10 @@
   <div class="row">
     <h1 class="text-center">Your daily challenge</h1>
     <div id="card-container" class="card-container">
-      <div id="flipcard" class="flipcard">
+      <% flipped = UserChallenge.today.where(user: current_user).first %>
+      <div id="flipcard" class="flipcard <%= 'flipped' if flipped %>">
         <div class="challenge-body front-side" style="background-color: #c9c9c9;">
-          <div id='reveal'> <%= link_to "Reveal Challenge", challenge_user_challenges_path(@challenge), method: :post, class: 'btn btn-primary' %>
+          <div id='reveal'> <%= link_to "Reveal Challenge", challenge_user_challenges_path(@challenge), method: :post, remote: true, class: 'btn btn-primary' %>
           </div>
           <div class="co2-info" style="background-color: #c9c9c9">
           </div>
