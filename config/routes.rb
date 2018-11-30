@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   resources :my_challenges, only: :index
 # /my_challenges --> mychallenge#index
   resources :transportations, only: [:new, :create]
+  resource :dashboard, only: :show
 
 end
