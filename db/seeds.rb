@@ -12,7 +12,7 @@ user = User.new(username: "Testuser", email:"test@test.com", password:"test@test
 user.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543416493/PimpYourPrint/bunny.jpg'
 user.save!
 
-jadwiga = User.new(username: "Jadwiga", email:"jadwiga@coumert.com", password:"jadwiga@coumert.com", city: "Berlin", score: 155, streak: 3)
+jadwiga = User.new(username: "Jadwiga", email:"jadwiga@coumert.com", password:"jadwiga@coumert.com", city: "Berlin", score: 155, streak: 1)
 jadwiga.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543580300/profil-picture.jpg'
 jadwiga.save!
 
@@ -202,7 +202,7 @@ dry_hair = Challenge.new(title: "Dry your hair with a towel instead of a blow dr
 dry_hair.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543423070/PimpYourPrint/dry-hair.jpg'
 dry_hair.save!
 
-fake = Challenge.new(title: "Dry your hair with a towel instead of a blow dryer",
+fake = Challenge.new(title: "Dryy your hair with a towel instead of a blow dryer",
                     category: "energy",
                     description:"It's better for the earth, for your hair and for your energy bill!",
                     carbon: 40583,
