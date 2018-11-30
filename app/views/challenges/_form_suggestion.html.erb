@@ -1,0 +1,26 @@
+<h1 class="text-center">Suggest a new Challenge !</h1>
+<p class="text-center">Would you like to share a Challenge idea to reduce your daily carbon footprint? Let us know about it!</p>
+
+<div class="form">
+  <%= form_for challenge do |f| %>
+
+    <div class="form-inputs">
+      <%= f.label :title %>
+      <%= f.text_field :title, placeholder: 'ex: Don\'t eat meat for a day', class: "form-control" %>
+    </div>
+
+    <div class="form-inputs">
+      <%= f.label :description %>
+      <%= f.text_area :description, placeholder: 'ex: Meat has a very big impact on the environment.', rows: 5, class: "form-control" %>
+    </div>
+
+    <div class="form-inputs">
+      <%= f.label :category %>
+      <%= f.select :category, ['plastic', 'energy', 'nutrition', 'other'], class: "form-control" %>
+    </div>
+
+    <%= f.submit 'Suggest a Challenge', class: "btn btn-primary" %>
+  <% end %>
+  <span style="padding-top: 20px">Once submitted, we will assess the challenge and maybe publish it on the platform!</span>
+</div>
+

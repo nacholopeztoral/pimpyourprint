@@ -1,38 +1,73 @@
-.sd-navbar {
-  top: 0px;
-  padding-top: 65px;
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  display: flex;
-  justify-content: flex-end;
-      // z-index: 4;
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    text-shadow: 1px 1px #a7a7a7;
+}
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 70px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+}
+
+svg#icoOpen:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+ #closebtn:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
 
 
-}
-.z-index {
-  z-index: 2;
-}
-.side-navbar {
-  background-color: #ffffff;
-  opacity: 0.9;
-  height: 100vh;
-  width: 20vw;
-  transform: translate(20vw);
-  transition: all ease 1s;
-  transition-timing-function:cubic-bezier(0.2,0.5,0.3,1);
 
-}
-.transformationNew {
-transform: translate(0vw) !important;
-}
-@media only screen and (max-width:1030px) {
-  .side-navbar{
-    width: 50vw;
-    transform: translate(50vw);
-
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
   }
-  .transformNew {
-    transform: translate(-50vw);
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
   }
 }
