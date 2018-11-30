@@ -35,8 +35,8 @@
     font-size: 25px;
   }
   .challenge-picture {
-    height: 20vh;
-    width: 30vh;
+    height: 25vh;
+    width: 35vh;
     border-radius: 10px;
     border: 1px solid $white;
   }
@@ -91,9 +91,9 @@
   -moz-transform-style: preserve-3d;
   -o-transform-style: preserve-3d;
   div {
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden !important;
+    -moz-backface-visibility: hidden !important;
+    -o-backface-visibility: hidden !important;
   }
   .flipped {
     -webkit-transform: rotateY(180deg);

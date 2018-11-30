@@ -1,6 +1,5 @@
 <div class="container-fluid">
   <div class="row">
-    <h1 class="text-center">Your daily challenge</h1>
     <div id="card-container" class="card-container">
       <% flipped = UserChallenge.today.where(user: current_user).first %>
       <div id="flipcard" class="flipcard <%= 'flipped' if flipped %>">
@@ -14,8 +13,7 @@
           <div class="challenge-title">
             <%= @challenge.title %>
           </div>
-          <div class="challenge-picture">
-            <%= cl_image_tag @challenge.picture, height: 110, crop: :fill %>
+          <div class="challenge-picture" style="background-image: url(<%= cl_image_path @challenge.picture, height: 180, crop: :fill %>)">
           </div>
           <div class="challenge-description">
             <%= @challenge.description %>
