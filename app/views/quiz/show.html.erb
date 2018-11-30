@@ -49,7 +49,7 @@
       <div class="question">
         <div class="answer">
           <label for="Diet" class="quiz-title">How often do you eat meat?</label>
-          <% [ 'Never', '1 to 2 meals per week','More than 3 meals per week', 'Ever meal'].each do |diet| %>
+          <% [ 'Never', '1 to 2 meals per week','More than 3 meals per week', 'Every meal'].each do |diet| %>
           <label class="option">
             <%= radio_button_tag 'diet', diet, @diet == diet, class: "next" %>
             <%= diet.humanize %>
