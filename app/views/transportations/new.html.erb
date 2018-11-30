@@ -8,44 +8,43 @@
         <ul class="list-unstyled">
           <li>
               <p class="mode"><i class="fas fa-walking"></i>&nbsp;Walking</p>
-              <div class="transportation-co2"><input type="text" class="form-control transportation-input" placeholder="0">&nbsp;km</div>
+              <div class="transportation-co2"><input type="text" class="form-control transportation-input" placeholder="0">&nbsp;&nbsp;km</div>
           </li>
           <li>
             <p class="mode"><i class="fas fa-bicycle"></i>&nbsp;Cycling</p>
-            <div class="transportation-co2"><input type="text" class="form-control transportation-input" placeholder="0">&nbsp;km</div>
+            <div class="transportation-co2"><input type="text" class="form-control transportation-input" placeholder="0">&nbsp;&nbsp;km</div>
           </li>
           <li>
             <p class="mode"><i class="fas fa-motorcycle"></i>&nbsp;Scooter</p>
-            <div class="transportation-co2"><input type="text" class="form-control transportation-input" placeholder="0" id="mode-scooter" data-type="scooter">&nbsp;km</div>
+            <div class="transportation-co2"><input type="text" class="form-control transportation-input" placeholder="0" id="mode-scooter" data-type="scooter">&nbsp;&nbsp;km</div>
           </li>
           <li>
             <p class="mode"><i class="fas fa-car"></i>&nbsp;Car</p>
-            <div class="transportation-co2"><input type="text" class="form-control transportation-input" placeholder="0" id="mode-car">&nbsp;km</div>
+            <div class="transportation-co2"><input type="text" class="form-control transportation-input" placeholder="0" id="mode-car">&nbsp;&nbsp;km</div>
           </li>
           <li>
             <p class="mode"><i class="fas fa-bus"></i>&nbsp;Bus</p>
-            <div class="transportation-co2"><input type="text" class="form-control transportation-input" placeholder="0" id="mode-bus">&nbsp;km</div>
+            <div class="transportation-co2"><input type="text" class="form-control transportation-input" placeholder="0" id="mode-bus">&nbsp;&nbsp;km</div>
           </li>
           <li>
             <p class="mode"><i class="fas fa-subway"></i>&nbsp;Tram</p>
-            <div class="transportation-co2"><input type="text" class="form-control transportation-input" placeholder="0" id="mode-tram">&nbsp;km</div>
+            <div class="transportation-co2"><input type="text" class="form-control transportation-input" placeholder="0" id="mode-tram">&nbsp;&nbsp;km</div>
           </li>
           <li>
             <p class="mode"><i class="fas fa-train"></i>&nbsp;Train</p>
-            <div class="transportation-co2"><input type="text" class="form-control transportation-input" placeholder="0" id="mode-train">&nbsp;km</div>
+            <div class="transportation-co2"><input type="text" class="form-control transportation-input" placeholder="0" id="mode-train">&nbsp;&nbsp;km</div>
           </li>
           <li>
             <p class="mode"><i class="fas fa-plane"></i>&nbsp;Plane</p>
-            <div class="transportation-co2"><input type="text" class="form-control transportation-input" placeholder="0" id="mode-plane">min</div>
+            <div class="transportation-co2"><input type="text" class="form-control transportation-input diff-width" placeholder="0" id="mode-plane">&nbsp;min</div>
           </li>
         </ul>
       </div>
       <%= simple_form_for(@transportation) do |f| %>
           <%= f.submit 'Submit', class: "btn btn-secondary" %>
-
         <div class="co2-transp-info">
           <%= image_tag("co2.svg", class: 'co2-icon') %>&nbsp;
-          <%= f.input :carbon, input_html: { id: 'totalTranspCarbon' || 0 }, label: false, placeholder: '0' %>
+          <%= f.input :carbon, input_html: { id: 'totalTranspCarbon' || 0 }, label: false, placeholder: '0', class: 'transport-calculation', readonly: true %>
         </div>
       <% end %>
     </div>
