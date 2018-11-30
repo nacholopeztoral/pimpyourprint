@@ -63,15 +63,15 @@
           <i class="fas fa-leaf"></i>
           <p class="statistic-text">CO2 saved&nbsp;&nbsp;</p>
         </div>
-        <p class="statistic-number"><%= carbon_saved %></p>
+        <p class="statistic-number"><%= carbon_saved %><font size="-1">kg</font></p>
       </div>
     </div>
-    <div class="dashboard-row">
+    <div class="dashboard-row" id="top-border">
       <div class="dashboard-column">
         <div class="statistic-description">
           <p class="statistic-text long-text">CO2 released from commuting in last 5 days&nbsp;&nbsp;</p>
         </div>
-        <p class="statistic-number"><%= total_carbon %></p>
+        <p class="statistic-number" id="orange-text"><%= total_carbon %><font size="-1">kg</font></p>
       </div>
     </div>
     <%= area_chart transportation_carbon, colors: ['#6AA8C5'], suffix: 'kg', id: "myChart" %>
@@ -83,7 +83,7 @@
         <div class="statistic-description">
           <p class="statistic-text">CO2 saved&nbsp;&nbsp;</p>
         </div>
-        <p class="statistic-number"><%= total_carbon_saved %></p>
+        <p class="statistic-number"><%= total_carbon_saved %><font size="-1">kg</font></p>
       </div>
     </div>
     <div class="dashboard-row">
@@ -91,7 +91,7 @@
         <div class="statistic-description">
           <p class="statistic-text">CO2 saved by average user&nbsp;&nbsp;</p>
         </div>
-        <p class="statistic-number"><%= average_carbon %></p>
+        <p class="statistic-number"><%= average_carbon %><font size="-1">kg</font></p>
       </div>
     </div>
     <div class="dashboard-row">
