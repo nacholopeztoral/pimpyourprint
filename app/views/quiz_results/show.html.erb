@@ -2,7 +2,7 @@
 
   <div class="container quiz_result">
     <div class="quiz-result-box">
-      <p class="score"><% @score %></p>
+      <p class="score"><%= @score %></p>
         <p>Your result is:</p>
           <% case %>
               <% when @score <= 10 then status = " Damn! You are so green! Challenge yourself even more" %>

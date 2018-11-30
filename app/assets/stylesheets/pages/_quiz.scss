@@ -89,10 +89,14 @@
   top: 50px;
 }
 
-.quiz-btn{
+.quiz-btn {
   position: relative; left: 19%;
   transform: translateX(-50%);
   bottom: 28px;
+}
+
+.score {
+  display: none;
 }
 
 
