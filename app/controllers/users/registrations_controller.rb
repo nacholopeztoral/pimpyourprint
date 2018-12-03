@@ -45,6 +45,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.permit(:sign_up, keys: [:avatar,
                                                        :avatar_cache,
                                                        :username,
+                                                       :vegan,
+                                                       :car,
                                                        :time_zone])
   end
 
@@ -53,6 +55,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.permit(:account_update, keys: [:avatar,
                                                               :avatar_cache,
                                                               :username,
+                                                              :vegan,
+                                                              :car,
                                                               :time_zone])
   end
 
