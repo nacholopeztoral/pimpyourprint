@@ -5,22 +5,21 @@
 }
 
 .card-container {
-  height: calc(100vh - 70px);
   max-height: 540px;
   width: 100vw;
   display: flex;
   position: relative;
   align-self: center;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 45px;
   transition: transform 5s;
 }
 
 .challenge-body {
-  max-width: 340px;
+  max-width: 385px;
   height: 80vh;
-  width: 80vw;
-  max-height: 500px;
+  width: 93vw;
+  max-height: 610px;
   background-color: $blue;
   border-radius: 10px;
   color: $white;
@@ -40,12 +39,15 @@
     border-radius: 10px;
     border: 1px solid $white;
   }
-  // .challenge-description {
-  //   font-weight: lighter;
-  // }
+
   .challenge-category {
     font-size: 15px;
+
+  .challenge-description {
+    font-weight: bolder;
+    font-size: 20px;
   }
+
   .btn.btn-secondary{
     box-shadow: 0px 0px 4px #FFFFFF;
   }
@@ -81,8 +83,8 @@
 }
 
 .flipcard {
-  width: 340px;
-  height: 500px;
+  width: 385px;
+  height: 610px;
   position: relative;
   -webkit-transition: -webkit-transform 1s;
   -moz-transition: -moz-transform 1s;
