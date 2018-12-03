@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 2018_12_03_115356) do
     t.boolean "admin", default: false
     t.integer "streak"
     t.string "avatar"
+    t.string "time_zone"
     t.boolean "vegan", default: false
     t.boolean "car", default: false
     t.index ["email"], name: "index_users_on_email", unique: true

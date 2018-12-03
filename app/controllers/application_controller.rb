@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_action :authenticate_user!, except: [:home, :quiz, :quiz_results]
+  around_action :user_time_zone, if: :current_user
 
   include Pundit
   before_action :configure_permitted_parameters, if: :devise_controller?
@@ -35,5 +36,13 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     session[:previous_url] || root_path
+  end
+
+  def user_time_zone
+    if current_user
+      Time.use_zone(current_user.time_zone) { yield }
+    else
+      yield
+    end
   end
 end
