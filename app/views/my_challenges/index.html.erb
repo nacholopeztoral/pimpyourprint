@@ -1,3 +1,27 @@
-<% @challenges.each do |challenge| %>
-  <%= challenge.title %>
-<% end %>
+<div class="past-challenges-container">
+  <div class="challenge-row">
+    <% @challenges.each do |challenge| %>
+      <div class="col-xs-12 col-md-6 col-lg-3">
+        <div class="challenge-body" style="margin: 50px">
+          <div class="challenge-title">
+            <%= challenge.title %>
+          </div>
+          <div class="challenge-picture">
+            <%= cl_image_tag challenge.picture, height: 110, crop: :fill %>
+          </div>
+          <div class="challenge-description">
+            <%= challenge.description %>
+          </div>
+          <div class="co2-info">
+            <%= image_tag("co2.svg", class: 'co2-icon') %>
+            <%= challenge.carbon %>
+          </div>
+          <div class="btn btn-secondary">
+            Mark as done!
+          </div>
+          <div class="challenge-tip"><i class="fas fa-info-circle"></i></div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
