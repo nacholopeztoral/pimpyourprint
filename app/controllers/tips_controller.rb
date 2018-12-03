@@ -16,7 +16,7 @@ class TipsController < ApplicationController
   @challenge_id = @challenges
   @tip = Tip.new(tip_params)
    authorize @tip
-   if @tip .save
+  if @tip.save
     render 'index'
   else
     render 'new'
