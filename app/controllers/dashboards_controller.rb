@@ -11,12 +11,15 @@ class DashboardsController < ApplicationController
     challenge_time = current_challenge.created_at.to_time
     # result of division is given back in seconds
     time_elapsed = (Time.current - challenge_time) / 3600
+    new_day = true if midnight?
 
     if (midnight? && !current_challenge.completed?) || time_elapsed > 48
       @user.streak = 0
-    elsif time_elapsed < 24 && current_challenge.completed?
+    elsif time_elapsed < 24 && current_challenge.completed? && new_day
       @user.streak += 1
+      new_day = false # prevents streak increasing every time page is reloaded
     end
+    @user.save
     authorize @user
   end
 
