@@ -1,36 +1,27 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="past-challenges-container">
-      <% @challenges.each do |challenge| %>
-        <div class="card-container past-challenge">
-          <div class="challenge-body">
-
-            <div class="challenge-title">
-              <%= challenge.title %>
-            </div>
-
-            <div class="challenge-picture" style="background-image: url(<%= cl_image_path challenge.picture, height: 180, crop: :fill %>); background-repeat: no-repeat; background-size: cover">
-            </div>
-
-            <div class="challenge-description">
-              <%= challenge.description %>
-            </div>
-
-            <div class="co2-info">
-              <%= image_tag("co2.svg", class: 'co2-icon') %>
-              <%= challenge.carbon %>
-            </div>
-
-            <div class="challenge-completed">
-              <i class="fas fa-check"></i> Completed on the <%= challenge.updated_at.strftime('%A %e of %B') %>
-            </div>
-
-            <div class="challenge-tip">
-              <i class="fas fa-info-circle"></i>
-            </div>
+<div class="past-challenges-container">
+  <h1>My completed challenges</h1>
+    <% @challenges.each do |challenge| %>
+      <div class="col-xs-12 col-sm-6 col-md-4 past-challenge">
+        <div class="challenge-body" style="margin-right: 1px; margin-left: 1px;">
+          <div class="challenge-title">
+            <%= challenge.title %>
+          </div>
+          <div class="challenge-picture" style="background-image: url(<%= cl_image_path challenge.picture, height: 180, crop: :fill %>); background-repeat: no-repeat; background-size: cover">
+          </div>
+          <div class="challenge-description">
+            <%= challenge.description %>
+          </div>
+          <div class="co2-info">
+            <%= image_tag("co2.svg", class: 'co2-icon') %>
+            <%= challenge.carbon %>
+          </div>
+          <div class="challenge-completed">
+            <i class="fas fa-check"></i> Completed on the <%= challenge.updated_at.strftime('%A %e of %B') %>
+          </div>
+          <div class="challenge-tip">
+            <i class="fas fa-info-circle"></i>
           </div>
         </div>
-      <% end %>
-    </div>
-  </div>
+      </div>
+    <% end %>
 </div>
