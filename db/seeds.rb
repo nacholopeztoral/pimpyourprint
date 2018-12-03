@@ -223,39 +223,11 @@ u2 = UserChallenge.new(user_id: admin.id, completed: true, challenge_id: dry_hai
 u2.created_at = 2.days.ago
 u2.save
 
-u3 = UserChallenge.new(user_id: admin.id, completed: false, challenge_id: heating.id)
+u3 = UserChallenge.new(user_id: admin.id, completed: true, challenge_id: heating.id)
 u3.created_at = 3.days.ago
 u3.save
 
-u4 = UserChallenge.new(user_id: admin.id, completed: true, challenge_id: dry_clothes.id)
-u4.created_at = 4.days.ago
+u4 = UserChallenge.new(user_id: admin.id, challenge_id: dry_clothes.id)
 u4.save
-
-u5 = UserChallenge.new(user_id: admin.id, completed: true, challenge_id: car.id)
-u5.created_at = 5.days.ago
-u5.save
-
-u6 = UserChallenge.new(user_id: admin.id, completed: true, challenge_id: cup.id)
-u6.created_at = 6.days.ago
-
-u7 = UserChallenge.new(user_id: user.id, completed: true, challenge_id: sticker.id)
-u7.created_at = 1.day.ago
-u7.save
-
-u8 = UserChallenge.new(user_id: user.id, completed: false, challenge_id: dry_hair.id)
-u8.created_at = 2.days.ago
-u8.save
-
-u9 = UserChallenge.new(user_id: user.id, completed: true, challenge_id: heating.id)
-u9.created_at = 3.days.ago
-u9.save
-
-u10 = UserChallenge.new(user_id: user.id, completed: true, challenge_id: dry_clothes.id)
-u10.created_at = 4.days.ago
-u10.save
-
-u11 = UserChallenge.new(user_id: user.id, completed: false, challenge_id: car.id)
-u11.created_at = 5.days.ago
-u11.save
 
 puts "Seeding completed"

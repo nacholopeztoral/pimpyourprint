@@ -29,7 +29,7 @@ class ChallengesController < ApplicationController
         redirect_to @challenge, alert: "Challenge was created, you still need to activate it to publish it."
       else
         # If User isn't an Admin, redirect to his dashboard when page is created.
-        redirect_to @challenge, alert: "Thank you for suggesting a new challenge!"
+        redirect_to @challenge, notice: "Thank you for suggesting a new challenge!"
       end
     else
       render 'new'

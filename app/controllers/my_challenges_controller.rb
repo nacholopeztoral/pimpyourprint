@@ -9,7 +9,10 @@ class MyChallengesController < ApplicationController
     # If current_user already has generated a user_challenge for today, reassign it to @challenge
     @user_challenge = current_user.user_challenges.today.last
     @challenge = @user_challenge.challenge if @user_challenge.present?
-    authorize @challenge
+
+    redirect_to dashboard_path flash[:alert] = "Unfortunately, we don't have anymore available challenges for you! How about you suggest a new one? #{view_context.link_to('Suggest new challenge', new_challenge_path)}".html_safe if @challenge.nil?
+
+    authorize @challenge, policy_class: ChallengePolicy
   end
 
   def index

@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :challenges, through: :user_challenges
   has_many :tips, dependent: :destroy
   has_many :transportations, dependent: :destroy
+
   validates :username, uniqueness: true, presence: true
   validates :city, presence: true
 
