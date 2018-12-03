@@ -10,9 +10,16 @@
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "email" }%>
+      <%= f.input :username,
+                  required: true %>
+      <%= f.input :city,
+                  required: true %>
       <%= f.label "Your time zone" %>
+      <br>
       <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.all.sort,
-                              required: true %>
+                              required: true,
+                              default: "Berlin" %>
+      <br> <br>
       <!-- <p class="icon-form"><i class="fas fa-key"></i></p> -->
       <%= f.input :password,
                   required: true,
