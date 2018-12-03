@@ -20,8 +20,14 @@ Rails.application.routes.draw do
   resources :transportations, only: [:new, :create]
   resource :dashboard, only: :show
 
-  resources :events
-  resources :messages
-  resources :responses
+  resources :events do
+    resources :attendances, only: :create
+    # post 'attendance/:id', to: 'attendances#create', as: :attend
+    resources :comments do
+      resources :responses
+      end
+    end
+
+
 
 end

@@ -1,0 +1,13 @@
+
+<div class="container">
+  <div class="row">
+    <div class="event col-xs-12 col-md-12 col-lg-12">
+      <h1><%= @event.title %></h1>
+      <p>Created by <%= @event.user.username %></p>
+      <%= link_to "Comment", new_event_comment_path(@event) %>
+      <p><%= @event.capacity %></p>
+      <%= link_to "Join", event_attendances_path(@event), method: :post %>
+    </div>
+  </div>
+</div>
+
