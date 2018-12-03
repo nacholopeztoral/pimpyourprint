@@ -113,7 +113,7 @@ bottle.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v15
 bottle.save!
 
 transportation = Challenge.new(title: "Calculate your daily transportation carbon footprint",
-                    category: "energy",
+                    category: "transportation",
                     description:"Ever wondered about your daily transportation carbon footprint impact?",
                     carbon: 0,
                     active: true
@@ -149,7 +149,7 @@ elevator.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v
 elevator.save!
 
 car = Challenge.new(title: "Leave your car home and use alternative transports",
-                    category: "energy",
+                    category: "transportation",
                     description:"An empty car ride in the city is the most unefficient way of traveling.",
                     carbon: 50,
                     active: true
