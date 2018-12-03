@@ -1,0 +1,9 @@
+<% @tips.each do |tip| %>
+  <div class="content">
+  <p><%= tip.content %></p>
+  </div>
+  <div class="avatar-name">
+    <%= tip.avatar%>
+    <%= tip.name %>
+  </div>
+<% end %>
