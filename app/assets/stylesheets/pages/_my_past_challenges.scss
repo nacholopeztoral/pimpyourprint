@@ -1,16 +1,12 @@
+// Flex parent
 .past-challenges-container {
   display: flex;
-  flex-direction: column;
+  width: 100%;
   flex-wrap: wrap;
-  position: absolute;
-  justify-content: space-between;
-  width: 100vw;
-  align-items: center;
-  justify-content: center;
 }
 
+// Flex-child
 .past-challenge {
-  display: flex;
-  margin-top: 70px !important;
-  position: relative;
+  flex: 0 0 25%;
+  margin: 0 5px;
 }
