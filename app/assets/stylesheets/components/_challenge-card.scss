@@ -39,10 +39,15 @@
     border-radius: 10px;
     border: 1px solid $white;
   }
+  .challenge-category {
+    font-size: 15px;
+  }
+
   .challenge-description {
     font-weight: bolder;
     font-size: 20px;
   }
+
   .btn.btn-secondary{
     box-shadow: 0px 0px 4px #FFFFFF;
   }
@@ -114,4 +119,8 @@
     -moz-backface-visibility: visible;
     -o-backface-visibility: visible;
   }
+}
+
+.challenge-completed {
+  font-weight: lighter;
 }

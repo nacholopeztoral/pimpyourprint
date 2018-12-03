@@ -6,7 +6,11 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :responses, dependent: :destroy
   has_many :transportations, dependent: :destroy
+
   has_many :events, :through => :attendances
+
+  validates :time_zone, presence: true
+
   validates :username, uniqueness: true, presence: true
   validates :city, presence: true
 
@@ -21,6 +25,6 @@ class User < ApplicationRecord
   private
 
   def assign_url
-   self.remote_avatar_tag = '../assets/images/giraffe.jpng' if avatar_url.nil?
+   self.remote_avatar_url = 'https://c1.staticflickr.com/1/68/158034360_1cfd317f3e_b.jpg' if remote_avatar_url.nil?
   end
 end
