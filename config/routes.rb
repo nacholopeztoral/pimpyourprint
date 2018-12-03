@@ -20,11 +20,10 @@ Rails.application.routes.draw do
   resources :transportations, only: [:new, :create]
   resource :dashboard, only: :show
 
-  resources :events do
+  resources :events, only: [:index, :show, :new, :create] do
     resources :attendances, only: :create
     # post 'attendance/:id', to: 'attendances#create', as: :attend
-    resources :comments do
-      resources :responses
+    resources :comments, except: [:edit, :destroy] do
       end
     end
 
