@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/quiz_results', to: 'quiz_results#show'
   get '/quiz', to: 'quiz#show'
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
 
   resources :challenges, except: [:destroy] do
     resources :user_challenges, only: :create

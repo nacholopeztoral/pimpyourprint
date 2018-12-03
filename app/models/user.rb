@@ -4,8 +4,8 @@ class User < ApplicationRecord
   has_many :challenges, through: :user_challenges
   has_many :tips, dependent: :destroy
   has_many :transportations, dependent: :destroy
-  validates :username, uniqueness: true, presence: true
-  validates :city, presence: true
+  # validates :username, uniqueness: true, presence: true
+  # validates :city, presence: true
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -18,6 +18,6 @@ class User < ApplicationRecord
   private
 
   def assign_url
-   self.remote_avatar_tag = '../assets/images/giraffe.jpng' if avatar_url.nil?
+   self.remote_avatar_url = 'https://c1.staticflickr.com/1/68/158034360_1cfd317f3e_b.jpg' if remote_avatar_url.nil?
   end
 end
