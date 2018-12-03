@@ -4,7 +4,7 @@ class MyChallengesController < ApplicationController
 
   def show
     # Radomly pick a Challenge out of the pool that the user hasn"t done yet
-    @challenge = Challenge.not_taken_by(current_user).sample
+    @challenge = Challenge.not_taken_by(current_user).where(active: true).sample
     # To prevent the generation of a new challenge everytime the user goes to "my_challenge",
     # If current_user already has generated a user_challenge for today, reassign it to @challenge
     @user_challenge = current_user.user_challenges.today.last
