@@ -1,12 +1,12 @@
 <% if user_signed_in? %>
-<canvas id="canvas" width="1600" height="1000" style="position: relative"></canvas>
+<canvas id="canvas" width="2500" height="1000" style="position: relative"></canvas>
 <div class="jumbotron jumbotronstyle" style="position: absolute; background-color: #0e0e0e66;">
   <div class="flex1"><h1 style="font-family: Montserrat !important;">Welcome Back <%= current_user.username %></h1></div>
   <div class="flex2"><p style="font-family: Montserrat !important;">Check your daily challenge</p></div>
     <div class="flex3"><%= link_to "My challenge", my_challenge_path , class: " btn-modern take-quiz"  %></div>
 </div>
 <% else %>
-<canvas id="canvas" width="1600" height="1000" style="position: relative; "></canvas>
+<canvas id="canvas" width="2500" height="1000" style="position: relative; "></canvas>
 <div class="jumbotron jumbotronstyle" style="position: absolute; background-color: #0e0e0e66;">
   <div class="flex1"><h1 style="font-family: Montserrat !important;">Reduce your carbon footprint</h1></div>
   <div class="flex2"><p style="font-family: Montserrat !important;">Are you green enough?</p></div>
