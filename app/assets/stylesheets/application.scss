@@ -15,11 +15,12 @@
 @import "pages/index";
 
 body {
+  margin-top: 70px;
   width: 100vw;
   max-width: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
 }
   h1, h2{
   font-family: 'Quicksand', sans-serif !important;
