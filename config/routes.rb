@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :challenges, except: [:destroy] do
     resources :user_challenges, only: [:create] do
-      resources :tips, only: [:index]
+      resources :tips, only: [:index, :new, :create]
     end
   end
 

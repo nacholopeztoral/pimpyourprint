@@ -3,7 +3,15 @@
   <p><%= tip.content %></p>
   </div>
   <div class="avatar-name">
-    <%= tip.avatar%>
-    <%= tip.name %>
+    <%= tip.user.avatar%>
+    <%= tip.user.name %>
   </div>
 <% end %>
+
+<%= form_for([@challenge, @challenge_user, @tip]) do |f| %>
+ <%= f.label "Give a tip" %>
+  <%= f.text_field :content %>
+ <%= f.submit id: "btn btn-primary", class: "button-form" %>
+
+<% end %>
+
