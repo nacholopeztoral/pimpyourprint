@@ -20,4 +20,8 @@ Rails.application.routes.draw do
   resources :transportations, only: [:new, :create]
   resource :dashboard, only: :show
 
+  resources :events
+  resources :messages
+  resources :responses
+
 end
