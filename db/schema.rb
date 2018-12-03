@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_12_03_151906) do
+=======
+ActiveRecord::Schema.define(version: 2018_12_03_115356) do
+>>>>>>> 10d0ddd6678d59aeb8a82806ff2a8ea6ad3d5897
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -114,6 +118,9 @@ ActiveRecord::Schema.define(version: 2018_12_03_151906) do
     t.boolean "admin"
     t.integer "streak"
     t.string "avatar"
+    t.string "time_zone"
+    t.boolean "vegan", default: false
+    t.boolean "car", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
