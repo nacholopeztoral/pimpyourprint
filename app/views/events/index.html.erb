@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <%= link_to "Create Event", new_event_path %>
+<% @events.each do |event| %>
+    <div class="event col-xs-12 col-md-6 col-lg-6">
+      <h1><%= event.title %></h1>
+      <p>Created by <%= event.user.username %></p>
+    <%= link_to "Comment", new_event_comment_path(event.id) %>
+    <%= link_to "Read more", event %>
+    </div>
+<% end %>
+  </div>
+</div>
+
+

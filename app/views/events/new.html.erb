@@ -1,0 +1,31 @@
+<div class="form">
+  <%= form_for @event do |f| %>
+
+    <div class="form-inputs">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="form-inputs">
+      <%= f.label :description %>
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
+
+    <div class="form-inputs">
+      <%= f.label :address %>
+      <%= f.text_field :address, class: "form-control" %>
+    </div>
+
+    <div class="form-inputs">
+      <%= f.label :capacity %>
+      <%= f.select :capacity, ['10', '20', '30', 'more'], class: "form-control" %>
+    </div>
+
+    <div class="form-inputs align-center">
+      <%= f.label :city %>
+      <%= f.text_field :city, class: "button-form" %>
+    </div>
+
+    <%= f.submit id: "btn btn-primary", class: "button-form" %>
+  <% end %>
+</div>

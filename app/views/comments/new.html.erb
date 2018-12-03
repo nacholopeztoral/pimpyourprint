@@ -1,0 +1,9 @@
+<div class="form">
+  <%= form_for ([@event ,@comment]) do |f| %>
+    <div class="form-inputs">
+      <%= f.label :content %>
+      <%= f.text_field :content, class: "form-control" %>
+    </div>
+    <%= f.submit id: "btn btn-primary", class: "button-form" %>
+  <% end %>
+</div>
