@@ -19,6 +19,26 @@
       <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
+        <br>
+        <%= f.label :"Are you Vegan?" %>
+        <br>
+        <div class="space-between">
+
+       <%= f.collection_radio_buttons :vegan,
+                                      [[true, 'Yes'],
+                                      [false, 'No']],
+                                      :first, :last  %>
+        </div>
+        <br>
+      <%= f.label :"Do you own a car?" %>
+        <br>
+        <div class="space-between">
+       <%= f.collection_radio_buttons :car, [
+                                      [true, 'Yes'] ,
+                                      [false, 'No']],
+                                       :first, :last  %>
+        </div>
+
     </div>
 
     <div class="form-actions ">
