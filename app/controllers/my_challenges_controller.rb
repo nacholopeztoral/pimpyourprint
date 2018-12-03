@@ -3,7 +3,7 @@ class MyChallengesController < ApplicationController
   skip_after_action :verify_authorized, only: :index
 
   def show
-    # Radomly pick a Challenge out of the pool that the user hasn"t done yet
+    # Radomly pick a Challenge out of the pool that the user hasn't done yet
     @challenge = Challenge.not_taken_by(current_user).where(active: true).sample
     # To prevent the generation of a new challenge everytime the user goes to "my_challenge",
     # If current_user already has generated a user_challenge for today, reassign it to @challenge

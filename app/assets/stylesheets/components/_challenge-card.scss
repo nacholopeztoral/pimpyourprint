@@ -40,9 +40,9 @@
     border-radius: 10px;
     border: 1px solid $white;
   }
-  .challenge-description {
-    font-weight: lighter;
-  }
+  // .challenge-description {
+  //   font-weight: lighter;
+  // }
   .challenge-category {
     font-size: 15px;
   }
@@ -117,4 +117,8 @@
     -moz-backface-visibility: visible;
     -o-backface-visibility: visible;
   }
+}
+
+.challenge-completed {
+  font-weight: lighter;
 }
