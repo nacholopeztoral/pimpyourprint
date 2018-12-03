@@ -1,13 +1,18 @@
 <div class="container forms">
 
-<h2>Log in</h2>
+<h2 style="padding-bottom: 20px; font-family: 'Montserrat', sans-serif !important; padding-top: 60px; ">Log in</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
+    <p class="icon-form1"><i class="fas fa-at"></i></p>
     <%= f.input :email,
                 required: false,
                 autofocus: true,
-                input_html: { autocomplete: "email" } %>
+                input_html: { autocomplete: "email" },
+                label_html: { autocomplete: "email" } %>
+                <p class="icon-form2">
+                  <i class="fas fa-key"></i>
+                </p>
     <%= f.input :password,
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
@@ -15,9 +20,11 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+    <%= f.button :submit, "Log in", class:'btn btn-primary' %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
 </div>
+
+ <!-- input_html: { class: 'link-under-form' } -->

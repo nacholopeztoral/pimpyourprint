@@ -12,13 +12,17 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
-  <body">
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/side-navbar' %>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
-  </body>
+  <body>
+    <div id="main">
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/flashes' %>
+      <%= render 'shared/sidenew' %>
+      <%= yield %>
+      <%= javascript_include_tag 'application' %>
+      <%= javascript_pack_tag 'application' %>
+      <%= yield :charts_js %>
+    </div>
+</body>
+
 
 </html>

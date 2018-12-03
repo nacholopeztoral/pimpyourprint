@@ -1,5 +1,7 @@
 <div class="container-fluid">
-  <h1 class="text-center">Suggest a new Challenge !</h1>
-  <p class="text-center">Would you like to share a Challenge idea to reduce your daily carbon footprint? Let us know about it!</p>
-  <%= render 'form_new', challenge: @challenge %>
+  <% if current_user.admin? %>
+    <%= render 'form_new', challenge: @challenge %>
+  <% else %>
+    <%= render 'form_suggestion', challenge: @challenge %>
+  <% end %>
 </div>

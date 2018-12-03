@@ -1,0 +1,86 @@
+.dashboard-container {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-card {
+  margin: 10px;
+  min-width: 400px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  border-radius: 10px;
+  box-shadow: 1px 1px 17px rgba(0,0,0,0.1);
+  .dashboard-user {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 0;
+    border-bottom: 1px solid #6aa8c542;
+    h1 {
+      color: $blue;
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.dashboard-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 30px;
+  margin-bottom: 5px;
+  margin-top: 20px;
+  .dashboard-column {
+    display: flex;
+    min-width: 100px;
+    .statistic-description {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .statistic-text {
+        text-transform: uppercase;
+        font-size: 15px;
+        max-width: 120px;
+      }
+      .statistic-text.long-text {
+        max-width: 225px;
+        text-align: center;
+      }
+    }
+    .statistic-number {
+      font-size: 35px;
+      color: $green;
+      margin: 0;
+    }
+    .green-text {
+      color: $green;
+      text-align: center;
+    }
+    .red-text {
+      color: $red;
+      text-align: center;
+    }
+  }
+}
+
+#orange-text {
+  color: $orange;
+}
+
+#top-border {
+  border-top: 1px solid #6aa8c542;
+  padding: 20px;
+}
+
+#myChart {
+  border-bottom: 1px solid #6aa8c542;
+  padding-bottom: 10px;
+  margin-bottom: -10px;
+}
