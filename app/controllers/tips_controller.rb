@@ -1,6 +1,6 @@
 class TipsController < ApplicationController
   def index
-    @tips = Tips.all
+    @tips = Tip.all
     authorize @tips
   end
 
