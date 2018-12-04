@@ -10,11 +10,11 @@
 <!-- get data for user based on their transportation habits -->
 <% transportation_carbon = [] %>
 <% count = 0 %>
-<% total_carbon = 0 %>
+<% total_carbon = 0.0 %>
 <% @user.transportations.each do |t| %>
   <% key = "#{t.created_at.year}.#{t.created_at.month}.#{t.created_at.day}"%>
   <% transportation_carbon << [key, t.carbon] %>
-  <% total_carbon += t.carbon %>
+  <% total_carbon += t.carbon / 1000.0%>
   <% count += 1 %>
   <% break if count == 6 %>
 <% end %>

@@ -8,7 +8,7 @@ class AttendancesController < ApplicationController
     @attendance.attending = true
     authorize @attendance
     if @attendance.save
-      redirect_to event_path(@event)
+      redirect_to events_path
     else
       render "events/new"
     end

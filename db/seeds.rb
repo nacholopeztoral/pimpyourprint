@@ -1,18 +1,20 @@
 UserChallenge.destroy_all
 Challenge.destroy_all
+Attendance.destroy_all
+Event.destroy_all
 User.destroy_all
 Transportation.destroy_all
 
 puts "Creating Challenges and Users..."
-admin = User.new(username: "AdminUser", email:"admin@test.com", password:"admin@test.com", city: "Berlin", time_zone: "Berlin", admin: true, score: 188, streak: 4)
+admin = User.new(username: "AdminUser", email:"admin@test.com", password:"admin@test.com", city: "Berlin", time_zone: "Berlin", admin: true, score: 188, streak: 4, streak_created_at: 4.days.ago)
 admin.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543416288/PimpYourPrint/bala.jpg'
 admin.save!
 
-user = User.new(username: "Testuser", email:"test@test.com", password:"test@test.com", city: "London", time_zone: "London", score: 55, streak: 3)
+user = User.new(username: "Testuser", email:"test@test.com", password:"test@test.com", city: "London", time_zone: "London", score: 55, streak: 3, streak_created_at: 3.days.ago)
 user.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543416493/PimpYourPrint/bunny.jpg'
 user.save!
 
-jadwiga = User.new(username: "Jadwiga", email:"jadwiga@coumert.com", password:"jadwiga@coumert.com", city: "Berlin", time_zone: "Berlin", score: 155, streak: 1)
+jadwiga = User.new(username: "Jadwiga", email:"jadwiga@coumert.com", password:"jadwiga@coumert.com", city: "Berlin", time_zone: "Berlin", score: 155, streak: 1, streak_created_at: 1.days.ago)
 jadwiga.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543580300/profil-picture.jpg'
 jadwiga.save!
 
