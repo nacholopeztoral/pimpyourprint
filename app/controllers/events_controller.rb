@@ -1,8 +1,8 @@
 class EventsController < ApplicationController
-    def index
+  def index
     @events = policy_scope(Event)
     authorize @events
-    end
+  end
 
   def show
     @event = Event.find(params[:id])
@@ -28,13 +28,13 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event)
-          .permit(
-            :user_id,
-            :title,
-            :description,
-            :address,
-            :capacity,
-            :city
-          )
+    .permit(
+      :user_id,
+      :title,
+      :description,
+      :address,
+      :capacity,
+      :city
+      )
   end
 end

@@ -5,15 +5,23 @@
     margin-top: 0 !important;
   }
   .event-card-container {
-        width: 100vw !important;
+    width: 100vw !important;
   }
   .events-box {
-        width: 100vw !important;
+    width: 100vw !important;
   }
   .event-link {
     margin: 10px;
   }
   .event-links {
     margin-top: 15px;
+  }
+
+  .event-box-grown {
+    height: 615px !important;
+  }
+  .popup-content.show {
+    width: 333px;
+    right: 19px;
   }
 }
