@@ -20,6 +20,7 @@
 }
 
 
+
 /* The navigation menu links */
 .sidenav a {
   padding: 8px 8px 8px 32px;
@@ -28,24 +29,26 @@
   color: #818181;
   display: block;
   transition: 0.3s;
+
   // text-shadow: 1px 1px #a7a7a7;
 }
 .sidenav a:hover, .offcanvas a:focus{
+
     color: #f1f1f1;
-}
+  }
 
 /* Position and style the close button (top right corner) */
 .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 70px;
-    margin-left: 50px;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 70px;
+  margin-left: 50px;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
-    transition: margin-left .5s;
+  transition: margin-left .5s;
 }
 
 svg#icoOpen:hover {
@@ -54,7 +57,7 @@ svg#icoOpen:hover {
   backface-visibility: hidden;
   perspective: 1000px;
 }
- #closebtn:hover {
+#closebtn:hover {
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
@@ -65,9 +68,9 @@ div.hr-width {
   width: 95%;
 }
 @media only screen and (max-width:400px) {
-div.hr-width {
-  width: 80%;
-}
+  div.hr-width {
+    width: 80%;
+  }
 }
 
 

@@ -12,7 +12,7 @@ class User < ApplicationRecord
   validates :time_zone, presence: true
   validates :username, uniqueness: true, presence: true
   validates :city, presence: true
-
+  validates :events, uniqueness: { scope: :user }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

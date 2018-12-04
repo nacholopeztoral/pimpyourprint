@@ -21,6 +21,10 @@ class AttendancePolicy < ApplicationPolicy
       false
     end
 
+    def destroy?
+      true
+    end
+
     def activation?
       false
     end
