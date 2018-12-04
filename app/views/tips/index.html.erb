@@ -1,0 +1,21 @@
+<div class="tip-container">
+<% @tips.each do |tip| %>
+ <div class="tip">
+    <div class="avatar-name">
+      <%= image_tag tip.user.avatar.url, class: "avatar-tip" %>
+      <%= tip.user.username %>
+    </div>
+    <div class="content">
+      <p><%= tip.content %></p>
+      <p class ="tip-created-at"> Created <%= tip.created_at.strftime("%d/%m/%Y - %H:%M:%S")  %></p>
+    </div>
+ </div>
+<% end %>
+
+<%= form_for([@challenge, @challenge_user, @tip]) do |f| %>
+ <%= f.label "Give a tip" %>
+  <%= f.text_field :content %>
+ <%= f.submit id: "btn btn-primary", class: "button-form" %>
+<% end %>
+</div>
+

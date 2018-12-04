@@ -17,10 +17,21 @@ class MyChallengesController < ApplicationController
       end
     end
 
+
+    # To prevent the generation of a new challenge everytime the user goes to "my_challenge",
+    # If current_user already has generated a user_challenge for today, reassign it to @challenge
+    @user_challenge = current_user.user_challenges.today.last
+
     @challenge = @user_challenge.challenge if @user_challenge.present?
+    @tips = policy_scope(Tip).order(created_at: :desc)
+    @tip = Tip.new
+
 
     redirect_to dashboard_path flash[:alert] = "You have fulfilled all the challenges! Feel free to suggest new ones." if @challenge.nil?
-    authorize @challenge, policy_class: ChallengePolicy
+#     authorize @challenge, policy_class: ChallengePolicy
+
+    skip_authorization
+
   end
 
   def index

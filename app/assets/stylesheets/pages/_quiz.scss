@@ -53,8 +53,8 @@
       color: #6AA8C5;
       &:hover {
         background-color: $light-gray;
-        color: $gray;
-        cursor: none;
+        color: #6AA8C5;
+        cursor: default;
       }
     }
 }
