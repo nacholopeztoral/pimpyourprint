@@ -121,7 +121,7 @@ event_challenge = Challenge.new(title: "Join a Pimp Your Print event in your cit
                     category: "other",
                     description:"To get things in the move, nothing is best than to do it together!",
                     carbon: 0,
-                    active: true
+                    active: false
                     )
 event_challenge.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543423622/PimpYourPrint/event.jpg'
 event_challenge.save!
@@ -184,7 +184,7 @@ dry_clothes = Challenge.new(title: "Hang your clothes to dry them",
                     category: "energy",
                     description:"Skip the dryer, that uses too much energy",
                     carbon: 80,
-                    active: false
+                    active: true
                     )
 dry_clothes.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543423076/PimpYourPrint/dry-clothes.jpg'
 dry_clothes.save!
@@ -209,8 +209,5 @@ u2.save
 u3 = UserChallenge.new(user_id: admin.id, completed: true, challenge_id: heating.id)
 u3.created_at = 3.days.ago
 u3.save
-
-u4 = UserChallenge.new(user_id: admin.id, challenge_id: dry_clothes.id)
-u4.save
 
 puts "Seeding completed"

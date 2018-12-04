@@ -11,12 +11,17 @@ class MyChallengesController < ApplicationController
       @challenge = Challenge.not_taken_by(current_user).where(active: true).sample
     end
 
-    @user_challenge = current_user.user_challenges.today.last
+    unless current_user.user_challenges.last.nil?
+      if current_user.user_challenges.last.created_at.in_time_zone(current_user.time_zone).to_date == Time.current.in_time_zone(current_user.time_zone).to_date
+        @user_challenge = current_user.user_challenges.last
+      end
+    end
+
     @challenge = @user_challenge.challenge if @user_challenge.present?
 
     redirect_to dashboard_path flash[:alert] = "You have fulfilled all the challenges! Feel free to suggest new ones." if @challenge.nil?
     authorize @challenge, policy_class: ChallengePolicy
-end
+  end
 
   def index
     @challenges = current_user.challenges.where(user_challenges: {completed: true})
