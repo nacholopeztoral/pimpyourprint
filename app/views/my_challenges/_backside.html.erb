@@ -2,7 +2,7 @@
   <div class="challenge-title">
     <%= challenge.title %>
   </div>
-    <div class="challenge-picture" style="background-image: url(<%= cl_image_path @challenge.picture, height: 180, crop: :fill %>); background-repeat: no-repeat; background-size: cover"></div>
+  <div class="challenge-picture" style="background-image: url(<%= cl_image_path challenge.picture, height: 180, crop: :fill %>); background-repeat: no-repeat; background-size: cover"></div>
   <div class="challenge-description">
     <%= challenge.description %>
   </div>
@@ -15,10 +15,8 @@
   <% else %>
     <%= link_to 'To Dashboard', dashboard_path, class:'btn btn-secondary' %>
   <% end %>
-  <div class="challenge-tip fas fa-info-circle">
-     <!-- <%= link_to challenge_tips_path(challenge)%> -->
+  <div class="challenge-tip fas fa-info-circle"></div>
+  <div class="tips-show tips-show-hidden">
+    <%= render 'tips', challenge: @challenge,challenge_user: @challenge_user, tip:@tip, tips: @tips %>
   </div>
-       <div class="tips-show tips-show-hidden">
-         <%= render 'tips', challenge: @challenge,challenge_user: @challenge_user, tip:@tip, tips: @tips %>
-       </div>
 </div>
