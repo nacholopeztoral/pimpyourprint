@@ -48,7 +48,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
                                                        :vegan,
                                                        :car,
                                                        :city,
-                                                       :time_zone])
+                                                       :time_zone,
+                                                       :streak_created_at])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
@@ -59,7 +60,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
                                                               :city,
                                                               :vegan,
                                                               :car,
-                                                              :time_zone])
+                                                              :time_zone,
+                                                              :streak_created_at])
   end
 
   # The path used after sign up.

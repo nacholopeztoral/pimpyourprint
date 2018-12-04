@@ -11,12 +11,28 @@ class MyChallengesController < ApplicationController
       @challenge = Challenge.not_taken_by(current_user).where(active: true).sample
     end
 
+    unless current_user.user_challenges.last.nil?
+      if current_user.user_challenges.last.created_at.in_time_zone(current_user.time_zone).to_date == Time.current.in_time_zone(current_user.time_zone).to_date
+        @user_challenge = current_user.user_challenges.last
+      end
+    end
+
+
+    # To prevent the generation of a new challenge everytime the user goes to "my_challenge",
+    # If current_user already has generated a user_challenge for today, reassign it to @challenge
     @user_challenge = current_user.user_challenges.today.last
+
     @challenge = @user_challenge.challenge if @user_challenge.present?
+    @tips = policy_scope(Tip).order(created_at: :desc)
+    @tip = Tip.new
+
 
     redirect_to dashboard_path flash[:alert] = "You have fulfilled all the challenges! Feel free to suggest new ones." if @challenge.nil?
-    authorize @challenge, policy_class: ChallengePolicy
-end
+#     authorize @challenge, policy_class: ChallengePolicy
+
+    skip_authorization
+
+  end
 
   def index
     @challenges = current_user.challenges.where(user_challenges: {completed: true})

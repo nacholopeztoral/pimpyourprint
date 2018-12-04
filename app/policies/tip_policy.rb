@@ -9,7 +9,7 @@ class TipPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    record.challenge.taken_by?(user) || user.admin
   end
 
   def new?

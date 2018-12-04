@@ -1,0 +1,66 @@
+.about-banner {
+  height: 25vh;
+  background-image: url('https://images.unsplash.com/photo-1472313420546-a46e561861d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  color:white;
+  box-shadow:-2px -2px 4px 3px #87878770;
+}
+
+.about-text-container {
+  text-align: center;
+  p {
+    max-width: 1000px;
+    margin: auto;
+    text-align: initial;
+  }
+}
+
+.meet-the-team {
+  background-color: rgba(0, 107, 134, 0.7);
+  padding: 10px;
+  max-width: 1000px;
+  max-height: 100vh;
+  color: $white;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.profile-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100vw;
+  max-width: 1000px;
+  margin-bottom: 20px;
+  margin: auto;
+  .profile-card {
+    position: relative;
+    height: 180px;
+    width: 180px;
+    margin: 5px auto;
+    .profile-picture {
+      left: 0;
+      position: absolute;
+    }
+    .profile-name {
+      position: absolute;
+      background-color: $blue;
+      color: $white;
+      width: max-content;
+      padding: 3px;
+      bottom: 0px;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      &:hover {
+        background-color: $darkblue;
+      }
+    }
+  }
+}
+

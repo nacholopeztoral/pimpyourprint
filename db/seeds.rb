@@ -6,73 +6,85 @@ User.destroy_all
 Transportation.destroy_all
 
 puts "Creating Challenges and Users..."
-admin = User.new(username: "AdminUser", email:"admin@test.com", password:"admin@test.com", city: "Berlin", time_zone: "Berlin", admin: true, score: 188, streak: 4)
+
+admin = User.new(username: "AdminUser", email:"admin@test.com", password:"admin@test.com", city: "Berlin", time_zone: "Berlin", admin: true, score: 188, streak: 4, streak_created_at: 4.days.ago)
 admin.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543416288/PimpYourPrint/bala.jpg'
 admin.save!
 
-user = User.new(username: "Testuser", email:"test@test.com", password:"test@test.com", city: "London", time_zone: "London", score: 55, streak: 3)
+user = User.new(username: "Testuser", email:"test@test.com", password:"test@test.com", city: "London", time_zone: "London", score: 55, streak: 3, streak_created_at: 3.days.ago)
 user.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543416493/PimpYourPrint/bunny.jpg'
 user.save!
 
-jadwiga = User.new(username: "Jadwiga", email:"jadwiga@coumert.com", password:"jadwiga@coumert.com", city: "Berlin", time_zone: "Berlin", score: 155, streak: 1)
+jadwiga = User.new(username: "Jadwiga", email:"jadwiga@coumert.com", password:"jadwiga@coumert.com", city: "Berlin", time_zone: "Berlin", score: 155, streak: 1, streak_created_at: 1.days.ago)
 jadwiga.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543580300/profil-picture.jpg'
 jadwiga.save!
 
-t1 = Transportation.new(user_id: admin.id, carbon: 147)
+t1 = Transportation.new(user_id: admin.id, carbon: 147000)
 t1.created_at = (rand*10).days.ago
 t1.save
-t2 = Transportation.new(user_id: admin.id, carbon: 280)
+t2 = Transportation.new(user_id: admin.id, carbon: 280000)
 t2.created_at = (rand*10).days.ago
 t2.save
-t3 = Transportation.new(user_id: admin.id, carbon: 18)
+t3 = Transportation.new(user_id: admin.id, carbon: 18000)
 t3.created_at = (rand*10).days.ago
 t3.save
 t4 = Transportation.new(user_id: admin.id, carbon: 0)
 t4.created_at = (rand*10).days.ago
 t4.save
-t5 = Transportation.new(user_id: admin.id, carbon: 22)
+t5 = Transportation.new(user_id: admin.id, carbon: 22000)
 t5.created_at = (rand*10).days.ago
 t5.save
-t6 = Transportation.new(user_id: admin.id, carbon: 35)
+t6 = Transportation.new(user_id: admin.id, carbon: 35000)
 t6.created_at = (rand*10).days.ago
 t6.save
-t7 = Transportation.new(user_id: admin.id, carbon: 11)
+t7 = Transportation.new(user_id: admin.id, carbon: 11000)
 t7.created_at = (rand*10).days.ago
 t7.save
-t8 = Transportation.new(user_id: admin.id, carbon: 101)
+t8 = Transportation.new(user_id: admin.id, carbon: 101000)
 t8.created_at = (rand*10).days.ago
 t8.save
-t9 = Transportation.new(user_id: admin.id, carbon: 177)
+t9 = Transportation.new(user_id: admin.id, carbon: 177000)
 t9.created_at = (rand*10).days.ago
 t9.save
-t10 = Transportation.new(user_id: admin.id, carbon: 32)
+t10 = Transportation.new(user_id: admin.id, carbon: 32000)
 t10.created_at = (rand*10).days.ago
 t10.save
 
-jadwiga_t1 = Transportation.new(user_id: jadwiga.id, carbon: 147)
+jadwiga_t1 = Transportation.new(user_id: jadwiga.id, carbon: 147000)
 jadwiga_t1.created_at = 1.day.ago
 jadwiga_t1.save
-jadwiga_t2 = Transportation.new(user_id: jadwiga.id, carbon: 280)
+jadwiga_t2 = Transportation.new(user_id: jadwiga.id, carbon: 280000)
 jadwiga_t2.created_at = 2.days.ago
 jadwiga_t2.save
-jadwiga_t3 = Transportation.new(user_id: jadwiga.id, carbon: 18)
+jadwiga_t3 = Transportation.new(user_id: jadwiga.id, carbon: 18000)
 jadwiga_t3.created_at = 3.days.ago
 jadwiga_t3.save
 jadwiga_t4 = Transportation.new(user_id: jadwiga.id, carbon: 0)
 jadwiga_t4.created_at = 4.days.ago
 jadwiga_t4.save
-jadwiga_t5 = Transportation.new(user_id: jadwiga.id, carbon: 22)
+jadwiga_t5 = Transportation.new(user_id: jadwiga.id, carbon: 22000)
 jadwiga_t5.created_at = 5.days.ago
 jadwiga_t5.save
-jadwiga_t6 = Transportation.new(user_id: jadwiga.id, carbon: 35)
+jadwiga_t6 = Transportation.new(user_id: jadwiga.id, carbon: 35000)
 jadwiga_t6.created_at = 6.days.ago
 jadwiga_t6.save
 
-Transportation.new(user_id: user.id, carbon: 53).save!
-Transportation.new(user_id: user.id, carbon: 12).save!
-Transportation.new(user_id: user.id, carbon: 99).save!
-Transportation.new(user_id: user.id, carbon: 163).save!
-Transportation.new(user_id: user.id, carbon: 12).save!
+user_t1 = Transportation.new(user_id: user.id, carbon: 53000)
+user_t1.created_at = 1.day.ago
+user_t1.save
+user_t2 = Transportation.new(user_id: user.id, carbon: 12000)
+user_t2.created_at = 2.days.ago
+user_t2.save
+user_t3 = Transportation.new(user_id: user.id, carbon: 99000)
+user_t3.created_at = 3.days.ago
+user_t3.save
+user_t4 = Transportation.new(user_id: user.id, carbon: 163000)
+user_t4.created_at = 4.days.ago
+user_t4.save
+user_t5 = Transportation.new(user_id: user.id, carbon: 12000)
+user_t5.created_at = 5.days.ago
+user_t5.save
+
 
 meat = Challenge.new(title: "A day without eating meat",
                     category: "nutrition",
@@ -123,7 +135,7 @@ event_challenge = Challenge.new(title: "Join a Pimp Your Print event in your cit
                     category: "other",
                     description:"To get things in the move, nothing is best than to do it together!",
                     carbon: 0,
-                    active: true
+                    active: false
                     )
 event_challenge.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543423622/PimpYourPrint/event.jpg'
 event_challenge.save!
@@ -186,7 +198,7 @@ dry_clothes = Challenge.new(title: "Hang your clothes to dry them",
                     category: "energy",
                     description:"Skip the dryer, that uses too much energy",
                     carbon: 80,
-                    active: false
+                    active: true
                     )
 dry_clothes.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543423076/PimpYourPrint/dry-clothes.jpg'
 dry_clothes.save!
@@ -211,8 +223,5 @@ u2.save
 u3 = UserChallenge.new(user_id: admin.id, completed: true, challenge_id: heating.id)
 u3.created_at = 3.days.ago
 u3.save
-
-u4 = UserChallenge.new(user_id: admin.id, challenge_id: dry_clothes.id)
-u4.save
 
 puts "Seeding completed"
