@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="event col-xs-12 col-md-12 col-lg-12">
+      <div class="head-event">
+        <div class="created-by">
+          <img src="https://source.unsplash.com/random" alt="" class="img-event">
+        </div>
+        <h1><%= @event.title %></h1>
+      </div>
+      <p style="text-align: -webkit-center;">Created by <strong><%= @event.user.username %></strong></p>
+      <p style="text-align: -webkit-center;">Capacity of <%= @event.capacity %> people</p>
+
+<div class="row">
+
+        <div class="col-xs-12 col-md-3 col-lg-2">
+          <div class="buttons-event">
+            <%= link_to "Back", events_path, class: 'button-event' %>
+              <%= link_to "Join", event_attendances_path(@event), method: :post, class: 'button-event' %>
+              <%= link_to "Comment", new_event_comment_path(@event), class: 'button-event' %></div>
+          </div>
+
+        <div class="col-xs-12 col-md-9 col-lg-9">
+          <p class="description"><%= @event.description %></p>
+        </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
