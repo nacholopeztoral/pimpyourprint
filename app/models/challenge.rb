@@ -6,9 +6,7 @@ class Challenge < ApplicationRecord
 
   validates :title, presence: true, uniqueness: true
   validates :description, presence: true
-  # Add array of categories in the future
   validates :category, inclusion: { in: %w(plastic energy nutrition water waste transportation other) }
-  validates :picture, presence: true
 
   scope :for_vegan, -> { where.not(category: 'nutrition')}
   scope :no_car, -> { where.not(category: 'transportation')}

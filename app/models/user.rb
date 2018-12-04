@@ -6,11 +6,9 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :responses, dependent: :destroy
   has_many :transportations, dependent: :destroy
-
-  has_many :events, :through => :attendances
+  has_many :events, through: :attendances
 
   validates :time_zone, presence: true
-
   validates :username, uniqueness: true, presence: true
   validates :city, presence: true
 
