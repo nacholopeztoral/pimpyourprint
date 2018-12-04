@@ -31,8 +31,8 @@ class DashboardsController < ApplicationController
     @user = current_user
     current_challenge = @user.user_challenges.last
     challenge_time = current_challenge.created_at.to_time
-    if Date.current.in_time_zone(@user.time_zone).to_date == challenge_time.to_date + 1
+    if Time.current.in_time_zone(@user.time_zone).to_date == challenge_time.to_date + 1
       return true
     end
   end
-end
+  end
