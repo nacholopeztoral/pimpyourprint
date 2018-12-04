@@ -14,6 +14,7 @@
     <%else %>
       <%= link_to "Take the Quiz", quiz_path, class: "link-side-bar" %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "link-side-bar" %>
+      <%= link_to t(".sign_up", default: "Sign up"), new_user_registration_path, class: "link-side-bar" %>
     <% end %>
   </ul>
 </div>
