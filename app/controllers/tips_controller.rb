@@ -24,6 +24,9 @@ class TipsController < ApplicationController
       @tips = policy_scope(Tip).order(created_at: :desc)
       redirect_to my_challenge_path
     end
+
+  # @challenge_id = Tip.find(params[:challenge_id])
+  # @challenge_id = @challenges
   end
 
   private
