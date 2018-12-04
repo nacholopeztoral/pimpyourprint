@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
   resources :challenges, except: [:destroy] do
-    resources :user_challenges, only: :create
+    resources :user_challenges, only: [:create]
+    resources :tips, only: [:index, :new, :create]
   end
 
   get 'activation/:id', to: 'challenges#activation', as: :activation
