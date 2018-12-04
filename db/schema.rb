@@ -111,7 +111,7 @@ ActiveRecord::Schema.define(version: 2018_12_03_151906) do
     t.string "username"
     t.integer "score"
     t.string "city"
-    t.boolean "admin"
+    t.boolean "admin", default: false
     t.integer "streak"
     t.string "avatar"
     t.string "time_zone"
