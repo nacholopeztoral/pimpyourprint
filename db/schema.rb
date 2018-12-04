@@ -111,12 +111,12 @@ ActiveRecord::Schema.define(version: 2018_12_03_151906) do
     t.string "username"
     t.integer "score"
     t.string "city"
-    t.boolean "admin"
+    t.boolean "admin", default: false
     t.integer "streak"
     t.string "avatar"
-    t.string "time_zone"
     t.boolean "vegan", default: false
     t.boolean "car", default: false
+    t.string "time_zone"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

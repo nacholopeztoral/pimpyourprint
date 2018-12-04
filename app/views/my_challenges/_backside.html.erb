@@ -15,10 +15,10 @@
   <% else %>
     <%= link_to 'To Dashboard', dashboard_path, class:'btn btn-secondary' %>
   <% end %>
-  <div class="challenge-tip">
-    <%= link_to challenge_user_challenge_tips_path(@challenge, @user_challenge)  do
-      %>
-    <i class="fas fa-info-circle"></i>
-    <% end %>
+  <div class="challenge-tip fas fa-info-circle">
+     <!-- <%= link_to challenge_tips_path(challenge)%> -->
   </div>
+       <div class="tips-show tips-show-hidden">
+         <%= render 'tips', challenge: @challenge,challenge_user: @challenge_user, tip:@tip, tips: @tips %>
+       </div>
 </div>

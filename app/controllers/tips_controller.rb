@@ -1,10 +1,9 @@
 class TipsController < ApplicationController
   def index
     @challenge = Challenge.find(params[:challenge_id])
-    @challenge_user = UserChallenge.find(params[:user_challenge_id])
     @tips = policy_scope(Tip).order(created_at: :desc)
     @tip = Tip.new
-    authorize @tips
+    authorize @challenge, :show?
   end
 
   def new
@@ -14,17 +13,17 @@ class TipsController < ApplicationController
   end
 
   def create
-  @challenge = Challenge.find(params[:challenge_id])
-  @challenge_user = UserChallenge.find(params[:user_challenge_id])
-  @tip = Tip.new(tip_params)
-  @tip.challenge = @challenge
-  @tip.user = current_user
-   authorize @tip
-  #  if @tip.save
-  #   render 'index'
-  # else
-  #   render 'new'
-  # end
+    @challenge = Challenge.find(params[:challenge_id])
+    @tip = Tip.new(tip_params)
+    @tip.challenge = @challenge
+    @tip.user = current_user
+    authorize @tip
+    if @tip.save
+      redirect_to my_challenge_path
+    else
+      @tips = policy_scope(Tip).order(created_at: :desc)
+      redirect_to my_challenge_path
+    end
   end
 
   private
