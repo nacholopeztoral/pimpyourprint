@@ -37,12 +37,17 @@ class DashboardsController < ApplicationController
   def calculate_score
     @user = current_user
     carbon_from_transport = 0.00
-    @user.transportations.each do |t|
-      carbon_from_transport += t.carbon / 1000.00
+    if @user.transportations
+      @user.transportations.each do |t|
+        carbon_from_transport += t.carbon / 1000.00
+      end
     end
     @user.score = 0 if @user.score.nil?
-    @user.score = @user.user_challenges.count(&:completed) * 15 +
-                  2 * @user.highest_streak - carbon_from_transport / 50
+    if @user.user_challenges
+      @user.score = @user.user_challenges.count(&:completed) * 15 +
+                    2 * @user.highest_streak - carbon_from_transport / 500
+    end
+    @user.score = 0 if @user.score < 0
     @user.save
     authorize @user
   end

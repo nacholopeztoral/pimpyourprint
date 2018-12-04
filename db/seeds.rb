@@ -16,61 +16,61 @@ jadwiga = User.new(username: "Jadwiga", email:"jadwiga@coumert.com", password:"j
 jadwiga.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543580300/profil-picture.jpg'
 jadwiga.save!
 
-t1 = Transportation.new(user_id: admin.id, carbon: 147)
+t1 = Transportation.new(user_id: admin.id, carbon: 147000)
 t1.created_at = (rand*10).days.ago
 t1.save
-t2 = Transportation.new(user_id: admin.id, carbon: 280)
+t2 = Transportation.new(user_id: admin.id, carbon: 280000)
 t2.created_at = (rand*10).days.ago
 t2.save
-t3 = Transportation.new(user_id: admin.id, carbon: 18)
+t3 = Transportation.new(user_id: admin.id, carbon: 18000)
 t3.created_at = (rand*10).days.ago
 t3.save
 t4 = Transportation.new(user_id: admin.id, carbon: 0)
 t4.created_at = (rand*10).days.ago
 t4.save
-t5 = Transportation.new(user_id: admin.id, carbon: 22)
+t5 = Transportation.new(user_id: admin.id, carbon: 22000)
 t5.created_at = (rand*10).days.ago
 t5.save
-t6 = Transportation.new(user_id: admin.id, carbon: 35)
+t6 = Transportation.new(user_id: admin.id, carbon: 35000)
 t6.created_at = (rand*10).days.ago
 t6.save
-t7 = Transportation.new(user_id: admin.id, carbon: 11)
+t7 = Transportation.new(user_id: admin.id, carbon: 11000)
 t7.created_at = (rand*10).days.ago
 t7.save
-t8 = Transportation.new(user_id: admin.id, carbon: 101)
+t8 = Transportation.new(user_id: admin.id, carbon: 101000)
 t8.created_at = (rand*10).days.ago
 t8.save
-t9 = Transportation.new(user_id: admin.id, carbon: 177)
+t9 = Transportation.new(user_id: admin.id, carbon: 177000)
 t9.created_at = (rand*10).days.ago
 t9.save
-t10 = Transportation.new(user_id: admin.id, carbon: 32)
+t10 = Transportation.new(user_id: admin.id, carbon: 32000)
 t10.created_at = (rand*10).days.ago
 t10.save
 
-jadwiga_t1 = Transportation.new(user_id: jadwiga.id, carbon: 147)
+jadwiga_t1 = Transportation.new(user_id: jadwiga.id, carbon: 147000)
 jadwiga_t1.created_at = 1.day.ago
 jadwiga_t1.save
-jadwiga_t2 = Transportation.new(user_id: jadwiga.id, carbon: 280)
+jadwiga_t2 = Transportation.new(user_id: jadwiga.id, carbon: 280000)
 jadwiga_t2.created_at = 2.days.ago
 jadwiga_t2.save
-jadwiga_t3 = Transportation.new(user_id: jadwiga.id, carbon: 18)
+jadwiga_t3 = Transportation.new(user_id: jadwiga.id, carbon: 18000)
 jadwiga_t3.created_at = 3.days.ago
 jadwiga_t3.save
 jadwiga_t4 = Transportation.new(user_id: jadwiga.id, carbon: 0)
 jadwiga_t4.created_at = 4.days.ago
 jadwiga_t4.save
-jadwiga_t5 = Transportation.new(user_id: jadwiga.id, carbon: 22)
+jadwiga_t5 = Transportation.new(user_id: jadwiga.id, carbon: 22000)
 jadwiga_t5.created_at = 5.days.ago
 jadwiga_t5.save
-jadwiga_t6 = Transportation.new(user_id: jadwiga.id, carbon: 35)
+jadwiga_t6 = Transportation.new(user_id: jadwiga.id, carbon: 35000)
 jadwiga_t6.created_at = 6.days.ago
 jadwiga_t6.save
 
-Transportation.new(user_id: user.id, carbon: 53).save!
-Transportation.new(user_id: user.id, carbon: 12).save!
-Transportation.new(user_id: user.id, carbon: 99).save!
-Transportation.new(user_id: user.id, carbon: 163).save!
-Transportation.new(user_id: user.id, carbon: 12).save!
+Transportation.new(user_id: user.id, carbon: 53000).save!
+Transportation.new(user_id: user.id, carbon: 12000).save!
+Transportation.new(user_id: user.id, carbon: 99000).save!
+Transportation.new(user_id: user.id, carbon: 163000).save!
+Transportation.new(user_id: user.id, carbon: 12000).save!
 
 meat = Challenge.new(title: "A day without eating meat",
                     category: "nutrition",
