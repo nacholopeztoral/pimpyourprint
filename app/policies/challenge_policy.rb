@@ -11,7 +11,7 @@ class ChallengePolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    record.taken_by?(user) || user.admin?
   end
 
   def new?

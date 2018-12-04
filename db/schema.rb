@@ -114,11 +114,11 @@ ActiveRecord::Schema.define(version: 2018_12_04_143228) do
     t.boolean "admin", default: false
     t.integer "streak"
     t.string "avatar"
-    t.string "time_zone"
     t.boolean "vegan", default: false
     t.boolean "car", default: false
     t.datetime "streak_created_at"
     t.integer "highest_streak", default: 0
+    t.string "time_zone"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
