@@ -28,7 +28,7 @@ class MyChallengesController < ApplicationController
 
 
     redirect_to dashboard_path flash[:alert] = "You have fulfilled all the challenges! Feel free to suggest new ones." if @challenge.nil?
-#     authorize @challenge, policy_class: ChallengePolicy
+    # authorize @challenge, policy_class: ChallengePolicy
 
     skip_authorization
 

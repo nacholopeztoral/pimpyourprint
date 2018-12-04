@@ -1,9 +1,9 @@
-<div class="banner-quiz">
-
+<div class="quiz-intro-banner">
+  <h2>Your quiz result is:</h2>
+</div>
   <div class="container quiz_result">
     <div class="quiz-result-box">
       <p class="score"><%= @score %></p>
-        <p>Your result is:</p>
           <% case %>
               <% when @score <= 10 then status = " Damn! You are so green! Challenge yourself even more" %>
               <h4 class="quiz_status"><%= status %></h4>
@@ -15,5 +15,5 @@
     </div>
       <%= link_to "Sign up, be green", new_user_registration_path , class: "btn btn-success quiz_singup"  %>
   </div>
-</div>
+
 

@@ -17,8 +17,9 @@
     <%= form_for([challenge, challenge_user, tip]) do |f| %>
      <%= f.label "Give a tip" %>
       <div class="tip-form-content">
-      <%= f.text_field :content %>
-     <%= f.submit id: "btn btn-primary", class: " btn btn-secondary button-form" %>
+        <%= text_area(:content, :text, rows: 3) %>
+<!--       <%= f.text_field :content %>
+ -->     <%= f.submit id: "btn btn-primary", class: " btn btn-secondary button-form" %>
       </div>
     <% end %>
   </div>
