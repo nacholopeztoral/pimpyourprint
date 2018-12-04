@@ -13,7 +13,7 @@
 <% total_carbon = 0.0 %>
 <% @user.transportations.each do |t| %>
   <% key = "#{t.created_at.year}.#{t.created_at.month}.#{t.created_at.day}"%>
-  <% transportation_carbon << [key, t.carbon] %>
+  <% transportation_carbon << [key, t.carbon / 1000.0] %>
   <% total_carbon += t.carbon / 1000.0%>
   <% count += 1 %>
   <% break if count == 6 %>
