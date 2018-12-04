@@ -12,6 +12,7 @@
       <%= link_to "Suggest new challenge", new_challenge_path, class: "link-side-bar" %>
       <%= link_to t(".sign_in", default: "Logout"), destroy_user_session_path, method: :delete, class: "link-side-bar" %>
     <%else %>
+      <%= link_to "Take the Quiz", quiz_path, class: "link-side-bar" %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "link-side-bar" %>
     <% end %>
   </ul>

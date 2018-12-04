@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_03_115356) do
+ActiveRecord::Schema.define(version: 2018_12_03_151906) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attendances", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "attending"
+    t.index ["event_id"], name: "index_attendances_on_event_id"
+    t.index ["user_id"], name: "index_attendances_on_user_id"
+  end
 
   create_table "challenges", force: :cascade do |t|
     t.string "category"
@@ -24,6 +34,42 @@ ActiveRecord::Schema.define(version: 2018_12_03_115356) do
     t.datetime "updated_at", null: false
     t.string "title"
     t.boolean "active", default: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "event_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_comments_on_event_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "address"
+    t.integer "capacity"
+    t.date "start_date"
+    t.time "start_time"
+    t.date "end_date"
+    t.time "end_time"
+    t.string "city"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "responses", force: :cascade do |t|
+    t.bigint "comment_id"
+    t.bigint "user_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_responses_on_comment_id"
+    t.index ["user_id"], name: "index_responses_on_user_id"
   end
 
   create_table "tips", force: :cascade do |t|
@@ -70,10 +116,18 @@ ActiveRecord::Schema.define(version: 2018_12_03_115356) do
     t.string "avatar"
     t.boolean "vegan", default: false
     t.boolean "car", default: false
+    t.string "time_zone"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "attendances", "events"
+  add_foreign_key "attendances", "users"
+  add_foreign_key "comments", "events"
+  add_foreign_key "comments", "users"
+  add_foreign_key "events", "users"
+  add_foreign_key "responses", "comments"
+  add_foreign_key "responses", "users"
   add_foreign_key "tips", "challenges"
   add_foreign_key "tips", "users"
   add_foreign_key "transportations", "users"

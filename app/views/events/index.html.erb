@@ -1,0 +1,26 @@
+
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <% @events.each do |event| %>
+    <div class="event-index col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
+          <div class="flex-event" style= "justify-content: space-evenly;">
+            <img style="height: 145px;width: 145px; border-radius: 50%;" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt="">
+                    <h4><%= event.title %></h4>
+                <p>Created by <%= event.user.username %></p>
+          </div>
+
+
+      <%= link_to "Comment", new_event_comment_path(event.id), class: 'event-link' %>
+      <%= link_to "Read more", event, class: 'event-link' %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+    <%= link_to "Create Event", new_event_path %>
+

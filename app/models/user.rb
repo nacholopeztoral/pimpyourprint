@@ -3,11 +3,14 @@ class User < ApplicationRecord
   has_many :user_challenges, dependent: :destroy
   has_many :challenges, through: :user_challenges
   has_many :tips, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :responses, dependent: :destroy
   has_many :transportations, dependent: :destroy
+  has_many :events, through: :attendances
 
-  # validates :username, uniqueness: true, presence: true
-  # validates :city, presence: true
-
+  validates :time_zone, presence: true
+  validates :username, uniqueness: true, presence: true
+  validates :city, presence: true
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

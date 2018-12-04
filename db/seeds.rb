@@ -4,19 +4,19 @@ User.destroy_all
 Transportation.destroy_all
 
 puts "Creating Challenges and Users..."
-admin = User.new(username: "AdminUser", email:"admin@test.com", password:"admin@test.com", city: "Berlin", admin: true, score: 188, streak: 4)
+admin = User.new(username: "AdminUser", email:"admin@test.com", password:"admin@test.com", city: "Berlin", time_zone: "Berlin", admin: true, score: 188, streak: 4)
 admin.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543416288/PimpYourPrint/bala.jpg'
 admin.save!
 
-user = User.new(username: "Testuser", email:"test@test.com", password:"test@test.com", city: "Berlin", score: 55, streak: 3)
+user = User.new(username: "Testuser", email:"test@test.com", password:"test@test.com", city: "London", time_zone: "London", score: 55, streak: 3)
 user.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543416493/PimpYourPrint/bunny.jpg'
 user.save!
 
-jadwiga = User.new(username: "Jadwiga", email:"jadwiga@coumert.com", password:"jadwiga@coumert.com", city: "Berlin", score: 155, streak: 1)
+jadwiga = User.new(username: "Jadwiga", email:"jadwiga@coumert.com", password:"jadwiga@coumert.com", city: "Berlin", time_zone: "Berlin", score: 155, streak: 1)
 jadwiga.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543580300/profil-picture.jpg'
 jadwiga.save!
 
-captainplanet = User.new(username: "SuperGreen", email:"green@green.com", password:"green@green.com", city: "Berlin", score: 155, streak: 3)
+captainplanet = User.new(username: "SuperGreen", email:"green@green.com", password:"green@green.com", city: "Moscow", time_zone: "Moscow", score: 155, streak: 3)
 captainplanet.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543580300/profil-picture.jpg'
 captainplanet.save!
 
