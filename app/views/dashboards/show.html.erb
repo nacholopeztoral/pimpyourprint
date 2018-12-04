@@ -9,14 +9,11 @@
 
 <!-- get data for user based on their transportation habits -->
 <% transportation_carbon = [] %>
-<% count = 0 %>
 <% total_carbon = 0.0 %>
-<% @user.transportations.each do |t| %>
+<% @user.transportations.last(6).each do |t| %>
   <% key = "#{t.created_at.year}.#{t.created_at.month}.#{t.created_at.day}"%>
   <% transportation_carbon << [key, t.carbon / 1000.0] %>
   <% total_carbon += t.carbon / 1000.0%>
-  <% count += 1 %>
-  <% break if count == 6 %>
 <% end %>
 
 <!-- get data for all app users -->
@@ -33,6 +30,8 @@
     <div class="dashboard-user">
       <%= cl_image_tag @user.avatar, class: 'avatar-dashboard' %>
       <h1><%= @user.username %></h1>
+      <div class="btn btn-primary"><%= link_to "All my challenges",my_challenges_path %></div>
+      <div class="btn btn-primary"><%= link_to "My current challenge",my_challenge_path %></div>
     </div>
     <div class="dashboard-row">
       <div class="dashboard-column">
@@ -56,7 +55,7 @@
           <i class="fas fa-check-square"></i>
           <p class="statistic-text">challenges&nbsp;&nbsp;</p>
         </div>
-        <p><%= link_to challenges_completed, my_challenges_path, class: "statistic-number" %></p>
+        <p class="statistic-number"><%= challenges_completed %></p>
       </div>
       <div class="dashboard-column">
         <div class="statistic-description">
