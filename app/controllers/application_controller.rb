@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_action :authenticate_user!, except: [:home, :quiz, :quiz_results]
+  before_action :authenticate_user!, except: [:home, :quiz, :quiz_results, :about]
   around_action :user_time_zone, if: :current_user
 
   include Pundit

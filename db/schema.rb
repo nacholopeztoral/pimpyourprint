@@ -28,12 +28,12 @@ ActiveRecord::Schema.define(version: 2018_12_04_104052) do
   create_table "challenges", force: :cascade do |t|
     t.string "category"
     t.text "description"
-    t.integer "carbon"
+    t.integer "carbon", default: 0
     t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
-    t.boolean "active", default: true
+    t.boolean "active", default: false
   end
 
   create_table "comments", force: :cascade do |t|
@@ -109,16 +109,15 @@ ActiveRecord::Schema.define(version: 2018_12_04_104052) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
-    t.integer "score"
+    t.integer "score", default: 0
     t.string "city"
-    t.boolean "admin"
+    t.boolean "admin", default: false
     t.integer "streak"
     t.string "avatar"
-    t.string "time_zone"
     t.boolean "vegan", default: false
     t.boolean "car", default: false
+    t.string "time_zone"
     t.datetime "streak_created_at"
-
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
