@@ -1,26 +1,47 @@
-
-
-
-
-
-
 <div class="container">
-  <div class="row">
-    <% @events.each do |event| %>
-    <div class="event-index col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
-          <div class="flex-event" style= "justify-content: space-evenly;">
-            <img style="height: 145px;width: 145px; border-radius: 50%;" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt="">
-                    <h4><%= event.title %></h4>
-                <p>Created by <%= event.user.username %></p>
-          </div>
-
-
-      <%= link_to "Comment", new_event_comment_path(event.id), class: 'event-link' %>
-      <%= link_to "Read more", event, class: 'event-link' %>
+  <div class=" row flex-events-box">
+    <div class="user-box ">
+      <div>
+        <%= image_tag current_user.avatar.url,  class: "avatar-events" %>
+        <p><%= current_user.username %></p>
+        <%= link_to "Create Event", new_event_path, class: 'event-link' %>
+        <p>Future events:</p>
+        <p><% current_user.attendances.each do |attendance| %></p>
+        <ul>
+          <li style="font-size: 17px;"><%= attendance.event.title %></li>
+        </ul>
+        <% end  %>
+      </div>
     </div>
-    <% end %>
+    <div class="event-card-container">
+      <div class=" row ">
+        <% @events.each do |event| %>
+        <div class="events-box">
+          <div style="display: flex; justify-content: end;">
+            <%= image_tag current_user.avatar.url,  class: "avatar-event-creator" %>
+            <h4 class="title-event"><%= event.title %></h4>
+          </div>
+          <p>Created by <%= event.user.username %></p>
+          <div class="injection">
+            <p>Description: <%= event.description %></p>
+            <p >Capacity of <%= event.capacity %> people</p>
+
+          </div>
+          <!-- <hr class="event-hr"> -->
+          <div class="event-links">
+            <%= link_to "Comment", new_event_comment_path(event.id), class: 'event-link ' %>
+            <div class="event-link grow">Read more</div>
+            <%= link_to "Join", event_attendances_path(event.id), method: :post, class: 'event-link' %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+
+    </div>
   </div>
 </div>
 
-    <%= link_to "Create Event", new_event_path %>
 
+
+
+<%= javascript_pack_tag 'events' %>

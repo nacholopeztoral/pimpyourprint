@@ -1,0 +1,19 @@
+@media (max-width: 1030px) {
+  .flex-events-box {
+    height: 100vh !important;
+    flex-direction: column !important;
+    margin-top: 0 !important;
+  }
+  .event-card-container {
+        width: 100vw !important;
+  }
+  .events-box {
+        width: 100vw !important;
+  }
+  .event-link {
+    margin: 10px;
+  }
+  .event-links {
+    margin-top: 15px;
+  }
+}
