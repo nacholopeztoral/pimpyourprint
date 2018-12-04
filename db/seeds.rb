@@ -6,6 +6,7 @@ User.destroy_all
 Transportation.destroy_all
 
 puts "Creating Challenges and Users..."
+
 admin = User.new(username: "AdminUser", email:"admin@test.com", password:"admin@test.com", city: "Berlin", time_zone: "Berlin", admin: true, score: 188, streak: 4, streak_created_at: 4.days.ago)
 admin.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543416288/PimpYourPrint/bala.jpg'
 admin.save!
@@ -68,11 +69,22 @@ jadwiga_t6 = Transportation.new(user_id: jadwiga.id, carbon: 35000)
 jadwiga_t6.created_at = 6.days.ago
 jadwiga_t6.save
 
-Transportation.new(user_id: user.id, carbon: 53000).save!
-Transportation.new(user_id: user.id, carbon: 12000).save!
-Transportation.new(user_id: user.id, carbon: 99000).save!
-Transportation.new(user_id: user.id, carbon: 163000).save!
-Transportation.new(user_id: user.id, carbon: 12000).save!
+user_t1 = Transportation.new(user_id: user.id, carbon: 53000)
+user_t1.created_at = 1.day.ago
+user_t1.save
+user_t2 = Transportation.new(user_id: user.id, carbon: 12000)
+user_t2.created_at = 2.days.ago
+user_t2.save
+user_t3 = Transportation.new(user_id: user.id, carbon: 99000)
+user_t3.created_at = 3.days.ago
+user_t3.save
+user_t4 = Transportation.new(user_id: user.id, carbon: 163000)
+user_t4.created_at = 4.days.ago
+user_t4.save
+user_t5 = Transportation.new(user_id: user.id, carbon: 12000)
+user_t5.created_at = 5.days.ago
+user_t5.save
+
 
 meat = Challenge.new(title: "A day without eating meat",
                     category: "nutrition",
