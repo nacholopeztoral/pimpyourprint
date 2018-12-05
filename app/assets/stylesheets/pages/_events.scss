@@ -61,22 +61,18 @@ div.scroll {
   overflow: scroll;
   display: inline-block;
 
-  }
-  .events-search-input {
-    border-radius: 10px;
-    border: none;
-    // min-width: 315px;
-    box-shadow: 1px 1px 1px 1px #80808040;
-    margin-right: 5px;
-  }
-  .btn.btn-secondary {
-    box-shadow: 1px 1px 1px 1px #80808040;
-  }
-
-.event-card-container {
-  // height: 500px;
-  // overflow: scroll;
 }
+.events-search-input {
+  border-radius: 10px;
+  border: none;
+  box-shadow: 1px 1px 1px 1px #80808040;
+  margin-right: 5px;
+}
+.btn.btn-secondary {
+  box-shadow: 1px 1px 1px 1px #80808040;
+}
+
+.event-card-container {}
 
 .event-box-grown {
   height: 600px !important ;
@@ -148,22 +144,21 @@ div.event-link {
   font-size: 25px;
   color: #818181;
   transition: 0.3s;
-    // text-shadow: 1px 1px #a7a7a7;
-  }
-  .event-links a:hover, .offcanvas a:focus{
-    color: #f1f1f1 !important;
-    cursor: pointer;
-  }
-  a.event-link:hover, .offcanvas a:focus{
-    color: #122833db;
-    cursor: pointer;
+}
+.event-links a:hover, .offcanvas a:focus{
+  color: #f1f1f1 !important;
+  cursor: pointer;
+}
+a.event-link:hover, .offcanvas a:focus{
+  color: #122833db;
+  cursor: pointer;
 
-  }
-  .event-link:hover, .offcanvas a:focus{
-   color: #f1f1f1 !important;
+}
+.event-link:hover, .offcanvas a:focus{
+ color: #f1f1f1 !important;
 
- }
- .author-image {
+}
+.author-image {
   display: flex;
   padding-top: 50px;
 }
