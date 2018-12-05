@@ -33,6 +33,7 @@ class MyChallengesController < ApplicationController
 
     # If no challenge could be assigned, redirect to the dashboard
     redirect_to dashboard_path flash[:alert] = "You have fulfilled all the challenges! Feel free to suggest new ones." if @challenge.nil?
+
     skip_authorization
   end
 

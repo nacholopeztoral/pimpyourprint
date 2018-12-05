@@ -1,9 +1,23 @@
-<div class="form">
-  <%= form_for ([@event ,@comment]) do |f| %>
+  <div class="comments-parent-box">
+    <% @comments.each do |comment| %>
+    <div class="container comments-parent style="text-align: -webkit-center;">
+      <div class="comment-box ">
+        <p><%= comment.content %></p>
+        <p class="username"><%= comment.user.username %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+
+
+
+  <div class="form">
+    <%= form_for ([@event ,@comment]) do |f| %>
     <div class="form-inputs">
-      <%= f.label :content %>
+      <%= f.label :Message %>
       <%= f.text_field :content, class: "form-control" %>
     </div>
-    <%= f.submit id: "btn btn-primary", class: "button-form" %>
-  <% end %>
-</div>
+    <%= f.submit class: "btn btn-primary event-button" %>
+    <% end %>
+  </div>

@@ -7,9 +7,15 @@
         <%= link_to "Create Event", new_event_path, class: 'event-link' %>
         <p>Future events:</p>
         <p><% current_user.attendances.each do |attendance| %></p>
-        <ul>
-          <li style="font-size: 17px;"><%= attendance.event.title %></li>
-        </ul>
+        <a href="#" class= "thePopup" onclick="javascript:showPopup()" ><%= attendance.event.title %></a>
+        <div id="myPopup" class="popup-content">
+          <p><%= attendance.event.end_date %></p>
+          <p><%= attendance.event.description %></p>
+          <p><%= attendance.event.address %></p>
+          <%= link_to event_attendance_path(attendance.event, attendance.id), :method => 'delete' , class: 'event-link' do %>
+          <i class="fas fa-trash-alt"></i>
+          <% end  %>
+        </div>
         <% end  %>
       </div>
     </div>
@@ -19,15 +25,14 @@
         <div class="events-box">
           <div style="display: flex; justify-content: end;">
             <%= image_tag current_user.avatar.url,  class: "avatar-event-creator" %>
-            <h4 class="title-event"><%= event.title %></h4>
+            <h4 class="title-event">" <%= event.title %> "</h4>
           </div>
           <p>Created by <%= event.user.username %></p>
           <div class="injection">
             <p>Description: <%= event.description %></p>
+            <p>Description: <%= event.address %></p>
             <p >Capacity of <%= event.capacity %> people</p>
-
           </div>
-          <!-- <hr class="event-hr"> -->
           <div class="event-links">
             <%= link_to "Comment", new_event_comment_path(event.id), class: 'event-link ' %>
             <div class="event-link grow">Read more</div>
@@ -41,7 +46,26 @@
   </div>
 </div>
 
+<script>
+  function showPopup() {
+        // event.preventDefault();
+        document.getElementById("myPopup").classList.toggle("show");
+        return false;
+      }
 
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.thePopup')) {
 
-
-<%= javascript_pack_tag 'events' %>
+        var dropdowns = document.getElementsByClassName("popup-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+  <%= javascript_pack_tag 'events' %>
