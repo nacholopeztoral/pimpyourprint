@@ -2,35 +2,34 @@
   <div class="challenge-title">
     <%= challenge.title %>
   </div>
-  <div class="challenge-picture" style="background-image: url(<%= cl_image_path challenge.picture, height: 180, crop: :fill %>); background-repeat: no-repeat; background-size: cover"></div>
-  <div class="challenge-description">
-    <%= challenge.description %>
-  </div>
-  <div class="co2-info">
-    <%= image_tag("co2.svg", class: 'co2-icon') %>
-    <%= challenge.carbon %>
-  </div>
-
   <% if  user_challenge && !user_challenge&.completed %>
-    <%= link_to 'Mark as done!', completed_path(user_challenge), method: :post, class:'btn btn-secondary' %>
-  <% else %>
-    <%= link_to 'To Dashboard', dashboard_path, class:'btn btn-secondary' %>
-  <% end %>
-
-  <% if  user_challenge && !user_challenge&.completed %>
-    <div class="challenge-tip fab fa-readme" id="challenge-tip">
-      <p>Tips</p>
+    <div class="challenge-picture" style="background-image: url(<%= cl_image_path challenge.picture, height: 180, crop: :fill %>); background-repeat: no-repeat; background-size: cover"></div>
+    <div class="challenge-description">
+      <%= challenge.description %>
     </div>
-         <div id="tips" class="tips-show tips-show-hidden">
-           <%= render 'tips', challenge: @challenge, tip:@tip, tips: @tips %>
-         </div>
-         <% else %>
-         <div class="challenge-tip far fa-edit" id="challenge-tip">
-      <p>Give tips</p>
+    <div class="co2-info">
+      <%= image_tag("co2.svg", class: 'co2-icon') %>
+      <%= challenge.carbon %>
     </div>
-         <div id="tips" class="tips-show tips-show-hidden">
-           <%= render 'tips', challenge: @challenge, tip:@tip, tips: @tips %>
-         </div>
-  <% end %>
 
-</div>
+      <%= link_to 'Mark as done!', completed_path(user_challenge), method: :post, class:'btn btn-secondary' %>
+      <div class="challenge-tip fab fa-readme" id="challenge-tip">
+        <p>Tips</p>
+      </div>
+           <div id="tips" class="tips-show tips-show-hidden">
+             <%= render 'tips', challenge: @challenge, tip:@tip, tips: @tips %>
+           </div>
+    <% else %>
+       <div class="challenge-picture" style="background-image: url(<%= 'https://duckduckgo.com/?q=checked+png&t=h_&iar=images&iax=images&ia=images&iai=http%3A%2F%2Fwww2.kasa-solutions.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2016%2F01%2Ficon-check.png' %>); background-repeat: no-repeat; background-size: cover"></div>
+      <div >
+        <h2>Congratulations you finish a challenge</h2>
+      </div>
+             <div class="btn btn-secondary" id="challenge-tip">
+          <p>Give tips</p>
+        </div>
+             <div id="tips" class="tips-show tips-show-hidden">
+               <%= render 'tips', challenge: @challenge, tip:@tip, tips: @tips %>
+             </div>
+        <%= link_to 'To Dashboard', dashboard_path %>
+    <% end %>
+  </div>
