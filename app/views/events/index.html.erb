@@ -14,9 +14,10 @@
           <p>End:<%= attendance.event.date_end %></p>
           <p><%= attendance.event.description %></p>
           <p><%= attendance.event.address %></p>
-          <%= link_to event_attendance_path(attendance.event, attendance.id), :method => 'delete' , class: 'event-link' do %>
+          <%= link_to event_attendance_path(attendance.event, attendance.id), :method => 'delete' , class: 'event-link' do%>
           <i class="fas fa-trash-alt"></i>
           <% end  %>
+
         </div>
         <% end  %>
       </div>
