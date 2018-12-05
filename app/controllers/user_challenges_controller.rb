@@ -9,7 +9,7 @@ class UserChallengesController < ApplicationController
     if @user_challenge.save
       respond_to do |format|
         format.js
-        format.html { redirect_to my_challenge_path }
+        format.html {redirect_to my_challenge_path}
       end
     end
   end
