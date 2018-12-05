@@ -20,6 +20,10 @@
   display: table-cell;
   width: 305px;
   margin: 0 auto !important;
+  h3 {
+    font-size: 25px;
+    padding: 11px;
+  }
 }
 
 .tip-created-at {
@@ -31,7 +35,7 @@
   background-color: white;
   color: gray;
   opacity: 0.9;
-  border-radius: 3px;
+  border-radius: 10px;
   height: 74vh;
   min-width: 380px;
   position: absolute;
@@ -40,9 +44,12 @@
   padding-bottom: 160px;
 }
 
+#tips::-webkit-scrollbar {
+  display: none;
+}
+
 .tips-show-hidden {
   display: none;
-
 }
 
 .content {

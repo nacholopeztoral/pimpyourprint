@@ -30,6 +30,7 @@ class MyChallengesController < ApplicationController
 
     @tips = policy_scope(Tip).order(created_at: :desc)
     @tip = Tip.new
+    @tips = @challenge.tips
 
     # If no challenge could be assigned, redirect to the dashboard
     redirect_to dashboard_path flash[:alert] = "You have fulfilled all the challenges! Feel free to suggest new ones." if @challenge.nil?
