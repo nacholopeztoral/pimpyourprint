@@ -9,7 +9,7 @@
       </div>
 
       <div id='backside'>
-        <% if @user_challenge.present? %>
+        <% if @user_challenge %>
           <%= render 'backside', challenge: @challenge, user_challenge: @user_challenge %>
         <% end %>
       </div>
