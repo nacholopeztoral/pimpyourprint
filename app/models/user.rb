@@ -1,11 +1,11 @@
 class User < ApplicationRecord
   mount_uploader :avatar, PhotoUploader
-  has_many :user_challenges, dependent: :destroy
+  has_many :user_challenges
   has_many :challenges, through: :user_challenges
   has_many :tips, dependent: :destroy
-  has_many :comments
+  has_many :comments, dependent: :destroy
   has_many :transportations, dependent: :destroy
-  has_many :attendances
+  has_many :attendances, dependent: :destroy
   has_many :events, through: :attendances, dependent: :destroy
 
   validates :time_zone, presence: true
