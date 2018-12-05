@@ -1,7 +1,11 @@
 class EventsController < ApplicationController
   def index
     @events = policy_scope(Event)
-    @event = Event.search_by_city(params[:query])
+    if params[:query].present?
+      @events = Event.search_by_city(params[:query])
+    else
+      @events = Event.all
+    end
     authorize @events
   end
 
@@ -25,6 +29,7 @@ class EventsController < ApplicationController
       redirect_to events_path
     end
   end
+
   private
 
   def event_params
