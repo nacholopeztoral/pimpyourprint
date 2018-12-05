@@ -39,21 +39,22 @@
       margin-bottom: 12px;
       border-radius: 2px;
       &:hover {
-        background-color: $blue;
-        color: white;
+        background-color: $blue !important;
+        color: white !important;
         cursor: pointer;
       }
     }
+
     .quiz-title {
       font-weight: bolder;
       border:none;
       font-size: 23px;
       margin: 20px 0;
       text-align: center;
-      color: #6AA8C5;
+      color: $blue;
       &:hover {
         background-color: $light-gray;
-        color: #6AA8C5;
+        color: $blue;
         cursor: default;
       }
     }

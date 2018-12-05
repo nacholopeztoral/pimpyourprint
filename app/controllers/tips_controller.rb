@@ -13,13 +13,13 @@ class TipsController < ApplicationController
   end
 
   def create
-    @challenge = Challenge.find(tip_params[:challenge_id])
+    @challenge = Challenge.find(params[:challenge_id])
     @tip = Tip.new(tip_params)
     @tip.challenge = @challenge
     @tip.user = current_user
     authorize @tip
     if @tip.save
-      redirect_to my_challenge_path
+      redirect_to dashboard_path
     else
       @tips = policy_scope(Tip).order(created_at: :desc)
       redirect_to my_challenge_path
