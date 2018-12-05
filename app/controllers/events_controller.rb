@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   def index
     @events = policy_scope(Event)
+    @event = Event.search_by_city(params[:query])
     authorize @events
   end
 
