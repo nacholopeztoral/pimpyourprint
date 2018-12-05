@@ -18,12 +18,12 @@
         <p>Tips</p>
       </div>
            <div id="tips" class="tips-show tips-show-hidden">
-             <%= render 'tips', challenge: @challenge, tip:@tip, tips: @tips %>
+             <%= render 'tips', challenge: @challenge, tip: @tip, tips: @tips %>
            </div>
     <% else %>
-       <div class="challenge-picture" style="background-image: url(<%= 'https://duckduckgo.com/?q=checked+png&t=h_&iar=images&iax=images&ia=images&iai=http%3A%2F%2Fwww2.kasa-solutions.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2016%2F01%2Ficon-check.png' %>); background-repeat: no-repeat; background-size: cover"></div>
+       <div class="challenge-picture checked" style="background-image: url(<%='https://www2.kasa-solutions.com/wp-content/uploads/sites/2/2016/01/icon-check.png'%>); background-repeat: no-repeat; background-size: cover"></div>
       <div >
-        <h2>Congratulations you finish a challenge</h2>
+        <h2>Congratulations you finished this challenge</h2>
       </div>
              <div class="btn btn-secondary" id="challenge-tip">
           <p>Give tips</p>
@@ -31,20 +31,8 @@
              <div id="tips" class="tips-show tips-show-hidden">
                <%= render 'tips', challenge: @challenge, tip:@tip, tips: @tips %>
              </div>
-        <%= link_to 'To Dashboard', dashboard_path %>
+        <%= link_to 'Dashboard', dashboard_path %>
     <% end %>
   </div>
-
-    <div id="tips" class="tips-show tips-show-hidden">
-      <%= render 'my_challenges/tips', challenge: @challenge, tip:@tip, tips: @tips %>
-    </div>
-  <% else %>
-    <div class="challenge-tip far fa-edit" id="challenge-tip">
-      <p>Give tips</p>
-    </div>
-    <div id="tips" class="tips-show tips-show-hidden">
-      <%= render 'my_challenges/tips', challenge: @challenge, tip:@tip, tips: @tips %>
-    </div>
-  <% end %>
 </div>
 

@@ -13,7 +13,7 @@ class TipsController < ApplicationController
   end
 
   def create
-    @challenge = Challenge.find(params[:challenge_id])
+    @challenge = Challenge.find(tip_params[:challenge_id])
     @tip = Tip.new(tip_params)
     @tip.challenge = @challenge
     @tip.user = current_user
@@ -24,14 +24,11 @@ class TipsController < ApplicationController
       @tips = policy_scope(Tip).order(created_at: :desc)
       redirect_to my_challenge_path
     end
-
-  # @challenge_id = Tip.find(params[:challenge_id])
-  # @challenge_id = @challenges
   end
 
   private
 
   def tip_params
-    params.require(:tip).permit(:content, :user_challenge_id, :challenge_id)
+    params.require(:tip).permit(:content, :challenge_id)
   end
 end
