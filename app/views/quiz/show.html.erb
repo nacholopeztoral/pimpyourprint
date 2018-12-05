@@ -1,15 +1,15 @@
+<% content_for :meta_title, "Take a Quiz to learn how green you are | #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "Answer a few questions and find out how green you are!" %>
+
 <div class="quiz-intro-banner">
   <h1>Eco quiz</h1>
 </div>
-<div class="banner-quiz">
 
+<div class="banner-quiz">
   <div class=" quiz container">
     <div class="questions">
-
-
       <%= form_tag quiz_results_path, options = { method: "get" } do  %>
       <div class="question">
-
         <div class="answer">
           <label for="Transport" class="quiz-title">Daily Transportation:</label>
           <% [ 'Cycle', 'Walking', 'Drive', 'Public Transportation', 'My private jet' ].each do |transport| %>
@@ -31,7 +31,6 @@
           </label>
           <% end %>
         </div>
-
       </div>
 
       <div class="question">
@@ -41,7 +40,7 @@
           <label class="option">
             <%= radio_button_tag 'smoker', smoker, @smoker == smoker, class: "next" %>
             <%= smoker.humanize %>
-        </label>
+          </label>
           <% end %>
         </div>
       </div>
@@ -50,10 +49,10 @@
         <div class="answer">
           <label for="Diet" class="quiz-title">How often do you eat meat?</label>
           <% [ 'Never', '1 to 2 meals per week','More than 3 meals per week', 'Every meal'].each do |diet| %>
-          <label class="option">
-            <%= radio_button_tag 'diet', diet, @diet == diet, class: "next" %>
-            <%= diet.humanize %>
-          </label>
+            <label class="option">
+              <%= radio_button_tag 'diet', diet, @diet == diet, class: "next" %>
+              <%= diet.humanize %>
+            </label>
           <% end %>
         </div>
       </div>
@@ -62,10 +61,10 @@
         <div class="answer">
           <label for="Recicle" class="quiz-title">How often do you recycle?</label>
           <% [ 'Never', 'Sometimes', 'Most of the time', 'Always' ].each do |recicle| %>
-          <label class="option">
-            <%= radio_button_tag 'recicle', recicle, @recicle == recicle, class: "last"%>
-            <%= recicle.humanize %>
-          </label>
+            <label class="option">
+              <%= radio_button_tag 'recicle', recicle, @recicle == recicle, class: "last"%>
+              <%= recicle.humanize %>
+            </label>
           <% end %>
           <br>
           <br>
