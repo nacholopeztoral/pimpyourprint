@@ -14,3 +14,4 @@ Chartkick.addAdapter(Chart);
 import { showTips, hideTips } from "./tips.js";
 showTips();
 hideTips();
+import "./places"

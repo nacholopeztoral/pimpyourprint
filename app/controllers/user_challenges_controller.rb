@@ -20,10 +20,14 @@ class UserChallengesController < ApplicationController
     @user_challenge.completed = true
     authorize @user_challenge
     if @user_challenge.save
-      if @user.transportations.last.created_at.in_time_zone(@user.time_zone).to_date ==
-        Time.current.in_time_zone(@user.time_zone).to_date
-        redirect_to dashboard_path
-      else
+      begin
+        if @user.transportations.last.created_at.in_time_zone(@user.time_zone).to_date ==
+          Time.current.in_time_zone(@user.time_zone).to_date
+          redirect_to dashboard_path
+        else
+          redirect_to new_transportation_path
+        end
+      rescue
         redirect_to new_transportation_path
       end
     end
