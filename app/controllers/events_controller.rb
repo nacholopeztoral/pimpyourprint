@@ -23,6 +23,8 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    @event.date = Time.zone.parse(event_params[:date])
+    @event.date_end = Time.zone.parse(event_params[:date_end])
     @event.user = current_user
     authorize @event
     if @event.save!
@@ -33,14 +35,15 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event)
-    .permit(
+    params.require(:event).permit(
       :user_id,
       :title,
       :description,
       :address,
       :capacity,
-      :city
+      :city,
+      :date,
+      :date_end
       )
   end
 end
