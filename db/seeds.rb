@@ -1,9 +1,10 @@
+require "pry"
 UserChallenge.destroy_all
 Challenge.destroy_all
 Attendance.destroy_all
+Transportation.destroy_all
 Event.destroy_all
 User.destroy_all
-Transportation.destroy_all
 
 puts "Creating Challenges and Users..."
 
