@@ -9,7 +9,7 @@ class TransportationsController < ApplicationController
     @transportation = Transportation.new(carbon: carbon_g)
     @transportation.user_id = current_user.id
     authorize @transportation
-    if @transportation.save!
+    if @transportation.save
       redirect_to my_challenge_path
     else
       render 'new'
