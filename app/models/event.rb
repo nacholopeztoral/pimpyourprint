@@ -7,6 +7,6 @@ class Event < ApplicationRecord
   pg_search_scope :search_by_city,
                   against: :city,
                   using: {
-                    tsearch: { prefix: true }
+                    tsearch: { prefix: true, any_word: true }
                   }
 end
