@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_05_113429) do
+ActiveRecord::Schema.define(version: 2018_12_05_163904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,11 +110,11 @@ ActiveRecord::Schema.define(version: 2018_12_05_113429) do
     t.integer "score"
     t.string "city"
     t.boolean "admin", default: false
-    t.integer "streak"
+    t.integer "streak", default: 0
     t.string "avatar"
+    t.string "time_zone"
     t.boolean "vegan", default: false
     t.boolean "car", default: false
-    t.string "time_zone"
     t.datetime "streak_created_at"
     t.integer "highest_streak", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
