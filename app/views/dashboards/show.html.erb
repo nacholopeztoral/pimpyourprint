@@ -30,8 +30,11 @@
     <div class="dashboard-user">
       <%= cl_image_tag @user.avatar, class: 'avatar-dashboard' %>
       <h1><%= @user.username %></h1>
-      <div class="btn btn-primary"><%= link_to "All my challenges",my_challenges_path %></div>
-      <div class="btn btn-primary"><%= link_to "My current challenge",my_challenge_path %></div>
+      <% if @user.user_challenges.last.completed %>
+        <div class="btn btn-primary"><%= link_to "All my challenges",my_challenges_path %></div>
+      <% else %>
+        <div class="btn btn-primary"><%= link_to "My current challenge",my_challenge_path %></div>
+      <% end %>
     </div>
     <div class="dashboard-row">
       <div class="dashboard-column">
@@ -75,7 +78,7 @@
     </div>
     <%= area_chart transportation_carbon, colors: ['#6AA8C5'], suffix: 'kg', id: "myChart" %>
     <div class="dashboard-row">
-      <h3>All PyP users</h3>
+      <h3>All users</h3>
     </div>
     <div class="dashboard-row">
       <div class="dashboard-column">
