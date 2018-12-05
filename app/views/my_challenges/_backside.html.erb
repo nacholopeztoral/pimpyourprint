@@ -12,7 +12,7 @@
       <%= challenge.carbon %>
     </div>
     <%= link_to 'Mark as done!', completed_path(user_challenge), method: :post, class:'btn btn-secondary' %>
-    <div class="challenge-tip fab fa-readme" id="challenge-tip">
+    <div class="challenge-tip fab fa-readme" id="open-btn">
       <p>Tips</p>
     </div>
     <div id="tips" class="tips-show tips-show-hidden">
@@ -23,12 +23,12 @@
     <div>
       <h2>Congratulations you finished this challenge</h2>
     </div>
-    <div class="btn btn-secondary" id="challenge-tip">
+    <div class="btn btn-secondary" id="give-tip-btn">
       <p>Give tips</p>
     </div>
     <div id="tips" class="tips-show tips-show-hidden">
       <%= render 'my_challenges/tips', challenge: @challenge, tip:@tip, tips: @tips %>
     </div>
-    <%= link_to 'Dashboard', dashboard_path %>
+    <%= link_to 'Dashboard', dashboard_path, class: "dashboard"%>
   <% end %>
 </div>
