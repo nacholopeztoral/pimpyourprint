@@ -1,7 +1,7 @@
 class Challenge < ApplicationRecord
   mount_uploader :picture, PhotoUploader
 
-  has_many :tips
+  has_many :tips, dependent: :destroy
   has_many :user_challenges
 
   validates :title, presence: true, uniqueness: true
