@@ -1,4 +1,4 @@
-const newTipButton = document.querySelector(".fa-info-circle");
+const newTipButton = document.getElementById("challenge-tip");
 const tips = document.querySelector(".tips-show");
 const closeButton = document.querySelector(".tips-show > .fa-times");
 

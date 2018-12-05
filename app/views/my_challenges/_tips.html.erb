@@ -1,6 +1,7 @@
 
 <div class="fas fa-times btn-close"></div>
 <div class="tip-container">
+<h3>Tips for this challenge:</h3>
 <% tips.each do |tip| %>
  <div class="tip">
     <div class="avatar-name">
@@ -13,15 +14,16 @@
     </div>
  </div>
 <% end %>
-  <div class="tip-form">
-    <%= form_for([challenge, challenge_user, tip]) do |f| %>
-     <%= f.label "Give a tip" %>
-      <div class="tip-form-content">
-        <%= text_area(:content, :text, rows: 3) %>
-<!--       <%= f.text_field :content %>
- -->     <%= f.submit id: "btn btn-primary", class: " btn btn-secondary button-form" %>
-      </div>
-    <% end %>
-  </div>
+  <% if @user_challenge && @user_challenge.completed %>
+    <div class="tip-form">
+      <%= form_for([challenge,tip]) do |f| %>
+       <%= f.label "Give a tip" %>
+        <div class="tip-form-content">
+          <%= text_area(:content, :text, rows: 3) %>
+          <%= f.submit id: "btn btn-primary", class: " btn btn-secondary button-form" %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 

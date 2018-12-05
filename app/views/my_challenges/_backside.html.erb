@@ -15,10 +15,19 @@
   <% else %>
     <%= link_to 'To Dashboard', dashboard_path, class:'btn btn-secondary' %>
   <% end %>
-  <div class="challenge-tip fas fa-info-circle">
-     <!-- <%= link_to challenge_tips_path(challenge)%> -->
-  </div>
-       <div class="tips-show tips-show-hidden">
-         <%= render 'tips', challenge: @challenge,challenge_user: @challenge_user, tip:@tip, tips: @tips %>
-       </div>
+  <% if  user_challenge && !user_challenge&.completed %>
+    <div class="challenge-tip fab fa-readme" id="challenge-tip">
+      <p>Tips</p>
+    </div>
+         <div id="tips" class="tips-show tips-show-hidden">
+           <%= render 'tips', challenge: @challenge, tip:@tip, tips: @tips %>
+         </div>
+         <% else %>
+         <div class="challenge-tip far fa-edit" id="challenge-tip">
+      <p>Give tips</p>
+    </div>
+         <div id="tips" class="tips-show tips-show-hidden">
+           <%= render 'tips', challenge: @challenge, tip:@tip, tips: @tips %>
+         </div>
+  <% end %>
 </div>
