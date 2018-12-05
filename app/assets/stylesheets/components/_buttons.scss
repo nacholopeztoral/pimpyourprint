@@ -17,22 +17,25 @@
   max-height: 43px;
   color: $white;
 }
+
 .btn-primary {
   background-color: $blue;
   &:hover {
     background-color: $darkblue;
+    color: $white;
   }
 }
 .btn-secondary {
   background-color: $green;
   &:hover {
     background-color: $darkgreen;
+    color: $white;
   }
 }
+
 .jump-down {
   border-radius: 0;
 }
-
 
 // Modern btn
 .btn-modern {
@@ -42,9 +45,8 @@
   padding: 1em 2em;
   letter-spacing: 0.05rem;
   color: white !important;
-text-decoration: none !important;
-margin-top: 20px !important;
-
+  text-decoration: none !important;
+  margin-top: 20px !important;
   &:focus { outline: 2px dotted #55d7dc; }
 }
 
@@ -115,10 +117,8 @@ margin-top: 20px !important;
   background: none;
   border: none;
   cursor: pointer;
-
   padding: 1em 2em;
   letter-spacing: 0.05rem;
-
   &:focus { outline: 2px dotted #55d7dc; }
 }
 
