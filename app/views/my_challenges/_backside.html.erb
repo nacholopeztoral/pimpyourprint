@@ -7,6 +7,7 @@
     <div class="challenge-description">
       <%= challenge.description %>
     </div>
+
     <div class="co2-info">
       <%= image_tag("co2.svg", class: 'co2-icon') %>
       <%= challenge.carbon %>
@@ -33,3 +34,17 @@
         <%= link_to 'To Dashboard', dashboard_path %>
     <% end %>
   </div>
+
+    <div id="tips" class="tips-show tips-show-hidden">
+      <%= render 'my_challenges/tips', challenge: @challenge, tip:@tip, tips: @tips %>
+    </div>
+  <% else %>
+    <div class="challenge-tip far fa-edit" id="challenge-tip">
+      <p>Give tips</p>
+    </div>
+    <div id="tips" class="tips-show tips-show-hidden">
+      <%= render 'my_challenges/tips', challenge: @challenge, tip:@tip, tips: @tips %>
+    </div>
+  <% end %>
+</div>
+
