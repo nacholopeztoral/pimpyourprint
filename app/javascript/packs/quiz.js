@@ -18,7 +18,7 @@ const nexts = document.querySelectorAll(".next")
         y.style.backgroundColor = "white"
         y.style.color = "#000000";
       })
-      x.style.backgroundColor = '#6AA8C5';
+      x.style.backgroundColor = '#315a6d';
       x.style.color = "white";
     })
   })
