@@ -24,7 +24,20 @@
 
     </div>
     <div class="event-card-container">
+
       <div class="">
+
+  <%= form_tag events_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      placeholder: "Search events by city",
+      class: "events-search-input",
+      id: "address-input"
+    %>
+    <%= submit_tag "Search", class: "btn btn-secondary" %>
+  <% end %>
+      <div class=" row ">
+
         <% @events.each do |event| %>
         <div class="events-box">
           <div style="display: flex; justify-content: end;">
@@ -54,6 +67,7 @@
 </div>
 
 <script>
+
   function showPopup() {
 
         document.getElementById("myPopup").classList.toggle("show");

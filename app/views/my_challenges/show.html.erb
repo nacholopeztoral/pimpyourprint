@@ -7,8 +7,11 @@
         <div class="co2-info" style="background-color: #c9c9c9">
         </div>
       </div>
+
       <div id='backside'>
-      <%= render 'backside', challenge: @challenge, user_challenge: @user_challenge %>
+        <% if @user_challenge %>
+          <%= render 'backside', challenge: @challenge, user_challenge: @user_challenge %>
+        <% end %>
       </div>
     </div>
   </div>

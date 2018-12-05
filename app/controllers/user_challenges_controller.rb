@@ -9,23 +9,23 @@ class UserChallengesController < ApplicationController
     if @user_challenge.save
       respond_to do |format|
         format.js
-        format.html { redirect_to my_challenge_path }
+        format.html {redirect_to my_challenge_path}
       end
-    else
-      # redirect_to my_challenge_path
-      # If there is no challenge available to give to the user
-      # User has done all available challenges for example
-      # What do we do?
-      # Congratulation, you have successfully fulfilled all challenges?
     end
   end
 
   def completed
+    @user = current_user
     @user_challenge = UserChallenge.find(params[:id])
     @user_challenge.completed = true
     authorize @user_challenge
     if @user_challenge.save
-      redirect_to new_transportation_path
+      if @user.transportations.last.created_at.in_time_zone(@user.time_zone).to_date ==
+        Time.current.in_time_zone(@user.time_zone).to_date
+        redirect_to dashboard_path
+      else
+        redirect_to new_transportation_path
+      end
     end
   end
 end

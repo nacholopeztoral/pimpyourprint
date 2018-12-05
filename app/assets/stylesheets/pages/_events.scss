@@ -49,7 +49,6 @@ input.btn.btn-primary.event-button {
   padding: 30px;
   background-color: white;
   border: 1px solid #80808040;
-  box-shadow: 1px 1px 1px 1px, #80808040;
   box-shadow: 1px 1px 1px 1px #80808040;
   border-radius: 4px;
   margin-top: 10px;
@@ -58,6 +57,20 @@ input.btn.btn-primary.event-button {
 }
 div.scroll {
   overflow: scroll;
+  form {
+    display: flex;
+    justify-content: center;
+  }
+  .events-search-input {
+    border-radius: 10px;
+    border: none;
+    min-width: 315px;
+    box-shadow: 1px 1px 1px 1px #80808040;
+    margin-right: 5px;
+  }
+  .btn.btn-secondary {
+    box-shadow: 1px 1px 1px 1px #80808040;
+  }
 }
 .event-card-container {
   // height: 500px;
