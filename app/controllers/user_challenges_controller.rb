@@ -9,14 +9,8 @@ class UserChallengesController < ApplicationController
     if @user_challenge.save
       respond_to do |format|
         format.js
-        format.html { redirect_to my_challenge_path }
+        format.html {redirect_to my_challenge_path}
       end
-    else
-      # redirect_to my_challenge_path
-      # If there is no challenge available to give to the user
-      # User has done all available challenges for example
-      # What do we do?
-      # Congratulation, you have successfully fulfilled all challenges?
     end
   end
 
