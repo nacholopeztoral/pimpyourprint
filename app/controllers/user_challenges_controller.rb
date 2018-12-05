@@ -15,11 +15,17 @@ class UserChallengesController < ApplicationController
   end
 
   def completed
+    @user = current_user
     @user_challenge = UserChallenge.find(params[:id])
     @user_challenge.completed = true
     authorize @user_challenge
     if @user_challenge.save
-      redirect_to new_transportation_path
+      if @user.transportations.last.created_at.in_time_zone(@user.time_zone).to_date ==
+        Time.current.in_time_zone(@user.time_zone).to_date
+        redirect_to dashboard_path
+      else
+        redirect_to new_transportation_path
+      end
     end
   end
 end

@@ -48,6 +48,7 @@
             <%= f.input :carbon, input_html: { id: 'totalTranspCarbon' || 0 }, label: false, placeholder: '0', class: 'transport-calculation', readonly: true %>
           </div>
         <% end %>
+        <div class="transportation-small-text"> <%= link_to "skip", dashboard_path %></div>
       </div>
     </div>
   </div>
