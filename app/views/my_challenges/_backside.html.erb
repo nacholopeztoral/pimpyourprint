@@ -2,7 +2,7 @@
   <div class="challenge-title">
     <%= challenge.title %>
   </div>
-    <div class="challenge-picture" style="background-image: url(<%= cl_image_path @challenge.picture, height: 180, crop: :fill %>); background-repeat: no-repeat; background-size: cover"></div>
+  <div class="challenge-picture" style="background-image: url(<%= cl_image_path challenge.picture, height: 180, crop: :fill %>); background-repeat: no-repeat; background-size: cover"></div>
   <div class="challenge-description">
     <%= challenge.description %>
   </div>
@@ -10,11 +10,13 @@
     <%= image_tag("co2.svg", class: 'co2-icon') %>
     <%= challenge.carbon %>
   </div>
+
   <% if  user_challenge && !user_challenge&.completed %>
     <%= link_to 'Mark as done!', completed_path(user_challenge), method: :post, class:'btn btn-secondary' %>
   <% else %>
     <%= link_to 'To Dashboard', dashboard_path, class:'btn btn-secondary' %>
   <% end %>
+
   <% if  user_challenge && !user_challenge&.completed %>
     <div class="challenge-tip fab fa-readme" id="challenge-tip">
       <p>Tips</p>
@@ -30,4 +32,5 @@
            <%= render 'tips', challenge: @challenge, tip:@tip, tips: @tips %>
          </div>
   <% end %>
+
 </div>

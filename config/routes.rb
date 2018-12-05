@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
 
-  get '/pages/:page', to: 'pages#show'
+  get '/about', to: 'pages#about'
 
   get '/quiz_results', to: 'quiz_results#show'
   get '/quiz', to: 'quiz#show'
@@ -23,7 +23,9 @@ Rails.application.routes.draw do
   resource :dashboard, only: :show
 
   resources :events, only: [:index, :show, :new, :create] do
-    resources :attendances, only: :create
-    resources :comments, except: [:edit, :destroy]
-  end
+
+    resources :attendances, only: [:create, :destroy]
+    # post 'attendance/:id', to: 'attendances#create', as: :attend
+    resources :comments, except: [:edit, :destroy] 
+    end
 end

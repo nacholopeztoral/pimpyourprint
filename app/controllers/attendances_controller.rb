@@ -13,4 +13,14 @@ class AttendancesController < ApplicationController
       render "events/new"
     end
   end
+  def destroy
+    @attendance = Attendance.find(params[:id])
+    # @event = Event.find(params[:event_id])
+    # @attendance.event = @event
+    authorize @attendance
+    if @attendance.destroy!
+      redirect_to events_path
+    end
+
+  end
 end
