@@ -52,8 +52,10 @@ input.btn.btn-primary.event-button {
   box-shadow: 1px 1px 1px 1px #80808040;
   border-radius: 4px;
   margin-top: 10px;
-
-
+}
+input.btn.btn-primary.less-margin {
+ margin-left: 10px !important;
+ margin: 0px;
 }
 div.scroll {
   overflow: scroll;
@@ -63,7 +65,7 @@ div.scroll {
   .events-search-input {
     border-radius: 10px;
     border: none;
-    min-width: 315px;
+    // min-width: 315px;
     box-shadow: 1px 1px 1px 1px #80808040;
     margin-right: 5px;
   }
