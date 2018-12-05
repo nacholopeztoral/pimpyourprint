@@ -1,36 +1,24 @@
 <div class="form">
-  <%= form_for @event do |f| %>
-
-    <div class="form-inputs">
-      <%= f.label :title %>
-      <%= f.text_field :title, class: "form-control" %>
-    </div>
-    <div class="form-inputs">
-      <%= f.date_field :start_date, data: {provide: 'datepicker'} %>
-      <%= f.date_field :end_date, data: {provide: 'datepicker'} %>
-    </div>
-
-
-    <div class="form-inputs">
-      <%= f.label :description %>
-      <%= f.text_area :description, class: "form-control" %>
-    </div>
-
-    <div class="form-inputs">
-      <%= f.label :address %>
-      <%= f.text_field :address, class: "form-control" %>
-    </div>
-
-
-    <div class="form-inputs">
-      <%= f.label :capacity %>
-      <%= f.select :capacity, ['10', '20', '30', 'No limit'], class: "form-control" %>
-    </div>
-
-    <div class="form-inputs align-center">
-      <%= f.label :city %>
-      <%= f.text_field :city, class: "button-form" %>
-    </div>
-    <%= f.submit id: "btn btn-primary", class: "btn btn-primary" %>
+  <%= simple_form_for @event do |f| %>
+  <div class="form-inputs">
+    <%= f.input :title, inline_label: 'Title', error: 'Title is mandatory, please specify one', class: "form-control" %>
+  </div>
+  <div class="form-inputs">
+    <%= f.input :date, as: :string, input_html: {class: "datepicker"} %>
+    <%= f.input :date_end, as: :string, input_html: {class: "datepicker"} %>
+  </div>
+  <div class="form-inputs align-center">
+    <%= f.input :city,inline_label: 'City',  class: "button-form" %>
+  </div>
+  <div class="form-inputs">
+    <%= f.input :address, inline_label: 'address', error: 'address is mandatory, please specify one', class: "form-control" %>
+  </div>
+  <div class="form-inputs">
+    <%= f.input :capacity, collection: 18..60, class: "form-control" %>
+  </div>
+  <div class="form-inputs">
+    <%= f.input :description, as: :text,  inline_label: 'Description', error: 'Description is mandatory, please specify one', class: "form-control"  %>
+  </div>
+  <%= f.submit id: "btn btn-primary", class: "btn btn-primary" %>
   <% end %>
 </div>
