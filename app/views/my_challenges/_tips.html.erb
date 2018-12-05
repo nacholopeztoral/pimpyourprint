@@ -1,19 +1,20 @@
-
 <div class="fas fa-times btn-close"></div>
 <div class="tip-container">
-<h3>Tips for this challenge:</h3>
-<% tips.each do |tip| %>
- <div class="tip">
-    <div class="avatar-name">
-      <%= image_tag tip.user.avatar.url, class: "avatar-tip" %>
-      <%= tip.user.username %>
-    </div>
-    <div class="content">
-      <p><%= tip.content %></p>
-      <p class ="tip-created-at"> Created <%= tip.created_at.strftime("%d/%m/%Y - %H:%M:%S")  %></p>
-    </div>
- </div>
-<% end %>
+  <h3>Tips for this challenge:</h3>
+  <% unless tips.nil? %>
+    <% tips.each do |tip| %>
+      <div class="tip">
+        <div class="avatar-name">
+          <%= image_tag tip.user.avatar.url, class: "avatar-tip" %>
+          <%= tip.user.username %>
+        </div>
+        <div class="content">
+          <p><%= tip.content %></p>
+          <p class ="tip-created-at"> Created <%= tip.created_at.strftime("%d/%m/%Y - %H:%M:%S")  %></p>
+        </div>
+     </div>
+    <% end %>
+  <% end %>
   <% if @user_challenge && @user_challenge.completed %>
     <div class="tip-form">
       <%= form_for([challenge,tip]) do |f| %>

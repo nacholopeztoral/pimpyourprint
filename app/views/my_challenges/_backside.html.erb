@@ -21,16 +21,15 @@
     <div class="challenge-tip fab fa-readme" id="challenge-tip">
       <p>Tips</p>
     </div>
-         <div id="tips" class="tips-show tips-show-hidden">
-           <%= render 'tips', challenge: @challenge, tip:@tip, tips: @tips %>
-         </div>
-         <% else %>
-         <div class="challenge-tip far fa-edit" id="challenge-tip">
+    <div id="tips" class="tips-show tips-show-hidden">
+      <%= render 'my_challenges/tips', challenge: @challenge, tip:@tip, tips: @tips %>
+    </div>
+  <% else %>
+    <div class="challenge-tip far fa-edit" id="challenge-tip">
       <p>Give tips</p>
     </div>
-         <div id="tips" class="tips-show tips-show-hidden">
-           <%= render 'tips', challenge: @challenge, tip:@tip, tips: @tips %>
-         </div>
+    <div id="tips" class="tips-show tips-show-hidden">
+      <%= render 'my_challenges/tips', challenge: @challenge, tip:@tip, tips: @tips %>
+    </div>
   <% end %>
-
 </div>
