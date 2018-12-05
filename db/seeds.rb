@@ -1,4 +1,3 @@
-require "pry"
 UserChallenge.destroy_all
 Challenge.destroy_all
 Attendance.destroy_all
