@@ -10,14 +10,12 @@ class CommentsController < ApplicationController
   end
 
   def new
-
     @comment = Comment.new
     @comment.user = current_user
     @comment.event = Event.find(params[:event_id])
     @event = @comment.event
     @comments = policy_scope(Comment).where(event_id: params[:event_id] )
     authorize @comments
-
     authorize @comment
   end
 

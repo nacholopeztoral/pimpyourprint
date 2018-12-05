@@ -39,13 +39,12 @@ input.btn.btn-primary.event-button {
   display: flex;
   justify-content: space-evenly;
   margin-top: 100px;
-  height: 80%;
-  height: 60vh;
 }
 .user-box {
-  flex: 0 0 20%;
-  position: sticky;
-  height: 400px;
+  flex: 0 0 35%;
+  position: sticky !important;
+  top: 90px !important;
+  height: 500px;
   text-align: center;
   padding: 30px;
   background-color: white;
@@ -53,14 +52,20 @@ input.btn.btn-primary.event-button {
   box-shadow: 1px 1px 1px 1px, #80808040;
   box-shadow: 1px 1px 1px 1px #80808040;
   border-radius: 4px;
+  margin-top: 10px;
+
+
+}
+div.scroll {
+  overflow: scroll;
 }
 .event-card-container {
-  height: 400px;
-  overflow: scroll;
+  // height: 500px;
+  // overflow: scroll;
 }
 
 .event-box-grown {
-  height: 400px !important ;
+  height: 600px !important ;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -101,12 +106,12 @@ input.btn.btn-primary.event-button {
   box-shadow: 1px 1px 1px 1px, #80808040;
   box-shadow: 1px 1px 1px 1px #80808040;
   border-radius: 4px;
-  overflow: scroll;
+  // overflow: scroll;
   background-color: $blue;
   color: white;
   padding: 30px;
   width: 45vw;
-  overflow: hidden;
+  // overflow: hidden;
 }
 a.event-link {
   text-decoration: none;
@@ -114,11 +119,16 @@ a.event-link {
   font-size: 25px;
   color: #818181;
   transition: 0.3s;
+  border-bottom: 3px solid !important;
 }
+div.event-link {
+ border-bottom: 3px solid !important;
+}
+
 .event-links  {
-  margin-top: 35px;
+  margin-top: 20px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   padding: 8px 8px 8px 32px;
   text-decoration: none !important;
   font-size: 25px;
