@@ -20,6 +20,15 @@
       </div>
     </div>
     <div class="event-card-container">
+  <%= form_tag events_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      placeholder: "Search events by city",
+      class: "events-search-input",
+      id: "address-input"
+    %>
+    <%= submit_tag "Search", class: "btn btn-secondary" %>
+  <% end %>
       <div class=" row ">
         <% @events.each do |event| %>
         <div class="events-box">
@@ -47,6 +56,7 @@
 </div>
 
 <script>
+
   function showPopup() {
         // event.preventDefault();
         document.getElementById("myPopup").classList.toggle("show");
