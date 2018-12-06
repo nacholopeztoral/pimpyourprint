@@ -1,14 +1,35 @@
 @media (max-width: 1030px) {
   .flex-events-box {
     height: 100vh !important;
-    flex-direction: column !important;
     margin-top: 0 !important;
+    display: block;
   }
   .event-card-container {
-    width: 100vw !important;
+    width: 100% !important;
+    form {
+      display: flex;
+    }
+  }
+  .avatar-events {
+    display: none;
+  }
+  .hide-mobile {
+    display: none;
   }
   .events-box {
-    width: 100vw !important;
+    width: 100% !important;
+    height: 245px;
+    margin: 20px 0;
+    box-shadow: 2px 2px 2px 2px #969494eb;
+  }
+  .user-box {
+    height: auto;
+    padding: 10px;
+    flex: 0 0 30%;
+    position: relative !important;
+    top: 0 !important;
+    margin-bottom: 20px;
+    margin-top: 20px;
   }
   .event-link {
     margin: 10px;

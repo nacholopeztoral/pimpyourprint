@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_04_143228) do
+ActiveRecord::Schema.define(version: 2018_12_05_163904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,12 +28,12 @@ ActiveRecord::Schema.define(version: 2018_12_04_143228) do
   create_table "challenges", force: :cascade do |t|
     t.string "category"
     t.text "description"
-    t.integer "carbon", default: 0
+    t.integer "carbon"
     t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
-    t.boolean "active", default: false
+    t.boolean "active", default: true
   end
 
   create_table "comments", force: :cascade do |t|
@@ -51,14 +51,12 @@ ActiveRecord::Schema.define(version: 2018_12_04_143228) do
     t.string "description"
     t.string "address"
     t.integer "capacity"
-    t.date "start_date"
-    t.time "start_time"
-    t.date "end_date"
-    t.time "end_time"
     t.string "city"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "date"
+    t.datetime "date_end"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
@@ -109,14 +107,14 @@ ActiveRecord::Schema.define(version: 2018_12_04_143228) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
-    t.integer "score", default: 0
+    t.integer "score"
     t.string "city"
     t.boolean "admin", default: false
-    t.integer "streak"
+    t.integer "streak", default: 0
     t.string "avatar"
+    t.string "time_zone"
     t.boolean "vegan", default: false
     t.boolean "car", default: false
-    t.string "time_zone"
     t.datetime "streak_created_at"
     t.integer "highest_streak", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true

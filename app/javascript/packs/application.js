@@ -11,6 +11,9 @@ window.Chartkick = Chartkick;
 // for Chart.js
 import Chart from "chart.js";
 Chartkick.addAdapter(Chart);
-import { showTips, hideTips } from "./tips.js";
+import { showTips, giveTips, hideTips } from "./tips.js";
 showTips();
+giveTips();
 hideTips();
+import "./places"
+import "./meter"

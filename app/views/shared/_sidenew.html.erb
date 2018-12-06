@@ -7,9 +7,9 @@
       <%= link_to "Daily challenge", my_challenge_path, class: "link-side-bar" %>
       <%= link_to "Dashboard", dashboard_path, class: "link-side-bar" %>
       <%= link_to "Events", events_path, class: "link-side-bar" %>
-      <%= link_to "Carbon Footprint calculator", new_transportation_path, class: "link-side-bar" %>
+      <%= link_to "C02 calculator", new_transportation_path, class: "link-side-bar" %>
       <%= link_to "Past challenges", my_challenges_path, class: "link-side-bar" %>
-      <%= link_to "Suggest new challenge", new_challenge_path, class: "link-side-bar" %>
+      <%= link_to "Suggest challenge", new_challenge_path, class: "link-side-bar" %>
       <%= link_to t(".sign_in", default: "Logout"), destroy_user_session_path, method: :delete, class: "link-side-bar" %>
       <%= link_to "About", about_path, class: "link-side-bar" %>
     <%else %>
@@ -27,7 +27,7 @@ function openNav() {
 
   if (width < 1030) {
     document.getElementById("sideNavigation").style.zIndex = "101";
-    document.getElementById("sideNavigation").style.width = "100vw";
+    document.getElementById("sideNavigation").style.width = "100%";
     document.getElementById("sideNavigation").style.display = "flex";
     document.getElementById("sideNavigation").style.justifyContent = "center";
     document.getElementById("main").style.marginLeft = "250px";

@@ -1,35 +1,43 @@
 <div class="challenge-body back-side">
-  <div class="challenge-title">
+  <% if  user_challenge && !user_challenge&.completed %>
+   <div class="challenge-title">
     <%= challenge.title %>
   </div>
-  <div class="challenge-picture" style="background-image: url(<%= cl_image_path challenge.picture, height: 180, crop: :fill %>); background-repeat: no-repeat; background-size: cover"></div>
-  <div class="challenge-description">
-    <%= challenge.description %>
-  </div>
-  <div class="co2-info">
-    <%= image_tag("co2.svg", class: 'co2-icon') %>
-    <%= challenge.carbon %>
-  </div>
-
-  <% if  user_challenge && !user_challenge&.completed %>
+    <div class="challenge-picture" style="background-image: linear-gradient(353deg, #194c6363, rgba(29, 52, 71, 0.21)), url(<%= cl_image_path challenge.picture, height: 180, crop: :fill %>); background-repeat: no-repeat; background-size: cover; background-position: center;"></div>
+    <div class="challenge-description">
+      <%= challenge.description %>
+    </div>
+    <div class="co2-info">
+      <%= image_tag("co2.svg", class: 'co2-icon') %>
+      <%= challenge.carbon %>
+    </div>
     <%= link_to 'Mark as done!', completed_path(user_challenge), method: :post, class:'btn btn-secondary' %>
-  <% else %>
-    <%= link_to 'To Dashboard', dashboard_path, class:'btn btn-secondary' %>
-  <% end %>
-
-  <% if  user_challenge && !user_challenge&.completed %>
-    <div class="challenge-tip fab fa-readme" id="challenge-tip">
+    <div class="challenge-tip fab fa-readme" id="open-btn">
       <p>Tips</p>
     </div>
     <div id="tips" class="tips-show tips-show-hidden">
-      <%= render 'my_challenges/tips', challenge: @challenge, tip:@tip, tips: @tips %>
+      <%= render 'my_challenges/tips', challenge: @challenge, tip: @tip, tips: @tips %>
     </div>
+  
   <% else %>
-    <div class="challenge-tip far fa-edit" id="challenge-tip">
+
+    <div class=" checked">
+      <%= image_tag("https://www2.kasa-solutions.com/wp-content/uploads/sites/2/2016/01/icon-check.png", style: "width: 121px;") %>
+    </div>
+  <div class="challenge-title">
+    <p style="font-size: 20px; font-weight: 100; opacity: .6;">Challenge:</p>
+    <%= challenge.title %>
+  </div>
+    <div class="congrats-message">
+
+      <h2>Congratulations you finished this challenge</h2>
+    </div>
+    <div class="btn btn-secondary" id="give-tip-btn">
       <p>Give tips</p>
     </div>
     <div id="tips" class="tips-show tips-show-hidden">
       <%= render 'my_challenges/tips', challenge: @challenge, tip:@tip, tips: @tips %>
     </div>
+    <%= link_to 'Dashboard', dashboard_path, class: "dashboard"%>
   <% end %>
 </div>

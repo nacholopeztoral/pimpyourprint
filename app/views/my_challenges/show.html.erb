@@ -1,10 +1,15 @@
 <div class="challenge-row">
   <div id="card-container" class="card-container">
     <div id="flipcard" class="flipcard <%= 'flipped' if @user_challenge %>">
-      <div class="challenge-body front-side" style="background-color: #c9c9c9;">
-        <div id='reveal'> <%= link_to "Reveal Challenge", challenge_user_challenges_path(@challenge), method: :post, remote: true, class: 'btn btn-primary' %>
+      <div class="challenge-body front-side" style="background-color: #ffffff; justify-content: center;">
+        <div class=" question-mark">
+          <%= image_tag("https://image.flaticon.com/icons/png/512/8/8235.png") %>
         </div>
-        <div class="co2-info" style="background-color: #c9c9c9">
+       <h4 style="color: lightgrey; margin: 39px 0;">Flip your card and reveal a random challenge</h4>
+        <div id='reveal'> <%= link_to "Reveal Challenge", challenge_user_challenges_path(@challenge), method: :post, remote: true, class: 'btn btn-primary', style: "max-height: 70px;
+    padding: 15px 41px;" %>
+        </div>
+        <div class="co2-info" style="display: none; background-color: #c9c9c9">
         </div>
       </div>
 
