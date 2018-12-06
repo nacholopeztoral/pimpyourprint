@@ -10,14 +10,12 @@
   </nav>
   <div class="justify_logo">
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
-      <%= image_tag "Logo4.png", height: 50 %>
+      <%= image_tag "Logo2.png", height: 50 %>
     <% end %>
   </div>
 
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <% unless user_signed_in? %>
-      <!-- Login link (when logged out) -->
-      <!-- Dropdown list appearing on mobile only -->
       <%= link_to "About", about_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
