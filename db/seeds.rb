@@ -44,7 +44,7 @@ clara = User.new(username: "Clara", email:"clara@test.com", password:"clara@test
 clara.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1544090558/christopher-campbell-28567-unsplash.jpg'
 clara.save!
 
-jadwiga = User.new(username: "Jadwiga", email:"jadwiga@coumert.com", password:"jadwiga@coumert.com", city: "Berlin", time_zone: "Berlin", score: 155, streak: 3, streak_created_at: 3.days.ago)
+jadwiga = User.new(username: "Jadwiga", email:"jadwiga@coumert.com", password:"jadwiga@coumert.com", city: "Berlin", time_zone: "Berlin")
 jadwiga.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543580300/profil-picture.jpg'
 jadwiga.save!
 
@@ -120,7 +120,7 @@ meat = Challenge.new(title: "A day without eating meat",
                     category: "nutrition",
                     description:"Discover alternatives to your nutrition.",
                     carbon: 100,
-                    active: true
+                    active: false
                     )
 meat.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543422305/PimpYourPrint/vegetarian-day.jpg'
 meat.save!
@@ -129,7 +129,7 @@ calendar = Challenge.new(title: "Hang a seasonal fruits and veggies calendar in 
                     category: "nutrition",
                     description:"Discover new flavors by eating seasonal and local.",
                     carbon: 15,
-                    active: true
+                    active: false
                     )
 calendar.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543423074/PimpYourPrint/seasonal.jpg'
 calendar.save!
@@ -138,7 +138,7 @@ soap = Challenge.new(title: "Replace your bottle of body wash with a bar soap",
                     category: "plastic",
                     description:"Bar soap comes in much less packaging and lasts much longer.",
                     carbon: 25,
-                    active: true
+                    active: false
                     )
 soap.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543423070/PimpYourPrint/bar-soap.jpg'
 soap.save!
@@ -149,14 +149,14 @@ bottle = Challenge.new(title: "Equip yourself with a reusable bottle of water",
                     carbon: 12, # One bottle emits 82.8 grams of CO2, 12kg per month with average bottle consumption.
                     active: true
                     )
-bottle.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543423622/PimpYourPrint/bottle.jpg'
+bottle.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1544112225/bottle.jpg'
 bottle.save!
 
 transportation = Challenge.new(title: "Calculate your daily transportation carbon footprint",
                     category: "transportation",
                     description:"Ever wondered about your daily transportation carbon footprint impact?",
                     carbon: 0,
-                    active: true
+                    active: false
                     )
 transportation.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543423072/PimpYourPrint/bike.jpg'
 transportation.save!
@@ -174,7 +174,7 @@ shower = Challenge.new(title: "Limit your shower to 5 minutes",
                     category: "water",
                     description:"Put a 5 minutes long song and save liters of water by limiting your shower time! Believe us, you'll have enough time.",
                     carbon: 9,
-                    active: true
+                    active: false
                     )
 shower.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543420779/PimpYourPrint/shower.jpg'
 shower.save!
@@ -183,7 +183,7 @@ elevator = Challenge.new(title: "Skip the elevator and take the stairs",
                     category: "energy",
                     description:"An elevator ride costs in average x of electricity. Skip the elevator and take the staris and lose x calories!",
                     carbon: 45,
-                    active: true
+                    active: false
                     )
 elevator.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543423621/PimpYourPrint/stairs.jpg'
 elevator.save!
@@ -192,7 +192,7 @@ car = Challenge.new(title: "Leave your car home and use alternative transports",
                     category: "transportation",
                     description:"An empty car ride in the city is the most unefficient way of traveling.",
                     carbon: 50,
-                    active: true
+                    active: false
                     )
 car.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543423070/PimpYourPrint/car.jpg'
 car.save!
@@ -201,7 +201,7 @@ heating = Challenge.new(title: "Reduce your heating by 1 degree",
                     category: "energy",
                     description:"Only one degree of all heating can make a difference on your bills and on our planet. Add an extra layer if necessary!",
                     carbon: 30,
-                    active: true
+                    active: false
                     )
 heating.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543423070/PimpYourPrint/heating.jpg'
 heating.save!
@@ -210,7 +210,7 @@ cup = Challenge.new(title: "Get yourself a reusable cup",
                     category: "plastic",
                     description:"Gently decline all offered plastic cups by using your own!",
                     carbon: 46,
-                    active: true
+                    active: false
                     )
 cup.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543423069/PimpYourPrint/reusable-cup.jpg'
 cup.save!
@@ -219,7 +219,7 @@ sticker = Challenge.new(title: "Install a 'No commercials' sticker on your mailb
                     category: "waste",
                     description:"Who cares about all that crap advertisement.",
                     carbon: 90,
-                    active: true
+                    active: false
                     )
 sticker.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543423073/PimpYourPrint/sticker.jpg'
 sticker.save!
@@ -228,7 +228,7 @@ dry_clothes = Challenge.new(title: "Hang your clothes to dry them",
                     category: "energy",
                     description:"Skip the dryer, that uses too much energy and damages your clothes. (And its's freaking loud)",
                     carbon: 80,
-                    active: true
+                    active: false
                     )
 dry_clothes.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543423076/PimpYourPrint/dry-clothes.jpg'
 dry_clothes.save!
@@ -237,7 +237,7 @@ dry_hair = Challenge.new(title: "Dry your hair with a towel instead of a blow dr
                     category: "energy",
                     description:"It's better for the earth, for your hair and for your energy bill!",
                     carbon: 40,
-                    active: true
+                    active: false
                     )
 dry_hair.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543423070/PimpYourPrint/dry-hair.jpg'
 dry_hair.save!
@@ -245,7 +245,7 @@ dry_hair.save!
 usernames = []
 challenges = ['A day without eating meat', 'Dry your hair with a towel instead of a blow dryer', 'Hang your clothes to dry them']
 User.all.each { |user| usernames << user.username}
-usernames.pop
+usernames.delete("Jadwiga")
 
 usernames.each { |user|
   i = 0
@@ -255,20 +255,10 @@ usernames.each { |user|
   end
 }
 
-u1 = UserChallenge.new(user_id: jadwiga.id, completed: true, challenge_id: sticker.id)
-u1.created_at = 1.day.ago
-u1.save
-u2 = UserChallenge.new(user_id: jadwiga.id, completed: true, challenge_id: dry_hair.id)
-u2.created_at = 2.days.ago
-u2.save
-u3 = UserChallenge.new(user_id: jadwiga.id, completed: true, challenge_id: heating.id)
-u3.created_at = 3.days.ago
-u3.save
-
 puts "Generating Events"
 
 event1 = Event.new(user_id: nacho.id,
-                  title: "Le Wagon DemoDay",
+                  title: "Le Wagon DemoDay After party",
                   description: "Join us at Le Wagon Demo Day! It's a great event where you can meet tons of people that also care about the environment and want to find creative solutions to reduce our daily carbon footprint.",
                   address: "Factory, Rheinsberger Str. 76/77, 10115 Berlin",
                   capacity: "100",
