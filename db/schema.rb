@@ -28,12 +28,12 @@ ActiveRecord::Schema.define(version: 2018_12_05_163904) do
   create_table "challenges", force: :cascade do |t|
     t.string "category"
     t.text "description"
-    t.integer "carbon", default: 0
+    t.integer "carbon"
     t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
-    t.boolean "active", default: false
+    t.boolean "active", default: true
   end
 
   create_table "comments", force: :cascade do |t|
@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 2018_12_05_163904) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
-    t.integer "score", default: 0
+    t.integer "score"
     t.string "city"
     t.boolean "admin", default: false
     t.integer "streak", default: 0
