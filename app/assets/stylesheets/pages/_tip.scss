@@ -1,97 +1,101 @@
 .avatar-tip {
-  height: 45px;
-  width: 45px;
-  border-radius: 50px;
-}
+    height: 45px;
+    width: 45px;
+    border-radius: 50px;
+  }
 
 .tip {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 20px 0;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0;
 
-}
+  }
 
 .avatar-name {
-  display: grid;
-  font-size: 14px;
-}
+    display: grid;
+    font-size: 14px;
+  }
 
 .tip-container {
-  display: table-cell;
-  width: 305px;
-  margin: 0 auto !important;
-  h3 {
-    font-size: 25px;
-    padding: 11px;
+    display: table-cell;
+    width: 305px;
+    margin: 0 auto !important;
+    h3 {
+      font-size: 23px;
+      padding: 11px;
+      margin-left: 27px;
+    }
   }
-}
 
 .tip-created-at {
-  font-size: 10px;
-  opacity: 0.5;
-}
+    font-size: 10px;
+    opacity: 0.5;
+  }
 
 .tips-show {
-  background-color: white;
-  color: gray;
-  opacity: 0.9;
-  border-radius: 10px;
-  height: 74vh;
-  min-width: 380px;
-  position: absolute;
-  overflow-y: scroll;
-  height: 558px;
-  padding-bottom: 160px;
-}
+    background-color: white;
+    color: gray;
+    opacity: 0.96;
+    border-radius: 10px;
+    height: 74vh;
+    min-width: 380px;
+    position: absolute;
+    overflow-y: scroll;
+    height: 558px;
+    padding-bottom: 160px;
+  }
+.dashboard {
+    color: white;
+  }
 
 #tips::-webkit-scrollbar {
-  display: none;
-}
+    display: none;
+  }
 
 .tips-show-hidden {
-  display: none;
-}
+    display: none;
+  }
 
 .content {
-  text-align: left;
-}
+    text-align: left;
+  }
 
 .challenge-tip {
-  cursor: pointer;
-}
+    cursor: pointer;
+  }
 
 .btn-close {
-  margin-top: 10px;
-  margin-left: 143px;
-  position: fixed;
-  cursor: pointer;
-}
+    margin-top: 10px;
+    margin-left: 143px;
+    position: fixed;
+    cursor: pointer;
+  }
 .tip-form {
-  position: fixed;
-  bottom: 15px;
-  display: flex;
-  background: white;
-  z-index: 4;
-  padding: 15px;
-}
+    position: fixed;
+    bottom: 15px;
+    display: flex;
+    background: white;
+    z-index: 4;
+    padding: 24px 44px;
+  }
 
 .tip-form-content {
-  margin: 0 18px;
-}
+    margin: 0px 18px;
+  }
 
 #tip_content {
-  margin-bottom: 10px;
-  border-radius: 5px;
-}
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
 
 @media only screen and (max-width:900px) {
-  .tip-form {
-    bottom: 24px;
-    padding: 7px;
-  }
+    .tip-form {
+        bottom: 24px;
+        padding: 7px;
+      }
 
-  .tips-show {
-    min-width: 350px;
-    height: 484px;
+    .tips-show {
+        min-width: 350px;
+        height: 484px;
+      }
   }
-}

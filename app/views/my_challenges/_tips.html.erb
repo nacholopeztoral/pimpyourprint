@@ -10,17 +10,16 @@
         </div>
         <div class="content">
           <p><%= tip.content %></p>
-          <p class ="tip-created-at"> Created <%= tip.created_at.strftime("%d/%m/%Y - %H:%M:%S")  %></p>
+          <p class ="tip-created-at"> Created <%= tip.created_at.strftime("%d/%m/%Y - %H:%M:%S") %></p>
         </div>
      </div>
     <% end %>
   <% end %>
   <% if @user_challenge && @user_challenge.completed %>
     <div class="tip-form">
-      <%= form_for([challenge,tip]) do |f| %>
-       <%= f.label "Give a tip" %>
+      <%= simple_form_for([challenge, tip]) do |f| %>
         <div class="tip-form-content">
-          <%= text_area(:content, :text, rows: 3) %>
+          <%= f.input :content, label: 'Give a tip' %>
           <%= f.submit id: "btn btn-primary", class: " btn btn-secondary button-form" %>
         </div>
       <% end %>

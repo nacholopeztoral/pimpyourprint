@@ -1,5 +1,4 @@
-const carbonPerKm = {'car': 130, 'bus': 70, 'train': 28,
-  'scooter': 77, 'tram': 20, 'plane': 1500};
+const carbonPerKm = {'car': 130, 'bus': 70, 'train': 28, 'plane': 1500};
 
 
 const calculateCarbon = (modeOfTransport) => {
@@ -32,7 +31,7 @@ function listenToTransporationInputs() {
       carbon.value = Math.round(total * 100) / 100;
       if(carbon.value > 300) {
         carbonBg.style.backgroundColor = '#EE5F5B'
-      } else if(carbon.value > 100) {
+      } else if (carbon.value > 0) {
         carbonBg.style.backgroundColor = '#E67E22'
       } else {
         carbonBg.style.backgroundColor = '#50B774'

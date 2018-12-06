@@ -39,28 +39,43 @@ input.btn.btn-primary.event-button {
   display: flex;
   justify-content: space-evenly;
   margin-top: 100px;
-  height: 80%;
-  height: 60vh;
 }
 .user-box {
-  flex: 0 0 20%;
-  position: sticky;
-  height: 400px;
+  flex: 0 0 35%;
+  position: sticky !important;
+  top: 90px !important;
+  height: 500px;
   text-align: center;
   padding: 30px;
   background-color: white;
   border: 1px solid #80808040;
-  box-shadow: 1px 1px 1px 1px, #80808040;
   box-shadow: 1px 1px 1px 1px #80808040;
   border-radius: 4px;
+  margin-top: 10px;
 }
-.event-card-container {
-  height: 400px;
+input.btn.btn-primary.less-margin {
+ margin-left: 10px !important;
+ margin: 0px;
+}
+div.scroll {
   overflow: scroll;
+  display: inline-block;
+
+}
+.events-search-input {
+  border-radius: 10px;
+  border: none;
+  box-shadow: 1px 1px 1px 1px #80808040;
+  margin-right: 5px;
+}
+.btn.btn-secondary {
+  box-shadow: 1px 1px 1px 1px #80808040;
 }
 
+.event-card-container {}
+
 .event-box-grown {
-  height: 400px !important ;
+  height: 600px !important ;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -101,12 +116,12 @@ input.btn.btn-primary.event-button {
   box-shadow: 1px 1px 1px 1px, #80808040;
   box-shadow: 1px 1px 1px 1px #80808040;
   border-radius: 4px;
-  overflow: scroll;
-  background-color: $blue;
+  // overflow: scroll;
+  background-color: $darkblue;
   color: white;
   padding: 30px;
   width: 45vw;
-  overflow: hidden;
+  // overflow: hidden;
 }
 a.event-link {
   text-decoration: none;
@@ -114,34 +129,39 @@ a.event-link {
   font-size: 25px;
   color: #818181;
   transition: 0.3s;
+  border-bottom: 3px solid !important;
 }
+div.event-link {
+ border-bottom: 3px solid !important;
+}
+
 .event-links  {
-  margin-top: 35px;
+  margin-top: 20px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   padding: 8px 8px 8px 32px;
   text-decoration: none !important;
   font-size: 25px;
   color: #818181;
   transition: 0.3s;
-    // text-shadow: 1px 1px #a7a7a7;
-  }
-  .event-links a:hover, .offcanvas a:focus{
-    color: #f1f1f1 !important;
-    cursor: pointer;
-  }
-  a.event-link:hover, .offcanvas a:focus{
-    color: #122833db;
-    cursor: pointer;
+}
+.event-links a:hover, .offcanvas a:focus{
+  color: #f1f1f1 !important;
+  cursor: pointer;
+}
+a.event-link:hover, .offcanvas a:focus{
+  color: #122833db;
+  cursor: pointer;
 
-  }
-  .event-link:hover, .offcanvas a:focus{
-   color: #f1f1f1 !important;
+}
+.event-link:hover, .offcanvas a:focus{
+ color: #f1f1f1 !important;
 
- }
- .author-image {
+}
+.author-image {
   display: flex;
   padding-top: 50px;
+
 }
 
 .avatar-events {
@@ -153,6 +173,10 @@ a.event-link {
   height: 60px;
   width: 60px;
   border-radius: 50%;
+}
+div.button-event {
+  display: flex;
+  justify-content: center;
 }
 
 
