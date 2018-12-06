@@ -68,6 +68,12 @@
 }
 
 
+.login a {
+  position: inherit;
+  top: 40px;
+}
+
+
 .quiz_result {
   text-align: center;
   opacity: 0.9;
@@ -76,7 +82,7 @@
   height: 90vh;
   width: 100vw;
   display: grid;
-  margin-top: -86px;
+  margin-top: -96px;
   overflow: hidden;
 }
 

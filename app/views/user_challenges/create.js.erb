@@ -3,3 +3,21 @@ const backside = document.getElementById("backside");
 if (backside) {
   backside.innerHTML = "<%= j render 'my_challenges/backside', challenge: @challenge, user_challenge: @user_challenge %>"
 }
+
+var newTipButton = document.getElementById("open-btn");
+var giveTipButton = document.getElementById("give-tip-btn");
+var tips = document.querySelector(".tips-show");
+var closeButton = document.querySelector(".tips-show > .fa-times");
+
+
+
+    newTipButton.addEventListener("click", (event) => {
+      tips.classList.toggle("tips-show-hidden");
+    });
+
+
+
+    closeButton.addEventListener("click", (event) => {
+      tips.classList.toggle("tips-show-hidden");
+    });
+

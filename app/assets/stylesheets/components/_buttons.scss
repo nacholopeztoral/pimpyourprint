@@ -16,7 +16,9 @@
   max-width: fit-content;
   max-height: 43px;
   color: $white;
+  max-width: fit-content;
 }
+
 .btn-primary {
   background-color: $blue;
   font-weight: bolder;
@@ -33,10 +35,10 @@
     color: $white;
   }
 }
+
 .jump-down {
   border-radius: 0;
 }
-
 
 // Modern btn
 .btn-modern {
@@ -48,7 +50,6 @@
   color: white !important;
   text-decoration: none !important;
   margin-top: 20px !important;
-
   &:focus { outline: 2px dotted #55d7dc; }
 }
 
@@ -119,10 +120,8 @@
   background: none;
   border: none;
   cursor: pointer;
-
   padding: 1em 2em;
   letter-spacing: 0.05rem;
-
   &:focus { outline: 2px dotted #55d7dc; }
 }
 

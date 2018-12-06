@@ -21,13 +21,13 @@
 a {
   &:hover {
    text-decoration: none;
-  }
+ }
 }
 
 /* Logo */
 .navbar-wagon-brand img {
 
-
+  margin-left: 40px;
   height: 35px;
 }
 div.justify_logo {
@@ -36,7 +36,8 @@ div.justify_logo {
   justify-content: flex-end;
   height: 50px;
   padding-bottom: 0px;
-  margin-bottom: 16px;
+  margin-bottom: -12px;
+  margin-right: 45%;
 }
 
 /* User Avatar */
@@ -64,16 +65,24 @@ img#navbar-wagon-menu {
 @media only screen and (max-width:400px) {
   .navbar-wagon-brand img {
     height: 42px;
+  }
+  div.justify_logo {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    height: 50px;
+    padding-bottom: 0px;
+    margin-right: 17%;
+  }
+}
+@media only screen and (max-width:350px) {
+  .navbar-wagon-brand img {
+    height: 42px;
 
   }}
-  @media only screen and (max-width:350px) {
-    .navbar-wagon-brand img {
-      height: 42px;
-
-    }}
-    .navbar-wagon-item {
-      cursor: pointer;
-      padding: 0 20px;
+  .navbar-wagon-item {
+    cursor: pointer;
+    padding: 0 20px;
   // margin-left: 1070px;
 }
 
