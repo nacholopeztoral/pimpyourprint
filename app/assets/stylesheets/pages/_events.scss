@@ -72,8 +72,6 @@ div.scroll {
   box-shadow: 1px 1px 1px 1px #80808040;
 }
 
-.event-card-container {}
-
 .event-box-grown {
   height: 600px !important ;
   display: flex;
@@ -182,6 +180,8 @@ div.button-event {
   }
 }
 
-
-
-
+.event-card-container {
+  form {
+    display: flex;
+  }
+}

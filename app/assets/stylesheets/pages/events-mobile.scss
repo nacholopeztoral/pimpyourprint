@@ -6,6 +6,9 @@
   }
   .event-card-container {
     width: 100% !important;
+    form {
+      display: flex;
+    }
   }
   .avatar-events {
     display: none;
