@@ -22,11 +22,15 @@ body {
   font-family: 'Montserrat', sans-serif !important;
   color: $gray;
 }
-  h1, h2{
+h1, h2{
   font-family: 'Quicksand', sans-serif !important;
-  }
+}
 
 a{
   font-family: 'Montserrat', sans-serif !important;
 
 }
+div#main {
+  height: 100vh !important;
+}
+
