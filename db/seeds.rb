@@ -269,10 +269,10 @@ puts "Generating Events"
 
 event1 = Event.new(user_id: nacho.id,
                   title: "Le Wagon DemoDay",
-                  description: "Join us at Le Wagon Demo Day! It's a great event where you can meet tons of people that also care about the environment and want to find creative solutions to reduce our daily carbon footprint.",
+                  description: "Have a drink after Le Wagon Demoday with people that also care about the environment",
                   address: "Factory, Rheinsberger Str. 76/77, 10115 Berlin",
                   capacity: "100",
-                  date: "2018-12-07 18:30",
+                  date: "2018-12-07 20:00",
                   date_end: "2018-12-08 06:00",
                   city: "Berlin")
 event1.save
