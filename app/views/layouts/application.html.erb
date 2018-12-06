@@ -26,6 +26,7 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
     <%= stylesheet_pack_tag 'application' %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
   </head>
   <body>
     <div id="main">

@@ -37,11 +37,12 @@
     <div class="dashboard-user">
       <%= cl_image_tag @user.avatar, class: 'avatar-dashboard' %>
       <h1><%= @user.username %></h1>
-      <% if @user.user_challenges.last && @user.user_challenges.last.completed %>
+      <!-- <% if @user.user_challenges.last && @user.user_challenges.last.completed %>
         <div class="btn btn-primary"><%= link_to "All my challenges",my_challenges_path %></div>
       <% else %>
         <div class="btn btn-primary"><%= link_to "My current challenge",my_challenge_path %></div>
-      <% end %>
+      <% end %> -->
+      <div class="btn btn-primary"><%= link_to "See events", events_path %></div>
     </div>
     <div class="dashboard-row">
       <div class="dashboard-column">
