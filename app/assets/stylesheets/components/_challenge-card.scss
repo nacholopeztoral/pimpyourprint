@@ -117,7 +117,9 @@
       box-shadow: 0px 0px 4px #FFFFFF;
     // position: absolute;
     bottom: 42px;
-    padding: 12px 34px;
+    padding: 12px 35px;
+    display:flex;
+    justify-content:center;
     max-height: 79px;
     p {
       margin: 0;

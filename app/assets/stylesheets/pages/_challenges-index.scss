@@ -1,14 +1,16 @@
 .challenges-container {
   max-width: 700px;
 }
-.challenge-description.button-fix {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
+.challenge-description {
+  bottom: 40px !important;
 }
-a.btn.btn-secondary.btn-fix {
-  position: fixed;
-  left: 24%;
+
+.MAD{
+  color:white;
+  padding: 12px 35px;
+  background-color:$green;
+  width:fit-content;
+  margin:auto;
 }
 
 .challenges-list {
