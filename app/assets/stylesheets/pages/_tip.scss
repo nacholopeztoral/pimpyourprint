@@ -35,7 +35,6 @@
 .tips-show {
     background-color: white;
     color: gray;
-    opacity: 0.96;
     border-radius: 10px;
     height: 74vh;
     min-width: 380px;
@@ -77,6 +76,7 @@
     background: white;
     z-index: 4;
     padding: 24px 44px;
+    width: 91%;
   }
 
 .tip-form-content {
@@ -88,6 +88,19 @@
     border-radius: 5px;
   }
 
+  .btn.btn-terciary{
+  box-shadow: 0px 0px 4px #FFFFFF;
+  padding: 12px 34px;
+  max-height: 79px;
+  background-color: $green;
+  p {
+    margin: 0;
+  }
+}
+ #new_tip {
+  width: 100%;
+ }
+
 @media only screen and (max-width:900px) {
     .tip-form {
         bottom: 24px;
@@ -96,6 +109,5 @@
 
     .tips-show {
         min-width: 350px;
-        height: 484px;
       }
   }

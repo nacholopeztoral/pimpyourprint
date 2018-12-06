@@ -7,9 +7,10 @@
 
 .jumbotronstyle {
   top: 30%;
+  padding: 35px;
   width: 100%;
   background-color: transparent;
-  display: flex;
+
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -18,10 +19,53 @@
 }
 
 .flex1 {
-  text-shadow: 1px 1px #fffc;
+
+  text-shadow: 1px 1px 12px #000c;
 }
 .flex2 {
   padding-bottom: 30px;
 }
 
+.btn-home {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid transparent;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding: 7px 24px;
+    font-size: 21px;
+    line-height: 1.42857;
+    box-shadow: 1px 1px 12px black;
+    max-width: -webkit-fit-content;
+    /* border: solid 1px black; */
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    /* max-height: 43px; */
+    color: #FFFFFF;
+}
 
+
+.meter {
+
+svg{
+  max-height: 250px;
+}
+
+button{
+  background-color: white;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+  padding: 5px;
+}
+}

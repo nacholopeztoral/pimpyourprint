@@ -1,9 +1,9 @@
 <div class="challenge-body back-side">
-  <div class="challenge-title">
+  <% if  user_challenge && !user_challenge&.completed %>
+   <div class="challenge-title">
     <%= challenge.title %>
   </div>
-  <% if  user_challenge && !user_challenge&.completed %>
-    <div class="challenge-picture" style="background-image: url(<%= cl_image_path challenge.picture, height: 180, crop: :fill %>); background-repeat: no-repeat; background-size: cover"></div>
+    <div class="challenge-picture" style="background-image: linear-gradient(353deg, #194c6363, rgba(29, 52, 71, 0.21)), url(<%= cl_image_path challenge.picture, height: 180, crop: :fill %>); background-repeat: no-repeat; background-size: cover; background-position: center;"></div>
     <div class="challenge-description">
       <%= challenge.description %>
     </div>
@@ -18,9 +18,18 @@
     <div id="tips" class="tips-show tips-show-hidden">
       <%= render 'my_challenges/tips', challenge: @challenge, tip: @tip, tips: @tips %>
     </div>
-    <% else %>
-    <div class="challenge-picture checked" style="background-image: url(<%='https://www2.kasa-solutions.com/wp-content/uploads/sites/2/2016/01/icon-check.png'%>); background-repeat: no-repeat; background-size: cover"></div>
-    <div>
+  
+  <% else %>
+
+    <div class=" checked">
+      <%= image_tag("https://www2.kasa-solutions.com/wp-content/uploads/sites/2/2016/01/icon-check.png", style: "width: 121px;") %>
+    </div>
+  <div class="challenge-title">
+    <p style="font-size: 20px; font-weight: 100; opacity: .6;">Challenge:</p>
+    <%= challenge.title %>
+  </div>
+    <div class="congrats-message">
+
       <h2>Congratulations you finished this challenge</h2>
     </div>
     <div class="btn btn-secondary" id="give-tip-btn">
