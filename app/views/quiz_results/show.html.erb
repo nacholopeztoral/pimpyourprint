@@ -18,10 +18,11 @@
               <h4 class="quiz_status"><%= status %></h4>
           <% end %>
       <%= link_to "Sign up, be green", new_user_registration_path , class: "btn btn-success quiz_singup"  %>
-      <div class="login">
+      <div class="login" style=" position: inherit;">
          <%= link_to "Login", new_user_session_path %>
       </div>
     </div>
   </div>
 
 
+<%= javascript_pack_tag 'meter' %>

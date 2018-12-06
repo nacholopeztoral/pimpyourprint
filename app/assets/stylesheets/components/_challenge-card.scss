@@ -164,6 +164,8 @@
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
   div {
     -webkit-backface-visibility: hidden !important;
     -moz-backface-visibility: hidden !important;
@@ -174,6 +176,15 @@
     -moz-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
   }
+}
+
+.question-mark img {
+  -webkit-backface-visibility: hidden !important;
+  -moz-backface-visibility: hidden !important;
+  -o-backface-visibility: hidden !important;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
 }
 
 .flipcard .back-side {
