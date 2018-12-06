@@ -10,6 +10,9 @@
       <div class="MAD btn btn-secondary" style="margin-top: 15px;">Mark as done!</div>
       <% end %>
     </div>
+          <div id="tips" class="tips-show tips-show-hidden">
+      <%= render 'my_challenges/tips', challenge: challenge, tip: tip, tips: challenge.tips %>
+    </div>
 
     <div class="co2-info">
       <%= image_tag("co2.svg", class: 'co2-icon') %>
@@ -19,9 +22,7 @@
     <div class="challenge-tip fab fa-readme" id="open-btn">
       <p>Tips</p>
     </div>
-    <div id="tips" class="tips-show tips-show-hidden">
-      <%= render 'my_challenges/tips', challenge: challenge, tip: tip, tips: challenge.tips %>
-    </div>
+
 
   <% else %>
 
