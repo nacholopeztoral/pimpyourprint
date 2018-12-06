@@ -4,21 +4,26 @@
     <%= f.input :title, inline_label: 'Title', error: 'Title is mandatory, please specify one', class: "form-control" %>
   </div>
   <div class="form-inputs">
-    <%= f.input :date, as: :string, input_html: {class: "datepicker"} %>
-    <%= f.input :date_end, as: :string, input_html: {class: "datepicker"} %>
+    <div class="date-flex">
+      <div class="date">
+        <%= f.input :date, label: 'Start', as: :string, input_html: {class: "datepicker"} %></div>
+        <div class='date_end'>
+          <%= f.input :date_end, label: 'Finish', as: :string, input_html: {class: "datepicker"} %>
+        </div>
+      </div>
+    </div>
+    <div class="form-inputs align-center">
+      <%= f.input :city, inline_label: 'City',  class: "button-form" %>
+    </div>
+    <div class="form-inputs">
+      <%= f.input :address, inline_label: 'address', error: 'address is mandatory, please specify one', class: "form-control" %>
+    </div>
+    <div class="form-inputs">
+      <%= f.input :capacity, collection: 18..60, class: "form-control" %>
+    </div>
+    <div class="form-inputs">
+      <%= f.input :description, as: :text,  inline_label: 'Description', error: 'Description is mandatory, please specify one', class: "form-control"  %>
+    </div>
+    <%= f.submit id: "btn btn-primary", class: "btn btn-primary" %>
+    <% end %>
   </div>
-  <div class="form-inputs align-center">
-    <%= f.input :city,inline_label: 'City',  class: "button-form" %>
-  </div>
-  <div class="form-inputs">
-    <%= f.input :address, inline_label: 'address', error: 'address is mandatory, please specify one', class: "form-control" %>
-  </div>
-  <div class="form-inputs">
-    <%= f.input :capacity, collection: 18..60, class: "form-control" %>
-  </div>
-  <div class="form-inputs">
-    <%= f.input :description, as: :text,  inline_label: 'Description', error: 'Description is mandatory, please specify one', class: "form-control"  %>
-  </div>
-  <%= f.submit id: "btn btn-primary", class: "btn btn-primary" %>
-  <% end %>
-</div>
