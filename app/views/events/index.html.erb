@@ -43,7 +43,7 @@
             <% @events.each do |event| %>
             <div class="events-box">
               <div style="display: flex; justify-content: end;">
-                <%= image_tag current_user.avatar.url,  class: "avatar-event-creator" %>
+                <%= image_tag event.user.avatar.url,  class: "avatar-event-creator" %>
                 <h4 class="title-event">" <%= event.title %> "</h4>
               </div>
               <p>Created by <%= event.user.username %></p>
