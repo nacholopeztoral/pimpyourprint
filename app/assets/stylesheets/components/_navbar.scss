@@ -37,7 +37,7 @@ div.justify_logo {
   height: 50px;
   padding-bottom: 0px;
   margin-bottom: -12px;
-  margin-right: 67px;
+  margin-right: 45%;
 }
 
 /* User Avatar */
@@ -65,8 +65,16 @@ img#navbar-wagon-menu {
 @media only screen and (max-width:400px) {
   .navbar-wagon-brand img {
     height: 42px;
-
-  }}
+  }
+  div.justify_logo {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    height: 50px;
+    padding-bottom: 0px;
+    margin-right: 17%;
+  }
+}
   @media only screen and (max-width:350px) {
     .navbar-wagon-brand img {
       height: 42px;
