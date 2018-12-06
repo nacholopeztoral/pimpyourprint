@@ -9,11 +9,18 @@
 
 <!-- get data for user based on their transportation habits -->
 <% transportation_carbon = [] %>
+<% transportation_dates = [] %>
 <% total_carbon = 0.0 %>
-<% @user.transportations.last(6).each do |t| %>
+<% count = 0 %>
+<% @user.transportations.each do |t| %>
   <% key = "#{t.created_at.year}.#{t.created_at.month}.#{t.created_at.day}"%>
+  <% unless transportation_dates.include? key %>
+    <% count += 1 %>
+  <% end %>
   <% transportation_carbon << [key, t.carbon / 1000.0] %>
+  <% transportation_dates << key %>
   <% total_carbon += t.carbon / 1000.0%>
+  <% break if count == 5 %>
 <% end %>
 
 <!-- get data for all app users -->
@@ -73,7 +80,7 @@
         <div class="statistic-description">
           <p class="statistic-text long-text">CO2 released from commuting in last 5 days&nbsp;&nbsp;</p>
         </div>
-        <p class="statistic-number" id="orange-text"><%= total_carbon %><font size="-1">kg</font></p>
+        <p class="statistic-number" id="orange-text"><%= total_carbon.round(1) %><font size="-1">kg</font></p>
       </div>
     </div>
     <%= area_chart transportation_carbon, colors: ['#6AA8C5'], suffix: 'kg', id: "myChart" %>
