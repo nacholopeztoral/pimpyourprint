@@ -277,13 +277,44 @@ event1 = Event.new(user_id: nacho.id,
                   city: "Berlin")
 event1.save
 
-event2 = Event.new(user_id: anja.id, title: "Berlin street cleaning", description: "I would like to meet up this Sunday to clean up the streets of Berlin. We will start from Alexander platz and walk our until Mauerpark picking up trash. Free beers in the end of the day!", address: "Alexander 10178 Berlin", capacity: "10", date: "2018-12-08 11:00", date_end: "2018-12-08 14:00", city: "Berlin")
+event2 = Event.new(user_id: anja.id,
+                  title: "Berlin street cleaning",
+                  description: "I would like to meet up this Sunday to clean up the streets of Berlin. We will start from Alexander platz and walk our until Mauerpark picking up trash. Free beers in the end of the day!",
+                  address: "Alexander 10178 Berlin",
+                  capacity: "10",
+                  date: "2018-12-08 11:00",
+                  date_end: "2018-12-08 14:00",
+                  city: "Berlin")
 event2.save
-event3 = Event.new(user_id: rebeca.id, title: "Clothes swop", description: "I'm inviting you to come to my place to exchange the clothes you don't wear anymore! Clothes that won't be picked will be given to charity", address: "Falckensteinstraße 35, 10997 Berlin", capacity: "15", date: "2018-12-09 10:30", date_end: "2018-12-09 12:00", city: "Berlin")
+
+event3 = Event.new(user_id: rebeca.id,
+                    title: "Clothes swop",
+                    description: "I'm inviting you to come to my place to exchange the clothes you don't wear anymore! Clothes that won't be picked will be given to charity",
+                    address: "Falckensteinstraße 35, 10997 Berlin",
+                    capacity: "15",
+                    date: "2018-12-09 10:30",
+                    date_end: "2018-12-09 12:00",
+                    city: "Berlin")
 event3.save
-event4 = Event.new(user_id: jadwiga.id, title: "How can we improve recycling in Munich?", description: "Let's meet up at the Hofbrauhaus and talk about ideas to improve the recycling system in Munich", address: "Platzl 9, 80331 München", capacity: "20", date: "2018-12-07 18:30", date_end: "2018-12-07 22:00", city: "Munich")
+
+event4 = Event.new(user_id: jadwiga.id,
+                  title: "How can we improve recycling in Munich?",
+                  description: "Let's meet up at the Hofbrauhaus and talk about ideas to improve the recycling system in Munich",
+                  address: "Platzl 9, 80331 München",
+                  capacity: "20",
+                  date: "2018-12-07 18:30",
+                  date_end: "2018-12-07 22:00",
+                  city: "Munich")
 event4.save
-event5 = Event.new(user_id: anja.id, title: "Demonstration in the streets of Ljubljana", description: "Let's meet up on the main square of Ljubljana and show the government what we have to say.", address: "Tržnica 1000 Ljubljana Slovenia", capacity: "150", date: "2018-12-07 18:30", date_end: "2018-12-07 22:00", city: "Munich")
+
+event5 = Event.new(user_id: anja.id,
+                  title: "Demonstration in the streets of Ljubljana",
+                  description: "Let's meet up on the main square of Ljubljana and show the government what we have to say.",
+                  address: "Tržnica 1000 Ljubljana Slovenia",
+                  capacity: "150",
+                  date: "2018-12-07 18:30",
+                  date_end: "2018-12-07 22:00",
+                  city: "Ljubljana")
 event5.save
 
 puts "Generating Attendances"
