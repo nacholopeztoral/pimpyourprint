@@ -1,8 +1,9 @@
 UserChallenge.destroy_all
 Challenge.destroy_all
 Attendance.destroy_all
-Transportation.destroy_all
 Event.destroy_all
+Transportation.destroy_all
+Tip.destroy_all
 User.destroy_all
 
 puts "Generating users..."
@@ -16,15 +17,15 @@ user.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v15434
 user.save!
 
 anja = User.new(username: "Anja", email:"anja@test.com", password:"anja@test.com", city: "Ljubljana", time_zone: "Berlin", score: [12,23,34,45,56,67,78,89].sample, streak: [1,2,3,4,5].sample, streak_created_at: [1,2,3,4,5].sample.days.ago)
-anja.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543416493/PimpYourPrint/bunny.jpg'
+anja.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1544090564/anja.jpg'
 anja.save!
 
 rebeca = User.new(username: "Rebeca", email:"rebeca@test.com", password:"rebeca@test.com", city: "Goiânia", time_zone: "London", score: [12,23,34,45,56,67,78,89].sample, streak: [1,2,3,4,5].sample, streak_created_at: [1,2,3,4,5].sample.days.ago)
-rebeca.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543416493/PimpYourPrint/bunny.jpg'
+rebeca.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1544090566/rebeca.jpg'
 rebeca.save!
 
 nacho = User.new(username: "Nacho", email:"nacho@test.com", password:"nacho@test.com", city: "Madrid", time_zone: "London", score: [12,23,34,45,56,67,78,89].sample, streak: [1,2,3,4,5].sample, streak_created_at: [1,2,3,4,5].sample.days.ago)
-nacho.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543416493/PimpYourPrint/bunny.jpg'
+nacho.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1544090484/37050701.jpg'
 nacho.save!
 
 marcel = User.new(username: "Marcel", email:"marcel@test.com", password:"marcel@test.com", city: "Rio de Janeiro", time_zone: "Berlin", score: [12,23,34,45,56,67,78,89].sample, streak: [1,2,3,4,5].sample, streak_created_at: [1,2,3,4,5].sample.days.ago)
@@ -40,7 +41,7 @@ alice.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543
 alice.save!
 
 clara = User.new(username: "Clara", email:"clara@test.com", password:"clara@test.com", city: "Berlin", time_zone: "London", score: [12,23,34,45,56,67,78,89].sample, streak: [1,2,3,4,5].sample, streak_created_at: [1,2,3,4,5].sample.days.ago)
-clara.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543416493/PimpYourPrint/bunny.jpg'
+clara.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1544090558/christopher-campbell-28567-unsplash.jpg'
 clara.save!
 
 jadwiga = User.new(username: "Jadwiga", email:"jadwiga@coumert.com", password:"jadwiga@coumert.com", city: "Berlin", time_zone: "Berlin", score: 155, streak: 3, streak_created_at: 3.days.ago)
@@ -214,7 +215,6 @@ cup = Challenge.new(title: "Get yourself a reusable cup",
 cup.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543423069/PimpYourPrint/reusable-cup.jpg'
 cup.save!
 
-puts "Almost done..."
 sticker = Challenge.new(title: "Install a 'No commercials' sticker on your mailbox",
                     category: "waste",
                     description:"Who cares about all that crap advertisement.",
@@ -243,36 +243,64 @@ dry_hair.remote_picture_url = 'https://res.cloudinary.com/jadwiga/image/upload/v
 dry_hair.save!
 
 usernames = []
-challenges = ['A day without eating meat', 'Dry your hair with a towel instead of a blow dryer']
+challenges = ['A day without eating meat', 'Dry your hair with a towel instead of a blow dryer', 'Hang your clothes to dry them']
 User.all.each { |user| usernames << user.username}
 usernames.pop
 
 usernames.each { |user|
   i = 0
-  2.times do
+  3.times do
     UserChallenge.new(user_id: "#{User.where(username: user)[0].id}".to_i, completed: true, challenge_id: "#{Challenge.where(title: challenges[i])[0].id}".to_i).save!
-    i =+ 1
+    i += 1
   end
 }
 
 u1 = UserChallenge.new(user_id: jadwiga.id, completed: true, challenge_id: sticker.id)
 u1.created_at = 1.day.ago
 u1.save
-
 u2 = UserChallenge.new(user_id: jadwiga.id, completed: true, challenge_id: dry_hair.id)
 u2.created_at = 2.days.ago
 u2.save
-
 u3 = UserChallenge.new(user_id: jadwiga.id, completed: true, challenge_id: heating.id)
 u3.created_at = 3.days.ago
 u3.save
 
 puts "Generating Events"
 
-event1 = Event.new(user_id: nacho.id, title: "Le Wagon DemoDay", description: "Join us at Le Wagon Demo Day! It's a great event where you can meet tons of people that also care about the environment and want to find creative solutions to reduce our daily carbon footprint.", address: "Factory, Rheinsberger Str. 76/77, 10115 Berlin", capacity: "100", date: "2018-12-07 18:30", date_end: "2018-12-08 06:00", city: "Berlin").save
-event2 = Event.new(user_id: anja.id, title: "Berlin street cleaning", description: "I would like to meet up this Sunday to clean up the streets of Berlin. We will start from Alexander platz and walk our until Mauerpark picking up trash. Free beers in the end of the day!", address: "Alexander 10178 Berlin", capacity: "10", date: "2018-12-08 11:00", date_end: "2018-12-08 14:00", city: "Berlin").save
-event3 = Event.new(user_id: rebeca.id, title: "Clothes swop", description: "I'm inviting you to come to my place to exchange the clothes you don't wear anymore! Clothes that won't be picked will be given to charity", address: "Falckensteinstraße 35, 10997 Berlin", capacity: "15", date: "2018-12-09 10:30", date_end: "2018-12-09 12:00", city: "Berlin").save
-event4 = Event.new(user_id: jadwiga.id, title: "How can we improve recycling in Munich?", description: "Let's meet up at the Hofbrauhaus and talk about ideas to improve the recycling system in Munich", address: "Platzl 9, 80331 München", capacity: "20", date: "2018-12-07 18:30", date_end: "2018-12-07 22:00", city: "Munich").save
-event5 = Event.new(user_id: anja.id, title: "Demonstration in the streets of Ljubljana", description: "Let's meet up on the main square of Ljubljana and show the government what we have to say.", address: "Tržnica 1000 Ljubljana Slovenia", capacity: "150", date: "2018-12-07 18:30", date_end: "2018-12-07 22:00", city: "Munich").save
+event1 = Event.new(user_id: nacho.id,
+                  title: "Le Wagon DemoDay",
+                  description: "Join us at Le Wagon Demo Day! It's a great event where you can meet tons of people that also care about the environment and want to find creative solutions to reduce our daily carbon footprint.",
+                  address: "Factory, Rheinsberger Str. 76/77, 10115 Berlin",
+                  capacity: "100",
+                  date: "2018-12-07 18:30",
+                  date_end: "2018-12-08 06:00",
+                  city: "Berlin")
+event1.save
+
+event2 = Event.new(user_id: anja.id, title: "Berlin street cleaning", description: "I would like to meet up this Sunday to clean up the streets of Berlin. We will start from Alexander platz and walk our until Mauerpark picking up trash. Free beers in the end of the day!", address: "Alexander 10178 Berlin", capacity: "10", date: "2018-12-08 11:00", date_end: "2018-12-08 14:00", city: "Berlin")
+event2.save
+event3 = Event.new(user_id: rebeca.id, title: "Clothes swop", description: "I'm inviting you to come to my place to exchange the clothes you don't wear anymore! Clothes that won't be picked will be given to charity", address: "Falckensteinstraße 35, 10997 Berlin", capacity: "15", date: "2018-12-09 10:30", date_end: "2018-12-09 12:00", city: "Berlin")
+event3.save
+event4 = Event.new(user_id: jadwiga.id, title: "How can we improve recycling in Munich?", description: "Let's meet up at the Hofbrauhaus and talk about ideas to improve the recycling system in Munich", address: "Platzl 9, 80331 München", capacity: "20", date: "2018-12-07 18:30", date_end: "2018-12-07 22:00", city: "Munich")
+event4.save
+event5 = Event.new(user_id: anja.id, title: "Demonstration in the streets of Ljubljana", description: "Let's meet up on the main square of Ljubljana and show the government what we have to say.", address: "Tržnica 1000 Ljubljana Slovenia", capacity: "150", date: "2018-12-07 18:30", date_end: "2018-12-07 22:00", city: "Munich")
+event5.save
+
+puts "Generating Attendances"
+
+Attendance.new(user_id: nacho.id, event_id: event1.id, attending: true).save
+Attendance.new(user_id: anja.id, event_id: event1.id, attending: true).save
+Attendance.new(user_id: rebeca.id, event_id: event1.id, attending: true).save
+Attendance.new(user_id: clara.id, event_id: event1.id, attending: true).save
+Attendance.new(user_id: marcel.id, event_id: event1.id, attending: true).save
+Attendance.new(user_id: dimitry.id, event_id: event1.id,  attending: true).save
+Attendance.new(user_id: admin.id, event_id: event1.id, attending: true).save
+Attendance.new(user_id: user.id, event_id: event1.id, attending: true).save
+
+
+puts "Generating Tips"
+
+Tip.new(user_id: nacho.id, challenge_id: bottle.id, content:"Don't forget to recycle your old plastic bottles.").save
+Tip.new(user_id: anja.id, challenge_id: bottle.id, content:"I simply use a beer bottle. Glass over plastic!").save
 
 puts "..aaaand done!"

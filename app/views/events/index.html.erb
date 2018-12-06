@@ -44,15 +44,15 @@
             <div class="events-box">
               <div style="display: flex; justify-content: end;">
                 <%= image_tag event.user.avatar.url,  class: "avatar-event-creator" %>
-                <h4 class="title-event">" <%= event.title %> "</h4>
+                <h4 class="title-event"><%= event.title %></h4>
               </div>
               <p>Created by <%= event.user.username %></p>
               <div class="injection">
-                <p>Description: <%= event.description %></p>
-                <p>Address: <%= event.address %></p>
-                <p>Capacity of <%= event.capacity %> people</p>
-                <p>Start:<%= event.date %></p>
-                <p>End:<%= event.date_end %></p>
+                <p><u>Description</u>: <%= event.description %></p>
+                <p><u>Address</u>: <%= event.address %></p>
+                <p><u>Capacity</u>: <%= event.capacity %> people. Already <%= event.attendances.all.count %> persons joining !</p>
+                <p><u>Start</u>: <%= event.date.strftime('%A %e of %B') %></p>
+                <p><u>End</u>: <%= event.date_end.strftime('%A %e of %B') %></p>
                 <%= link_to "Comment", new_event_comment_path(event.id), class: 'event-link ', style: 'pointer-events: auto;' %>
               </div>
               <div class="event-links">
