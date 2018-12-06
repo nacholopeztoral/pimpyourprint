@@ -27,11 +27,11 @@
 }
 
 
-  .front-side {
-        max-width: 385px;
-    height: 80vh;
-    width: 93vw;
-    max-height: 610px;
+.front-side {
+  max-width: 385px;
+  height: 80vh;
+  width: 93vw;
+  max-height: 610px;
     /* border-radius: 10px; */
     color: #FFFFFF;
     border: 3px dashed lightgrey;
@@ -45,76 +45,76 @@
   }
 
 
-.card-container {
-  max-height: 540px;
-  width: 100vw;
-  display: flex;
-  position: relative;
-  align-self: center;
-  justify-content: center;
-  margin-top: 45px;
-  transition: transform 5s;
-}
-.challenge-body {
-  max-width: 385px;
-  height: 80vh;
-  width: 93vw;
-  max-height: 610px;
-  background-color: $blue;
-  border-radius: 10px;
-  color: $white;
-  padding: 20px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  position: absolute;
-  .challenge-title {
-
-    font-weight: bold;
-    font-family: quicksand;
-    line-height: 35px;
-    z-index: 1000;
+  .card-container {
+    max-height: 540px;
+    width: 100vw;
+    display: flex;
+    position: relative;
+    align-self: center;
+    justify-content: center;
+    margin-top: 45px;
+    transition: transform 5s;
+  }
+  .challenge-body {
+    max-width: 385px;
+    height: 80vh;
+    width: 93vw;
+    max-height: 610px;
+    background-color: $blue;
+    border-radius: 10px;
+    color: $white;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     position: absolute;
-    font-size: 33px;
-    max-width: 330px;
-    text-align: CENTER;
-    top: 160px;
-  }
-  .challenge-picture {
-    height: 58%;
-    width: 100%;
-    border-radius: 10px 10px 0 0;
-    position: absolute;
-    top: 0;
-  }
-  .checked {
-    margin: 4px 57px;
-  }
-.congrats-message {
-      margin-top: 67px;
-    padding-top: 33px;
-    opacity: 0.7;
-    h2 {
-    font-size: 20px;
+    .challenge-title {
 
+      font-weight: bold;
+      font-family: quicksand;
+      line-height: 35px;
+      z-index: 1000;
+      position: absolute;
+      font-size: 33px;
+      max-width: 330px;
+      text-align: CENTER;
+      top: 160px;
     }
-}
-  .challenge-category {
-    font-size: 15px;
-  }
+    .challenge-picture {
+      height: 58%;
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+      position: absolute;
+      top: 0;
+    }
+    .checked {
+      margin: 4px 57px;
+    }
+    .congrats-message {
+      margin-top: 67px;
+      padding-top: 33px;
+      opacity: 0.7;
+      h2 {
+        font-size: 20px;
 
-  .challenge-description {
-    font-weight: bolder;
-    font-size: 20px;
-    z-index: 1000;
-    position: absolute;
-    bottom: 140px;
-  }
+      }
+    }
+    .challenge-category {
+      font-size: 15px;
+    }
 
-  .btn.btn-secondary{
-    box-shadow: 0px 0px 4px #FFFFFF;
+    .challenge-description {
+      font-weight: bolder;
+      font-size: 20px;
+      z-index: 1000;
+      position: absolute;
+      bottom: 140px;
+    }
+
+    .btn.btn-secondary{
+      box-shadow: 0px 0px 4px #FFFFFF;
     // position: absolute;
     bottom: 42px;
     padding: 12px 34px;
