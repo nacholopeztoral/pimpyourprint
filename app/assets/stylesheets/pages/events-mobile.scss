@@ -20,7 +20,8 @@
     box-shadow: 2px 2px 2px 2px #969494eb;
   }
   .user-box {
-    height: 180px;
+    height: auto;
+    padding: 0;
     flex: 0 0 30%;
     position: relative !important;
     top: 0 !important;
