@@ -5,6 +5,7 @@ class UserChallengesController < ApplicationController
     # Create a User_challenge with the picked challenge and the current user
     @user_challenge = UserChallenge.new(challenge: @challenge, user: current_user)
     authorize @user_challenge
+    @tip = Tip.new
 
     if @user_challenge.save
       respond_to do |format|

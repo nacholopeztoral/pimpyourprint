@@ -17,7 +17,7 @@
       <p>Tips</p>
     </div>
     <div id="tips" class="tips-show tips-show-hidden">
-      <%= render 'my_challenges/tips', challenge: @challenge, tip: @tip, tips: @tips %>
+      <%= render 'my_challenges/tips', challenge: challenge, tip: tip, tips: challenge.tips %>
     </div>
 
   <% else %>
@@ -37,7 +37,7 @@
       <p>Give tips</p>
     </div>
     <div id="tips" class="tips-show tips-show-hidden">
-      <%= render 'my_challenges/tips', challenge: @challenge, tip:@tip, tips: @tips %>
+      <%= render 'my_challenges/tips', challenge: challenge, tip: tip, tips: challenge.tips %>
     </div>
     <%= link_to 'Dashboard', dashboard_path, class: "dashboard"%>
   <% end %>

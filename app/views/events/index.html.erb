@@ -13,8 +13,8 @@
           <p><% current_user.attendances.each do |attendance| %></p>
             <a href="#" class= "thePopup" onclick="javascript:showPopup()" ><%= attendance.event.title %></a>
             <div id="myPopup" class="popup-content">
-              <p>Start: <%= attendance.event.date.strftime('%A %e of %B') %></p>
-              <p>End: <%= attendance.event.date_end.strftime('%A %e of %B') %></p>
+              <p>Start: <%= attendance.event.date.strftime('%A %e of %B at %H:%M:') %></p>
+              <p>End: <%= attendance.event.date_end.strftime('%A %e of %B until %H:%M') %></p>
               <p><%= attendance.event.description %></p>
               <p><%= attendance.event.address %></p>
               <%= link_to event_attendance_path(attendance.event, attendance.id), :method => 'delete' , class: 'event-link' do%>
@@ -50,8 +50,8 @@
                 <p><u>Description</u>: <%= event.description %></p>
                 <p><u>Address</u>: <%= event.address %></p>
                 <p><u>Capacity</u>: <%= event.capacity %> people. Already <%= event.attendances.all.count %> persons are joining !</p>
-                <p><u>Start</u>: <%= event.date.strftime('%A %e of %B') %></p>
-                <p><u>End</u>: <%= event.date_end.strftime('%A %e of %B') %></p>
+                <p><u>Start</u>: <%= event.date.strftime('%A %e of %B from %H:%M') %></p>
+                <p><u>End</u>: <%= event.date_end.strftime('%A %e of %B until %H:%M') %></p>
                 <%= link_to "Comment", new_event_comment_path(event.id), class: 'event-link ', style: 'pointer-events: auto;' %>
               </div>
               <div class="event-links">
