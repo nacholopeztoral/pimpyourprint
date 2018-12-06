@@ -5,15 +5,16 @@
         <%= image_tag current_user.avatar.url,  class: "avatar-events"%>
         <p class="hide-mobile"><%= current_user.username %></p>
           <%= link_to new_event_path do %>
-            <i class="fas fa-plus" style="font-size: 35px;"></i>
+            <p>Create an Event  <i class="fas fa-plus" style="font-size: 35px;"></i></p>
+            <hr>
           <%end %>
         <% unless current_user.attendances.empty? %>
           <p>My future events:</p>
           <p><% current_user.attendances.each do |attendance| %></p>
             <a href="#" class= "thePopup" onclick="javascript:showPopup()" ><%= attendance.event.title %></a>
             <div id="myPopup" class="popup-content">
-              <p>Start:<%= attendance.event.date %></p>
-              <p>End:<%= attendance.event.date_end %></p>
+              <p>Start: <%= attendance.event.date.strftime('%A %e of %B') %></p>
+              <p>End: <%= attendance.event.date_end.strftime('%A %e of %B') %></p>
               <p><%= attendance.event.description %></p>
               <p><%= attendance.event.address %></p>
               <%= link_to event_attendance_path(attendance.event, attendance.id), :method => 'delete' , class: 'event-link' do%>
@@ -48,7 +49,7 @@
               <div class="injection">
                 <p><u>Description</u>: <%= event.description %></p>
                 <p><u>Address</u>: <%= event.address %></p>
-                <p><u>Capacity</u>: <%= event.capacity %> people. Already <%= event.attendances.all.count %> persons joining !</p>
+                <p><u>Capacity</u>: <%= event.capacity %> people. Already <%= event.attendances.all.count %> persons are joining !</p>
                 <p><u>Start</u>: <%= event.date.strftime('%A %e of %B') %></p>
                 <p><u>End</u>: <%= event.date_end.strftime('%A %e of %B') %></p>
                 <%= link_to "Comment", new_event_comment_path(event.id), class: 'event-link ', style: 'pointer-events: auto;' %>
