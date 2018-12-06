@@ -14,7 +14,7 @@ class QuizResultsController < ApplicationController
   def points
     points = { 'Transport' => { 'Cycle' => 0, 'Walking' => 0, 'Drive' => 5, 'Public Transportation' => 3, 'My private jet' => 10 },
              'Flight' => {'None' => 0, 'Less than 10 hours' => 3 , 'Between 10-40 hours' => 5, 'More than 40 hours' => 10},
-             'Smoker' => {'Never' => 0,  'Sometimes' => 5, 'Regurlaly' => 10 },
+             'Smoker' => {'Never' => 0,  'Sometimes' => 5, 'Regularly' => 10 },
              'Diet' => {'Never' => 0, '1 to 2 meals per week' => 3 ,'More than 3 meals per week' => 7,'Every meal' => 10},
              'Recicle' => {'Never' => 10, 'Sometimes' => 5, 'Most of the time' => 3,'Always' => 0 }
              }

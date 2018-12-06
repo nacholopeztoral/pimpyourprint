@@ -4,16 +4,21 @@
   <div class="container quiz_result">
     <div class="quiz-result-box">
       <p class="score"><%= @score %></p>
+       <%= render 'meter' %>
+          <div class="meter"></div>
           <% case %>
-              <% when @score <= 10 then status = " Damn! You are so green! Challenge yourself even more" %>
+              <% when @score <= 10 then status = "You are so green! Challenge yourself even more" %>
+              <h4 class="quiz_status good">YOUR SCORE: Good, Damn!</h4>
               <h4 class="quiz_status"><%= status %></h4>
-              <% when @score <= 30 then status = " Not that bad...we can help you work on it... " %>
+              <% when @score <= 30 then status = "Not that bad...we can help you work on it... " %>
+              <h4 class="quiz_status avarage">YOUR SCORE: Avarage</h4>
               <h4 class="quiz_status"><%= status %></h4>
-              <% when @score <= 50 then status = " Oh boy... We have work to do... " %>
-              <h4 ><%= status %></h4>
+              <% when @score <= 50 then status = "Oh boy... We have work to do... " %>
+              <h4 class="quiz_status bad">YOUR SCORE: Bad</h4>
+              <h4 class="quiz_status"><%= status %></h4>
           <% end %>
-    </div>
       <%= link_to "Sign up, be green", new_user_registration_path , class: "btn btn-success quiz_singup"  %>
+    </div>
   </div>
 
 

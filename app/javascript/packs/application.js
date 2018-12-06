@@ -16,3 +16,4 @@ showTips();
 giveTips();
 hideTips();
 import "./places"
+import "./meter"
