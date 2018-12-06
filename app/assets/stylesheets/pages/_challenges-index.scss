@@ -1,6 +1,15 @@
 .challenges-container {
   max-width: 700px;
 }
+.challenge-description.button-fix {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+a.btn.btn-secondary.btn-fix {
+  position: fixed;
+  left: 24%;
+}
 
 .challenges-list {
   position: relative;

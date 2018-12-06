@@ -4,14 +4,15 @@
     <%= challenge.title %>
   </div>
     <div class="challenge-picture" style="background-image: linear-gradient(353deg, #194c6363, rgba(29, 52, 71, 0.21)), url(<%= cl_image_path challenge.picture, height: 180, crop: :fill %>); background-repeat: no-repeat; background-size: cover; background-position: center;"></div>
-    <div class="challenge-description">
+    <div class="challenge-description button-fix">
       <%= challenge.description %>
+      <%= link_to 'Mark as done!', completed_path(user_challenge), method: :post, class:'btn btn-secondary btn-fix' %>
     </div>
     <div class="co2-info">
       <%= image_tag("co2.svg", class: 'co2-icon') %>
       <%= challenge.carbon %>
     </div>
-    <%= link_to 'Mark as done!', completed_path(user_challenge), method: :post, class:'btn btn-secondary' %>
+
     <div class="challenge-tip fab fa-readme" id="open-btn">
       <p>Tips</p>
     </div>
