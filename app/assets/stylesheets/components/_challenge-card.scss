@@ -31,7 +31,9 @@
   align-items: center;
   position: absolute;
   .challenge-title {
-    font-size: 25px;
+
+    font-size: 28px;
+    font-weight: 900;
   }
   .challenge-picture {
     height: 25vh;
@@ -39,7 +41,7 @@
     border-radius: 10px;
     border: 1px solid $white;
   }
-.checked {
+  .checked {
     margin: 4px 57px;
   }
 
@@ -48,8 +50,8 @@
   }
 
   .challenge-description {
-    font-weight: bolder;
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: bolder !important;
   }
 
   .btn.btn-secondary{
