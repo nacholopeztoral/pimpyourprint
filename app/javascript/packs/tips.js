@@ -28,5 +28,6 @@ const hideTips = () => {
   }
 }
 
+
 export { showTips, giveTips, hideTips };
 
