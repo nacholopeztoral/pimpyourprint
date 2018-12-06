@@ -6,6 +6,9 @@
   }
   .event-card-container {
     width: 100% !important;
+    form {
+      display: flex;
+    }
   }
   .avatar-events {
     display: none;
@@ -16,10 +19,12 @@
   .events-box {
     width: 100% !important;
     height: 245px;
-    margin: 10px 0;
+    margin: 20px 0;
+    box-shadow: 2px 2px 2px 2px #969494eb;
   }
   .user-box {
-    height: 350px;
+    height: auto;
+    padding: 10px;
     flex: 0 0 30%;
     position: relative !important;
     top: 0 !important;

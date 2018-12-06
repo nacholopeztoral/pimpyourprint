@@ -4,89 +4,84 @@
       <div class="scroll">
         <%= image_tag current_user.avatar.url,  class: "avatar-events"%>
         <p class="hide-mobile"><%= current_user.username %></p>
-        <p>My future events:</p>
-
-        <p><% current_user.attendances.each do |attendance| %></p>
-        <a href="#" class= "thePopup" onclick="javascript:showPopup()" ><%= attendance.event.title %></a>
-
-        <div id="myPopup" class="popup-content">
-          <p>Start:<%= attendance.event.date %></p>
-          <p>End:<%= attendance.event.date_end %></p>
-          <p><%= attendance.event.description %></p>
-          <p><%= attendance.event.address %></p>
-          <%= link_to event_attendance_path(attendance.event, attendance.id), :method => 'delete' , class: 'event-link' do%>
-          <i class="fas fa-trash-alt"></i>
-          <% end  %>
-
-        </div>
-        <% end  %>
-      </div>
-
-    </div>
-    <div class="event-card-container">
-
-      <div class="">
-
-  <%= form_tag events_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      placeholder: "Search events by city",
-      class: "events-search-input",
-      id: "address-input"
-    %>
-    <%= submit_tag "Search", class: "btn btn-secondary" %>
-  <% end %>
-      <div class=" row ">
-
-        <% @events.each do |event| %>
-        <div class="events-box">
-          <div style="display: flex; justify-content: end;">
-            <%= image_tag current_user.avatar.url,  class: "avatar-event-creator" %>
-            <h4 class="title-event">" <%= event.title %> "</h4>
-          </div>
-          <p>Created by <%= event.user.username %></p>
-          <div class="injection">
-            <p>Description: <%= event.description %></p>
-            <p>Address: <%= event.address %></p>
-            <p>Capacity of <%= event.capacity %> people</p>
-            <p>Start:<%= event.date %></p>
-            <p>End:<%= event.date_end %></p>
-            <%= link_to "Join", event_attendances_path(event.id), method: :post, class: 'event-link' , style: 'pointer-events: auto;' %>
-          </div>
-          <div class="event-links">
-
-            <div class="event-link grow">Show</div>
-            <%= link_to "Comment", new_event_comment_path(event.id), class: 'event-link ' %>
-          </div>
-        </div>
+          <%= link_to new_event_path do %>
+            <p>Create an Event  <i class="fas fa-plus" style="font-size: 35px;"></i></p>
+            <hr>
+          <%end %>
+        <% unless current_user.attendances.empty? %>
+          <p>My future events:</p>
+          <p><% current_user.attendances.each do |attendance| %></p>
+            <a href="#" class= "thePopup" onclick="javascript:showPopup()" ><%= attendance.event.title %></a>
+            <div id="myPopup" class="popup-content">
+              <p>Start: <%= attendance.event.date.strftime('%A %e of %B') %></p>
+              <p>End: <%= attendance.event.date_end.strftime('%A %e of %B') %></p>
+              <p><%= attendance.event.description %></p>
+              <p><%= attendance.event.address %></p>
+              <%= link_to event_attendance_path(attendance.event, attendance.id), :method => 'delete' , class: 'event-link' do%>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+            </div>
+          <% end %>
         <% end %>
       </div>
-
+    </div>
+    <div class="event-card-container">
+      <div>
+        <div class="button-event">
+        <%= form_tag events_path, method: :get do %>
+          <%= text_field_tag :query,
+                             params[:query],
+                             placeholder: "Search events by city",
+                             class: "events-search-input",
+                             id: "address-input"
+          %>
+          <%= submit_tag "Search", class: "btn btn-primary less-margin" %>
+        <% end %>
+        </div>
+        <div class=" row ">
+          <% @events.each do |event| %>
+            <div class="events-box">
+              <div style="display: flex; justify-content: end;">
+                <%= image_tag event.user.avatar.url,  class: "avatar-event-creator" %>
+                <h4 class="title-event"><%= event.title %></h4>
+              </div>
+              <p>Created by <%= event.user.username %></p>
+              <div class="injection">
+                <p><u>Description</u>: <%= event.description %></p>
+                <p><u>Address</u>: <%= event.address %></p>
+                <p><u>Capacity</u>: <%= event.capacity %> people. Already <%= event.attendances.all.count %> persons are joining !</p>
+                <p><u>Start</u>: <%= event.date.strftime('%A %e of %B') %></p>
+                <p><u>End</u>: <%= event.date_end.strftime('%A %e of %B') %></p>
+                <%= link_to "Comment", new_event_comment_path(event.id), class: 'event-link ', style: 'pointer-events: auto;' %>
+              </div>
+              <div class="event-links">
+                <div class="event-link grow">Show</div>
+                <%= link_to "Join", event_attendances_path(event.id), method: :post, class: 'event-link'  %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
 <script>
-
   function showPopup() {
+    document.getElementById("myPopup").classList.toggle("show");
+    return false;
+  }
+  window.onclick = function(event) {
+    if (!event.target.matches('.thePopup')) {
 
-        document.getElementById("myPopup").classList.toggle("show");
-        return false;
-      }
-
-
-    window.onclick = function(event) {
-      if (!event.target.matches('.thePopup')) {
-
-        var dropdowns = document.getElementsByClassName("popup-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
+      var dropdowns = document.getElementsByClassName("popup-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
         }
       }
     }
-  </script>
-  <%= javascript_pack_tag 'events' %>
+  }
+</script>
+<%= javascript_pack_tag 'events' %>

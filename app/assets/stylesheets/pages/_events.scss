@@ -44,7 +44,7 @@ input.btn.btn-primary.event-button {
   flex: 0 0 35%;
   position: sticky !important;
   top: 90px !important;
-  height: 500px;
+  height: auto;
   text-align: center;
   padding: 30px;
   background-color: white;
@@ -52,29 +52,24 @@ input.btn.btn-primary.event-button {
   box-shadow: 1px 1px 1px 1px #80808040;
   border-radius: 4px;
   margin-top: 10px;
-
-
+}
+input.btn.btn-primary.less-margin {
+ margin-left: 10px !important;
+ margin: 0px;
 }
 div.scroll {
   overflow: scroll;
-  form {
-    display: flex;
-    justify-content: center;
-  }
-  .events-search-input {
-    border-radius: 10px;
-    border: none;
-    min-width: 315px;
-    box-shadow: 1px 1px 1px 1px #80808040;
-    margin-right: 5px;
-  }
-  .btn.btn-secondary {
-    box-shadow: 1px 1px 1px 1px #80808040;
-  }
+  display: inline-block;
+
 }
-.event-card-container {
-  // height: 500px;
-  // overflow: scroll;
+.events-search-input {
+  border-radius: 10px;
+  border: none;
+  box-shadow: 1px 1px 1px 1px #80808040;
+  margin-right: 5px;
+}
+.btn.btn-secondary {
+  box-shadow: 1px 1px 1px 1px #80808040;
 }
 
 .event-box-grown {
@@ -116,21 +111,18 @@ div.scroll {
   height:220px;
   margin: 10px;
   border: 1px solid #80808040;
-  box-shadow: 1px 1px 1px 1px, #80808040;
-  box-shadow: 1px 1px 1px 1px #80808040;
   border-radius: 4px;
-  // overflow: scroll;
-  background-color: $blue;
+  box-shadow: 2px 2px 1px 1px #96949463 !important;
+  background-color: $darkblue;
   color: white;
   padding: 30px;
   width: 45vw;
-  // overflow: hidden;
 }
 a.event-link {
   text-decoration: none;
   text-decoration: none !important;
   font-size: 25px;
-  color: #818181;
+  color: #d2cccc;
   transition: 0.3s;
   border-bottom: 3px solid !important;
 }
@@ -145,26 +137,26 @@ div.event-link {
   padding: 8px 8px 8px 32px;
   text-decoration: none !important;
   font-size: 25px;
-  color: #818181;
+  color: #d2cccc;
   transition: 0.3s;
-    // text-shadow: 1px 1px #a7a7a7;
-  }
-  .event-links a:hover, .offcanvas a:focus{
-    color: #f1f1f1 !important;
-    cursor: pointer;
-  }
-  a.event-link:hover, .offcanvas a:focus{
-    color: #122833db;
-    cursor: pointer;
+}
+.event-links a:hover, .offcanvas a:focus{
+  color: #f1f1f1 !important;
+  cursor: pointer;
+}
+a.event-link:hover, .offcanvas a:focus{
+  color: #122833db;
+  cursor: pointer;
 
-  }
-  .event-link:hover, .offcanvas a:focus{
-   color: #f1f1f1 !important;
+}
+.event-link:hover, .offcanvas a:focus{
+ color: #f1f1f1 !important;
 
- }
- .author-image {
+}
+.author-image {
   display: flex;
   padding-top: 50px;
+
 }
 
 .avatar-events {
@@ -177,7 +169,19 @@ div.event-link {
   width: 60px;
   border-radius: 50%;
 }
+div.button-event {
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 1030px) {
+  .date-flex {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
 
-
-
-
+.event-card-container {
+  form {
+    display: flex;
+  }
+}

@@ -22,42 +22,42 @@
 
 .question {
   height: 600px;
-    .answer {
-      max-width: max-content;
-      text-align: left;
-      display: inline-block;
-      margin-top: 10px;
-      font-size: 27px;
-     }
-    label {
-      display: block;
-      font-size: 22px;
-      min-width: 340px;
-      font-weight: lighter;
-      border-spacing: 10px;
-      padding: 7px 0px;
-      margin-bottom: 12px;
-      border-radius: 2px;
-      &:hover {
-        background-color: $blue !important;
-        color: white !important;
-        cursor: pointer;
-      }
+  .answer {
+    max-width: max-content;
+    text-align: left;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 27px;
+  }
+  label {
+    display: block;
+    font-size: 22px;
+    min-width: 340px;
+    font-weight: lighter;
+    border-spacing: 10px;
+    padding: 7px 0px;
+    margin-bottom: 12px;
+    border-radius: 2px;
+    &:hover {
+      background-color: $blue !important;
+      color: white !important;
+      cursor: pointer;
     }
+  }
 
-    .quiz-title {
-      font-weight: bolder;
-      border:none;
-      font-size: 23px;
-      margin: 20px 0;
-      text-align: center;
+  .quiz-title {
+    font-weight: bolder;
+    border:none;
+    font-size: 23px;
+    margin: 20px 0;
+    text-align: center;
+    color: $blue;
+    &:hover {
+      background-color: $light-gray;
       color: $blue;
-      &:hover {
-        background-color: $light-gray;
-        color: $blue;
-        cursor: default;
-      }
+      cursor: default;
     }
+  }
 }
 .next {
   visibility:hidden;
@@ -137,12 +137,12 @@
 .score {
   display: none;
 }
- .option{
+.option{
   background-color: white;
   box-shadow: 1px 1px 9px 0px rgba(116, 116, 116, 0.29);
   color: $gray !important;
   font-family: "Quicksand";
- }
+}
 
 @media only screen and (max-width:900px) {
   .quiz_singup {

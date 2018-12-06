@@ -1,3 +1,19 @@
+.past-challenges-container {
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.challenge-body.past-challenge {
+  margin-top: 50px;
+  height: 80vh;
+  flex: 0 0 25%;
+  position: static !important;
+}
+
 .challenge-row {
   width: 100%;
   text-align: center;
@@ -55,6 +71,7 @@
   align-items: center;
   position: absolute;
   .challenge-title {
+
     font-weight: bold;
     font-family: quicksand;
     line-height: 35px;
@@ -64,7 +81,6 @@
     max-width: 330px;
     text-align: CENTER;
     top: 160px;
-
   }
   .challenge-picture {
     height: 58%;
@@ -73,7 +89,7 @@
     position: absolute;
     top: 0;
   }
-.checked {
+  .checked {
     margin: 4px 57px;
   }
 .congrats-message {
@@ -179,4 +195,9 @@
 
 .challenge-completed {
   font-weight: lighter;
+}
+
+.fa-info-circle {
+  content: "\f05a";
+  color: whitesmoke !important;
 }

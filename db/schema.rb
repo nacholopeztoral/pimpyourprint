@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_05_113429) do
+ActiveRecord::Schema.define(version: 2018_12_05_163904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,12 +28,12 @@ ActiveRecord::Schema.define(version: 2018_12_05_113429) do
   create_table "challenges", force: :cascade do |t|
     t.string "category"
     t.text "description"
-    t.integer "carbon"
+    t.integer "carbon", default: 0
     t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
-    t.boolean "active", default: true
+    t.boolean "active", default: false
   end
 
   create_table "comments", force: :cascade do |t|
@@ -107,10 +107,10 @@ ActiveRecord::Schema.define(version: 2018_12_05_113429) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
-    t.integer "score"
+    t.integer "score", default: 0
     t.string "city"
     t.boolean "admin", default: false
-    t.integer "streak"
+    t.integer "streak", default: 0
     t.string "avatar"
     t.boolean "vegan", default: false
     t.boolean "car", default: false

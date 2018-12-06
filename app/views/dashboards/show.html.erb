@@ -9,11 +9,18 @@
 
 <!-- get data for user based on their transportation habits -->
 <% transportation_carbon = [] %>
+<% transportation_dates = [] %>
 <% total_carbon = 0.0 %>
-<% @user.transportations.last(6).each do |t| %>
+<% count = 0 %>
+<% @user.transportations.each do |t| %>
   <% key = "#{t.created_at.year}.#{t.created_at.month}.#{t.created_at.day}"%>
+  <% unless transportation_dates.include? key %>
+    <% count += 1 %>
+  <% end %>
   <% transportation_carbon << [key, t.carbon / 1000.0] %>
+  <% transportation_dates << key %>
   <% total_carbon += t.carbon / 1000.0%>
+  <% break if count == 5 %>
 <% end %>
 
 <!-- get data for all app users -->
@@ -30,8 +37,11 @@
     <div class="dashboard-user">
       <%= cl_image_tag @user.avatar, class: 'avatar-dashboard' %>
       <h1><%= @user.username %></h1>
-      <div class="btn btn-primary"><%= link_to "All my challenges",my_challenges_path %></div>
-      <div class="btn btn-primary"><%= link_to "My current challenge",my_challenge_path %></div>
+      <% if @user.user_challenges.last && @user.user_challenges.last.completed %>
+        <div class="btn btn-primary"><%= link_to "All my challenges",my_challenges_path %></div>
+      <% else %>
+        <div class="btn btn-primary"><%= link_to "My current challenge",my_challenge_path %></div>
+      <% end %>
     </div>
     <div class="dashboard-row">
       <div class="dashboard-column">
@@ -70,16 +80,17 @@
         <div class="statistic-description">
           <p class="statistic-text long-text">CO2 released from commuting in last 5 days&nbsp;&nbsp;</p>
         </div>
-        <p class="statistic-number" id="orange-text"><%= total_carbon %><font size="-1">kg</font></p>
+        <p class="statistic-number" id="orange-text"><%= total_carbon.round(1) %><font size="-1">kg</font></p>
       </div>
     </div>
     <%= area_chart transportation_carbon, colors: ['#6AA8C5'], suffix: 'kg', id: "myChart" %>
     <div class="dashboard-row">
-      <h3>All PyP users</h3>
+      <h3>All users</h3>
     </div>
     <div class="dashboard-row">
       <div class="dashboard-column">
         <div class="statistic-description">
+          <i class="fas fa-leaf"></i>
           <p class="statistic-text">CO2 saved&nbsp;&nbsp;</p>
         </div>
         <p class="statistic-number"><%= total_carbon_saved %><font size="-1">kg</font></p>
@@ -88,6 +99,7 @@
     <div class="dashboard-row">
       <div class="dashboard-column">
         <div class="statistic-description">
+          <i class="fas fa-leaf"></i>
           <p class="statistic-text">CO2 saved by average user&nbsp;&nbsp;</p>
         </div>
         <p class="statistic-number"><%= average_carbon %><font size="-1">kg</font></p>

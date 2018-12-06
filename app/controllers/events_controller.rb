@@ -28,6 +28,7 @@ class EventsController < ApplicationController
     @event.user = current_user
     authorize @event
     if @event.save!
+      Attendance.create(event_id: @event.id, user_id: @event.user, attending: true)
       redirect_to events_path
     end
   end
