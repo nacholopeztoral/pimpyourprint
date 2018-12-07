@@ -258,7 +258,7 @@ usernames.each { |user|
 puts "Generating Events"
 
 event1 = Event.new(user_id: nacho.id,
-                  title: "Le Wagon DemoDay After party",
+                  title: "Green talk @ Le Wagon After party",
                   description: "Have a drink after Le Wagon Demoday with people that also care about the environment",
                   address: "Factory, Rheinsberger Str. 76/77, 10115 Berlin",
                   capacity: "100",
@@ -322,6 +322,7 @@ Attendance.new(user_id: user.id, event_id: event1.id, attending: true).save
 puts "Generating Tips"
 
 Tip.new(user_id: nacho.id, challenge_id: bottle.id, content:"Don't forget to recycle your old plastic bottles.").save
+Tip.new(user_id: rebeca.id, challenge_id: bottle.id, content:"I found mine in the trash!").save
 Tip.new(user_id: anja.id, challenge_id: bottle.id, content:"I simply use a beer bottle. Glass over plastic!").save
 
 puts "..aaaand done!"
