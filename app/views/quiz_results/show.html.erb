@@ -1,28 +1,26 @@
 <div class="quiz-intro-banner">
   <h2>Your quiz result is:</h2>
 </div>
-  <div class="container quiz_result">
-    <div class="quiz-result-box">
-      <p class="score"><%= @score %></p>
-       <%= render 'meter' %>
-          <div class="meter"></div>
-          <% case %>
-              <% when @score <= 10 then status = "You are so green! Challenge yourself even more" %>
-              <h4 class="quiz_status good">YOUR SCORE: Good, Damn!</h4>
-              <h4 class="quiz_status"><%= status %></h4>
-              <% when @score <= 30 then status = "Not that bad...we can help you work on it... " %>
-              <h4 class="quiz_status avarage">YOUR SCORE: Average</h4>
-              <h4 class="quiz_status"><%= status %></h4>
-              <% when @score <= 50 then status = "Oh boy... We have work to do... " %>
-              <h4 class="quiz_status bad">YOUR SCORE: Bad</h4>
-              <h4 class="quiz_status"><%= status %></h4>
-          <% end %>
-      <%= link_to "Sign up, be green", new_user_registration_path , class: "btn btn-success quiz_singup"  %>
-      <div class="login" style=" position: inherit;">
-         <%= link_to "Login", new_user_session_path %>
-      </div>
+<div class="container quiz_result">
+  <div class="quiz-result-box">
+    <p class="score"><%= @score %></p>
+    <%= render 'meter' %>
+    <div class="meter"></div>
+      <% case %>
+        <% when @score <= 10 then status = "You are so green! Challenge yourself even more" %>
+        <h4 class="quiz_status good">YOUR SCORE: Good, Damn!</h4>
+        <h4 class="quiz_status"><%= status %></h4>
+        <% when @score <= 30 then status = "Not that bad...we can help you work on it... " %>
+        <h4 class="quiz_status avarage">YOUR SCORE: Average</h4>
+        <h4 class="quiz_status"><%= status %></h4>
+        <% when @score <= 50 then status = "Oh boy... We have work to do... " %>
+        <h4 class="quiz_status bad">YOUR SCORE: Bad</h4>
+        <h4 class="quiz_status"><%= status %></h4>
+      <% end %>
+    <%= link_to "Sign up, be green", new_user_registration_path , class: "btn btn-success quiz_singup" %>
+    <div class="login" style="position: relative; top: 15px;">
+       <%= link_to "Login", new_user_session_path %>
     </div>
   </div>
-
-
+</div>
 <%= javascript_pack_tag 'meter' %>
