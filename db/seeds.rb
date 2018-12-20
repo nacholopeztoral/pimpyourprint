@@ -28,22 +28,6 @@ nacho = User.new(username: "Nacho", email:"nacho@test.com", password:"nacho@test
 nacho.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1544090484/37050701.jpg'
 nacho.save!
 
-marcel = User.new(username: "Marcel", email:"marcel@test.com", password:"marcel@test.com", city: "Rio de Janeiro", time_zone: "Berlin", score: [12,23,34,45,56,67,78,89].sample, streak: [1,2,3,4,5].sample, streak_created_at: [1,2,3,4,5].sample.days.ago)
-marcel.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543416493/PimpYourPrint/bunny.jpg'
-marcel.save!
-
-dimitry = User.new(username: "Dimitry", email:"dimitry@test.com", password:"dimitry@test.com", city: "Paris", time_zone: "Berlin", score: [12,23,34,45,56,67,78,89].sample, streak: [1,2,3,4,5].sample, streak_created_at: [1,2,3,4,5].sample.days.ago)
-dimitry.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543416493/PimpYourPrint/bunny.jpg'
-dimitry.save!
-
-alice = User.new(username: "Alice", email:"alice@test.com", password:"alicece@test.com", city: "Lyon", time_zone: "Berlin", score: [12,23,34,45,56,67,78,89].sample, streak: [1,2,3,4,5].sample, streak_created_at: [1,2,3,4,5].sample.days.ago)
-alice.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543416493/PimpYourPrint/bunny.jpg'
-alice.save!
-
-clara = User.new(username: "Clara", email:"clara@test.com", password:"clara@test.com", city: "Berlin", time_zone: "London", score: [12,23,34,45,56,67,78,89].sample, streak: [1,2,3,4,5].sample, streak_created_at: [1,2,3,4,5].sample.days.ago)
-clara.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1544090558/christopher-campbell-28567-unsplash.jpg'
-clara.save!
-
 jadwiga = User.new(username: "Jadwiga", email:"jadwiga@coumert.com", password:"jadwiga@coumert.com", city: "Berlin", time_zone: "Berlin")
 jadwiga.remote_avatar_url = 'https://res.cloudinary.com/jadwiga/image/upload/v1543580300/profil-picture.jpg'
 jadwiga.save!

@@ -11,8 +11,11 @@ class Challenge < ApplicationRecord
   scope :for_vegan, -> { where.not(category: 'nutrition')}
   scope :no_car, -> { where.not(category: 'transportation')}
 
-  scope :not_taken_by, -> (user) { includes(:user_challenges).where(user_challenges: { user: user }).or(self.includes(:user_challenges).where.not(user_challenges: nil)) }
-
+  scope :not_taken_by, -> (user) { includes(:user_challenges)
+                                                            .where(user_challenges: { user: user })
+                                                            .where(user_challenges: { completed: false })
+                                                            .or(self.includes(:user_challenges)
+                                                            .where.not(user_challenges: nil)) }
   def taken_by?(a_user)
     user_challenges.where(user: a_user).any?
   end
